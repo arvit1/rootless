@@ -4,12 +4,12 @@
 
 export const environment = {
   production: false,
-  // apiUrl:
-  //   "http://rootlessstage-env.eba-ympxmm9w.us-east-2.elasticbeanstalk.com/user_api",
-  // publicUrl:
-  //   "http://rootlessstage-env.eba-ympxmm9w.us-east-2.elasticbeanstalk.com/public_api",
-  apiUrl: "http://localhost/user_api",
-  publicUrl: "http://localhost/public_api",
+  apiUrl:
+    "http://rootlessstage-env.eba-ympxmm9w.us-east-2.elasticbeanstalk.com/user_api",
+  publicUrl:
+    "http://rootlessstage-env.eba-ympxmm9w.us-east-2.elasticbeanstalk.com/public_api",
+  // apiUrl: "http://localhost/user_api",
+  // publicUrl: "http://localhost/public_api",
 
   adminUrl: "http://localhost/admin_api",
 };

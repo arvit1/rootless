@@ -28,7 +28,7 @@
               "@agm/core",
               "angular-draggable-droppable"
             ],
-            "outputPath": "dist/xtreme-admin-angular",
+            "outputPath": "docs",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
