@@ -1,0 +1,321 @@
+<!-- ============================================================== -->
+<!-- Main wrapper - style you can find in pages.scss -->
+<!-- ============================================================== -->
+<div id="main-wrapper" [ngClass]="{ 'show-sidebar': showMobileMenu }" [dir]="options.dir"
+  [attr.data-theme]="options.theme" [attr.data-layout]="options.layout" [attr.data-sidebartype]="options.sidebartype"
+  [attr.data-sidebar-position]="options.sidebarpos" [attr.data-header-position]="options.headerpos"
+  [attr.data-boxed-layout]="options.boxed">
+  <!-- ============================================================== -->
+  <!-- Topbar header - style you can find in topbar.scss -->
+  <!-- ============================================================== -->
+  <header class="topbar" [attr.data-navbarbg]="options.navbarbg">
+    <nav class="d-flex top-navbar navbar-expand-lg"
+      [ngClass]="options.navbarbg == 'skin6' ? 'navbar-light' : 'navbar-dark'">
+      <div class="navbar-header" [ngClass]="expandLogo ? 'expand-logo' : ''" [attr.data-logobg]="options.logobg">
+        <!-- This is for the sidebar toggle which is visible on mobile only -->
+        <a (click)="showMobileMenu = !showMobileMenu" class="nav-toggler waves-effect waves-light d-block d-lg-none"
+          href="javascript:void(0)">
+          <i [ngClass]="showMobileMenu ? 'fa fa-times' : 'fa fa-bars'"></i>
+        </a>
+        <!-- ============================================================== -->
+        <!-- Logo -->
+        <!-- ============================================================== -->
+        <!-- /experts/feed -->
+        <a class="navbar-brand" [routerLink]="user !== '' ? ['/experts/feed'] : ['/#/']">
+          <!-- Logo icon -->
+          <b class="logo-icon">
+            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+            <!-- Dark Logo icon -->
+            <img src="assets/images/rootlesslogo.png" alt="homepage" class="dark-logo" />
+            <!-- Light Logo icon -->
+            <!-- <img src="assets/images/logo-light-icon.png" alt="homepage" class="light-logo" /> -->
+          </b>
+          <!--End Logo icon -->
+        </a>
+        <!-- ============================================================== -->
+        <!-- End Logo -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Toggle which is visible on mobile only -->
+        <!-- ============================================================== -->
+        <a class="topbartoggler d-block d-lg-none waves-effect waves-light" href="javascript:void(0)"
+          (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent">
+          <i class="notification"></i>
+        </a>
+      </div>
+      <a [routerLink]="user !== '' ? ['/experts/feed'] : ['/']" class="order-1 order-md-0 d-lg-flex d-none">
+        <img src="assets/images/rootlesslogo.png" alt="homepage" class="dark-logo" width="120" />
+      </a>
+      <!-- ============================================================== -->
+      <!-- End Logo -->
+      <!-- ============================================================== -->
+      <div class="navbar-collapse collapse" id="navbarSupportedContent" [attr.data-navbarbg]="options.navbarbg"
+        [ngbCollapse]="!isCollapsed">
+        <!-- Vertical Header -->
+        <div *ngIf="options.layout === 'horizontal'" class="w-100">
+          <app-horizontal-navigation class="w-100 d-flex align-items-center justify-content-between">
+          </app-horizontal-navigation>
+        </div>
+        <!-- Horizontal Header -->
+        <div *ngIf="options.layout === 'vertical'" class="w-100">
+          <app-vertical-navigation (toggleSidebar)="toggleSidebarType()">
+          </app-vertical-navigation>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- ============================================================== -->
+  <!-- Left Sidebar - style you can find in sidebar.scss  -->
+  <!-- ============================================================== -->
+  <aside class="left-sidebar" [attr.data-sidebarbg]="options.sidebarbg" (mouseover)="Logo()" (mouseout)="Logo()">
+    <!-- Sidebar scroll-->
+    <div *ngIf="options.layout === 'horizontal'">
+      <div class="scroll-sidebar">
+        <app-horizontal-sidebar></app-horizontal-sidebar>
+      </div>
+    </div>
+    <!-- Horizontal Header -->
+    <div *ngIf="options.layout === 'vertical'">
+      <div class="scroll-sidebar" [perfectScrollbar]="config">
+        <app-vertical-sidebar></app-vertical-sidebar>
+      </div>
+    </div>
+    <!-- End Sidebar scroll-->
+  </aside>
+  <!-- ============================================================== -->
+  <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+  <!-- ============================================================== -->
+  <!-- ============================================================== -->
+  <!-- Page wrapper  -->
+  <!-- ============================================================== -->
+  <div class="page-wrapper">
+    <!-- ============================================================== -->
+    <!-- Container fluid  -->
+    <!-- ============================================================== -->
+    <div class="container-fluid">
+      <!-- ============================================================== -->
+      <!-- Start Page Content -->
+      <!-- ============================================================== -->
+      <router-outlet></router-outlet>
+      <!-- ============================================================== -->
+      <!-- End Start Page Content -->
+      <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Container fluid  -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- footer -->
+    <!-- ============================================================== -->
+    <footer class="footer text-center">
+      <!-- Footer -->
+      <footer class="bg-light text-center text-lg-start">
+        <!-- Grid container -->
+        <div class="p-4" style="background: black; padding: 120px 1.5em !important">
+          <!--Grid row-->
+          <div class="row">
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-12 mb-4 mb-md-0 jointherevolution">
+              <div style="width: 300px; margin: auto; margin-top: -60px">
+                <img src="assets/images/reverse.png" width="250" style="margin-bottom: 10px; margin-right: -50px" />
+                <div style="float: right">
+                  <h1>
+                    join the <br />
+                    revolution
+                  </h1>
+                </div>
+              </div>
+            </div>
+            <!--Grid column-->
+            <div class="col-lg-2 col-md-6 mb-4 mb-md-0 tab1">
+              <h5 class="text-uppercase">content</h5>
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a [routerLink]="['/blueprints']">Blueprints</a>
+                </li>
+                <li>
+                  <a [routerLink]="['/experts']">Experts</a>
+                </li>
+                <li>
+                  <a [routerLink]="['/courses']">Courses</a>
+                </li>
+                <li>
+                  <a [routerLink]="['/events']">Events</a>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+            <!--Grid column-->
+            <div class="col-lg-2 col-md-6 mb-4 mb-md-0 tab2">
+              <h5 class="text-uppercase mb-0">Links</h5>
+              <ul class="list-unstyled">
+                <li>
+                  <a [routerLink]="['/pricing']">Pricing</a>
+                </li>
+                <li>
+                  <a [routerLink]="['/about-us']">About</a>
+                </li>
+                <li>
+                  <a [routerLink]="['/contact']">Contact</a>
+                </li>
+                <li>
+                  <a [routerLink]="['/faq']">FAQs</a>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+            <!--Grid column-->
+            <div class="col-lg-2 col-md-6 mb-4 mb-md-0 tab3">
+              <h5 class="text-uppercase mb-0">community</h5>
+              <ul class="list-unstyled">
+                <!-- <li>
+                  <a [routerLink]="['/forum']">Forum</a>
+                </li> -->
+                <li>
+                  <a [routerLink]="['/blog']">Blog</a>
+                </li>
+              </ul>
+            </div>
+            <!--Grid column-->
+            <!--Grid column-->
+            <div class="col-lg-2 col-md-6 mb-4 mb-md-0 tab4">
+              <h5 class="text-uppercase mb-0">terms</h5>
+              <ul class="list-unstyled">
+                <li>
+                  <a (click)="open(privacy)" class="color-white" style="cursor: pointer">Privacy Statement</a>
+                </li>
+                <li>
+                  <a (click)="open(terms)" class="color-white" style="cursor: pointer">Terms & Conditions</a>
+                </li>
+                <li>
+                  <a (click)="open(policy)" class="color-white" style="cursor: pointer">Cookie Policy</a>
+                </li>
+                <!-- <li>
+                  <a
+                    (click)="open(content)"
+                    class="color-white"
+                    style="cursor: pointer"
+                    >Impressum</a
+                  >
+                </li> -->
+              </ul>
+            </div>
+            <!--Grid column-->
+          </div>
+          <!--Grid row-->
+        </div>
+        <!-- Grid container -->
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background: black; color: #fff">
+          <p style="text-align: end; font-size: 16px">
+            © 2021 Rootless Me. All Rights Reseved.
+          </p>
+        </div>
+        <!-- Copyright -->
+      </footer>
+      <!-- Footer -->
+    </footer>
+    <!-- ============================================================== -->
+    <!-- End footer -->
+    <!-- ============================================================== -->
+  </div>
+  <!-- ============================================================== -->
+  <!-- End Page wrapper  -->
+  <!-- ============================================================== -->
+
+  <div class="chat-windows"></div>
+</div>
+
+<ng-template #privacy let-modal>
+  <div class="modal-header" style="border: none">
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Nec feugiat in
+      fermentum posuere. Volutpat est velit egestas dui id ornare. Morbi non
+      arcu risus quis varius quam quisque id. Mi ipsum faucibus vitae aliquet
+      nec ullamcorper. Sociis natoque penatibus et magnis dis parturient montes
+      nascetur ridiculus. Leo urna molestie at elementum. Lectus magna fringilla
+      urna porttitor rhoncus dolor purus non enim. Tortor consequat id porta
+      nibh venenatis cras sed felis. Tristique senectus et netus et malesuada
+      fames ac turpis egestas. Vitae turpis massa sed elementum tempus egestas
+      sed sed. Felis eget nunc lobortis mattis aliquam. Diam sit amet nisl
+      suscipit adipiscing bibendum est ultricies integer. Senectus et netus et
+      malesuada fames ac. Cursus mattis molestie a iaculis at erat. Viverra
+      tellus in hac habitasse platea dictumst. Vitae auctor eu augue ut lectus
+      arcu. Scelerisque eu ultrices vitae auctor eu. Urna nec tincidunt praesent
+      semper feugiat nibh sed. Sit amet consectetur adipiscing elit ut aliquam
+      purus sit. Vel risus commodo viverra maecenas accumsan lacus. Scelerisque
+      purus semper eget duis at tellus at. Ultricies leo integer malesuada nunc.
+      Sed velit dignissim sodales ut eu sem integer. Adipiscing bibendum est
+      ultricies integer.
+    </p>
+  </div>
+</ng-template>
+
+<ng-template #terms let-modal>
+  <div class="modal-header" style="border: none">
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Nec feugiat in
+      fermentum posuere. Volutpat est velit egestas dui id ornare. Morbi non
+      arcu risus quis varius quam quisque id. Mi ipsum faucibus vitae aliquet
+      nec ullamcorper. Sociis natoque penatibus et magnis dis parturient montes
+      nascetur ridiculus. Leo urna molestie at elementum. Lectus magna fringilla
+      urna porttitor rhoncus dolor purus non enim. Tortor consequat id porta
+      nibh venenatis cras sed felis. Tristique senectus et netus et malesuada
+      fames ac turpis egestas. Vitae turpis massa sed elementum tempus egestas
+      sed sed. Felis eget nunc lobortis mattis aliquam. Diam sit amet nisl
+      suscipit adipiscing bibendum est ultricies integer. Senectus et netus et
+      malesuada fames ac. Cursus mattis molestie a iaculis at erat. Viverra
+      tellus in hac habitasse platea dictumst. Vitae auctor eu augue ut lectus
+      arcu. Scelerisque eu ultrices vitae auctor eu. Urna nec tincidunt praesent
+      semper feugiat nibh sed. Sit amet consectetur adipiscing elit ut aliquam
+      purus sit. Vel risus commodo viverra maecenas accumsan lacus. Scelerisque
+      purus semper eget duis at tellus at. Ultricies leo integer malesuada nunc.
+      Sed velit dignissim sodales ut eu sem integer. Adipiscing bibendum est
+      ultricies integer.
+    </p>
+  </div>
+</ng-template>
+
+<ng-template #policy let-modal>
+  <div class="modal-header" style="border: none">
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Nec feugiat in
+      fermentum posuere. Volutpat est velit egestas dui id ornare. Morbi non
+      arcu risus quis varius quam quisque id. Mi ipsum faucibus vitae aliquet
+      nec ullamcorper. Sociis natoque penatibus et magnis dis parturient montes
+      nascetur ridiculus. Leo urna molestie at elementum. Lectus magna fringilla
+      urna porttitor rhoncus dolor purus non enim. Tortor consequat id porta
+      nibh venenatis cras sed felis. Tristique senectus et netus et malesuada
+      fames ac turpis egestas. Vitae turpis massa sed elementum tempus egestas
+      sed sed. Felis eget nunc lobortis mattis aliquam. Diam sit amet nisl
+      suscipit adipiscing bibendum est ultricies integer. Senectus et netus et
+      malesuada fames ac. Cursus mattis molestie a iaculis at erat. Viverra
+      tellus in hac habitasse platea dictumst. Vitae auctor eu augue ut lectus
+      arcu. Scelerisque eu ultrices vitae auctor eu. Urna nec tincidunt praesent
+      semper feugiat nibh sed. Sit amet consectetur adipiscing elit ut aliquam
+      purus sit. Vel risus commodo viverra maecenas accumsan lacus. Scelerisque
+      purus semper eget duis at tellus at. Ultricies leo integer malesuada nunc.
+      Sed velit dignissim sodales ut eu sem integer. Adipiscing bibendum est
+      ultricies integer.
+    </p>
+  </div>
+</ng-template>

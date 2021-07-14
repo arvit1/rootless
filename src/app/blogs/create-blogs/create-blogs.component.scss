@@ -1,0 +1,37 @@
+.createBlog {
+  padding-top: 60px;
+  .backPrint {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 100 !important;
+    font-size: 16px !important;
+    color: #111111;
+  }
+  .titlePrint {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 23px;
+    color: #373737;
+  }
+  .uploadButton {
+    width: 37%;
+    float: right;
+    margin-top: -60px;
+    margin-right: 10px;
+    z-index: 10;
+    position: relative;
+  }
+  .tags {
+    margin-top: 80px;
+  }
+  @media (max-width: 900px) {
+    padding: 20px !important;
+    .responsive-img {
+      width: 100%;
+    }
+    .uploadButton {
+      width: auto;
+    }
+  }
+}

@@ -1,0 +1,136 @@
+<div class="blog">
+  <div class="col-lg-11 col-sm-12" style="margin: 70px 0">
+    <h1 class="font-55 black-color no-margin col-lg-6">
+      Howdy, Rootless me welcome to the blog
+    </h1>
+    <p class="margin-b-t font-20 black-color no-margin col-lg-6">
+      Let's get ready for another cup of latest news, expert tips and rootless
+      advice.
+    </p>
+  </div>
+  <div class="yellow-header margin-b-t">
+    <h4>today’s feature</h4>
+  </div>
+  <div class="row feture-tabs aos-init aos-animate padding-b-t-40 justify-content-center" data-aos="fade-up"
+    *ngIf="featuredBlog.length !== 0">
+    <div class="col-lg-5">
+      <img src="{{ featuredBlog[0].coverPhotoUrl }}" class="img-fluid d-block margin-auto" />
+    </div>
+    <div class="col-lg-6 d-flex">
+      <div class="card">
+        <div class="card-body">
+          <h3 class="font-normal font-40">
+            {{ featuredBlog[0].title }}
+          </h3>
+          <div class="d-flex no-block align-items-center m-b-15">
+            <span class="font-15"> {{ getTime(featuredBlog[0].createDate) }}</span>
+          </div>
+          <!-- <div class="ml-auto">
+            <a href="javascript:void(0)" class="link"><i class="fa fa-comment-alt"></i> 3</a>
+          </div> -->
+          <div class="tags mt-2">
+            <button class="btn btn-success yellow-btn" *ngFor="let tag of featuredBlog[0].tags">
+              {{ tag }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="green-header margin-b-t d-none">
+    <h4>get in touch with other experts</h4>
+  </div>
+  <div class="row blogsCard d-none">
+    <div class="col-lg-4 col-sm-12">
+      <div class="row cards" style="margin-top: 0">
+        <div class="col-md-4 p-r-0">
+          <img class="card-img-top img-responsive" src="assets/images/blog1.png" alt="Card image cap" />
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h1 class="card-title">Discovering new music through painting</h1>
+            <p class="card-text">
+              3 days ago by
+              <span class="card-text-colored" style="color: #88bcba">Arnon
+                <img class="badge-check" src="assets/images/verified-check-green.svg" /></span>
+            </p>
+            <div class="green-tags">
+              <button class="btn btn-success green-btn-tags">
+                Farward thinking
+              </button>
+              <button class="btn btn-success green-btn-tags">Art</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="beforeyougo col-sm-6 margin-b-t ml-auto mr-auto" id="beforeyougo">
+    <div>
+      <div class="beforeyou">
+        <h1>Are you an expert at what you do?</h1>
+        <p>
+          You can share your stories and your ideas with our community through
+          blog posts.
+        </p>
+        <div class="col-xs-12 p-b-20">
+          <button class="btn yellowBlack-btn padding-20 full-width" [routerLink]="['/experts/pricing']">
+            <img src="assets/images/flowerblack.png" style="width: 30px; margin-right: 10px" />
+            apply to join the rootless experts
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12 col-sm-12">
+      <div class="row cards" style="margin-top: 0">
+        <div class="col-md-3 p-r-0 vertical-tab">
+          <p class="title">TOPICS</p>
+          <ul>
+            <li (click)="setIndustry(null)">All</li>
+            <li *ngFor="let industry of industries" [class.selectedIndustry]="industry.id === selectedIndustry"
+              (click)="setIndustry(industry.id)">
+              {{ industry.name }}
+            </li>
+          </ul>
+          <p class="see-more">See more</p>
+        </div>
+        <div class="col-md-8 row">
+          <div>
+            <p class="no-margin font-weight-bold font-24 text-uppercase">ALL</p>
+            <p class="no-margin font-13">{{ paging.total }} blogs</p>
+          </div>
+          <div class="ml-auto">
+            <input placeholder="Search for something" class="searchBlog" (keyup.enter)="onEnter()" [(ngModel)]="search"
+              name="search" />
+            <i class="ti-search" style="-webkit-text-stroke-width: 1px"></i>
+          </div>
+          <div class="row w-100 mt-5">
+            <div class="col-lg-4 col-md-6" *ngFor="let blog of blogs" [routerLink]="['/blog', blog.id]">
+              <div class="card">
+                <img src="{{ blog.coverPhotoUrl }}" alt="Card image cap" class="card-img-top img-responsive" />
+                <div class="card-body">
+                  <h4 class="card-title font-20">
+                    {{ blog.title }}
+                  </h4>
+                  <p class="card-text no-margin font-16">
+                    {{getTime(blog.createDate)}} by <span class="card-text-colored">
+                      {{ getExpert(blog.userId).firstName }}
+                      <img class="badge-check" src="assets/images/verified-check.svg" /></span>
+                  </p>
+                  <div class="purple-tags">
+                    <button class="btn btn-success purple-btn-tags m-t-20" *ngFor="let tag of blog.tags">
+                      {{ tag }}
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,50 @@
+.loginPage {
+  padding: 60px 20px;
+  .page-count {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 26px;
+    color: #868686;
+    text-align: center;
+  }
+  .body {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    text-align: justify;
+    color: #373737;
+  }
+  .nav-tabs {
+    border-bottom: none;
+    margin-top: 50px;
+
+    .nav-link {
+      padding: 0;
+      margin: 0.5rem 1rem;
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 26px;
+      color: #0e0e10;
+    }
+
+    .nav-link.active {
+      border: none;
+      border-bottom: 5px solid #ffc20a;
+    }
+  }
+}
+.d-none {
+  display: none !important;
+}
+.input-group-addon {
+  float: right;
+  margin-top: -38px;
+  margin-right: 20px;
+}
+.font-25 {
+  font-size: 25px;
+}

@@ -1,0 +1,493 @@
+.blueprint {
+  .margin-b-t {
+    margin: 0 0 60px 0;
+  }
+
+  .row {
+    .font-60 {
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 60px;
+      line-height: 80px;
+      display: flex;
+      align-items: center;
+      color: #373737;
+    }
+
+    .font-24 {
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 24px;
+      line-height: 30px;
+      display: flex;
+      align-items: center;
+      color: #111111;
+    }
+  }
+
+  .yellow-header {
+    background-color: #feecb7;
+    padding: 10px 0;
+    margin: 30px 60px;
+
+    h4 {
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 26px;
+      color: #e0a800;
+    }
+  }
+
+  .green-header {
+    background-color: #e0f4f3;
+    padding: 10px 0;
+    margin: 30px 60px;
+
+    h4 {
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 26px;
+      color: #6faeac;
+    }
+  }
+
+  .statisticsContainer {
+    display: flex;
+    text-align: center;
+
+    div {
+      width: 120px;
+
+      span {
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 26px;
+        color: #111111;
+        padding: 5px;
+      }
+
+      p {
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 21px;
+        color: #111111;
+        margin-top: 20px;
+      }
+    }
+  }
+
+  .blueprintOfTheMonth {
+    h1 {
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 36px;
+      line-height: 40px;
+      display: flex;
+      align-items: center;
+      text-transform: uppercase;
+      color: #e0a800;
+    }
+
+    h4 {
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 26px;
+      display: flex;
+      align-items: center;
+      color: #111111;
+    }
+
+    p {
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 24px;
+      color: #111111;
+      margin-bottom: 30px;
+    }
+
+    .statisticsContainer {
+      div {
+        span {
+          border: 5px solid #e0a800;
+
+          &:hover {
+            background: #e0a800;
+            color: white;
+          }
+        }
+      }
+    }
+
+    .tags {
+      .btn {
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 18px;
+        text-transform: lowercase;
+      }
+
+      .btn-white {
+        background: #f0f0f0;
+        border: 1px solid #e0a800;
+        color: #e0a800;
+      }
+
+      .btn-yellow {
+        color: #ffffff;
+        background: #e0a800;
+        margin-left: 10px;
+      }
+    }
+  }
+
+  .blueprintCard {
+    margin-bottom: 100px;
+
+    .cards {
+      margin-top: 30px !important;
+    }
+
+    .overlay1 {
+      background-color: #6faeac;
+    }
+
+    .cards:hover .overlay1 {
+      opacity: 1;
+    }
+
+    .card-title {
+      font-family: Poppins;
+      font-size: 36px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 40px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: #6faeac;
+    }
+
+    .card-company {
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 26px;
+      color: #111111;
+    }
+
+    .card-location {
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 24px;
+      color: #111111;
+    }
+
+    .card-desc {
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 24px;
+      color: #111111;
+      margin: 25px 0;
+    }
+
+    .statisticsContainer {
+      div {
+        span {
+          border: 5px solid #6faeac;
+
+          &:hover {
+            background: #6faeac;
+            color: white;
+          }
+        }
+      }
+    }
+
+    .tags {
+      .btn {
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 18px;
+        text-transform: lowercase;
+      }
+
+      .btn-white {
+        background: #f0f0f0;
+        border: 1px solid #6faeac;
+        color: #6faeac;
+      }
+
+      .btn-teal {
+        color: #ffffff;
+        background: #6faeac;
+        margin-left: 10px;
+      }
+    }
+  }
+
+  .blueprintCard2 {
+    .overlay1 {
+      background-color: #784ebc;
+    }
+
+    .col-lg-4.col-sm-12 {
+      margin-top: 30px;
+    }
+
+    .cards:hover .overlay1 {
+      opacity: 1;
+    }
+
+    margin-bottom: 100px;
+    padding: 1.25em;
+
+    .card-title {
+      font-family: Poppins;
+      font-size: 36px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 40px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: #784ebc;
+    }
+
+    .card-company {
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 26px;
+      color: #111111;
+    }
+
+    .card-location {
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 24px;
+      color: #111111;
+      margin-bottom: 5px;
+    }
+
+    .card-desc {
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 24px;
+      color: #111111;
+      margin: 0 0 10px 0;
+    }
+
+    .img-responsive {
+      border: 10px solid #784ebc;
+    }
+
+    .statisticsContainer {
+      div {
+        span {
+          border: 5px solid #784ebc;
+
+          :hover {
+            background: #784ebc;
+            color: white;
+          }
+        }
+      }
+    }
+
+    .tags {
+      display: flex;
+
+      .btn {
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 18px;
+        text-transform: lowercase;
+      }
+
+      .btn-white {
+        background: #f0f0f0;
+        border: 1px solid #784ebc;
+        color: #784ebc;
+        width: 50%;
+      }
+
+      .btn-teal {
+        color: #ffffff;
+        background: #784ebc;
+        margin-left: 10px;
+        width: 50%;
+      }
+    }
+
+    .card-body {
+      padding-bottom: 0;
+      padding-right: 10px;
+      padding-left: 10px;
+      padding-top: 0;
+    }
+  }
+
+  .shareStory {
+
+    .col-md-6,
+    .col-md-12 {
+      padding: 80px 30px;
+
+      .btn {
+        background-color: white;
+        width: auto;
+      }
+    }
+  }
+
+  .b-teal {
+    background-color: #6faeac;
+  }
+
+  .b-yellow {
+    background-color: #ffc20a;
+  }
+
+  .overlay1 {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 20;
+    width: 100%;
+    opacity: 0;
+    transition: 0.3s ease;
+  }
+
+  .text1 {
+    padding-top: 12px;
+    padding-left: 18px;
+  }
+
+  .text1 h4 {
+    color: white;
+    font-size: 30px;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+    position: absolute;
+  }
+
+  .text1 h5 {
+    color: white;
+    font-size: 30px;
+    font-weight: normal;
+    font-family: "Poppins", sans-serif;
+    padding-top: 35px;
+  }
+
+  .blueprintFront {
+    .overlay1 {
+      background-color: #dfa800;
+    }
+
+    &:hover .overlay1 {
+      opacity: 1;
+    }
+
+    img {
+      border: 10px solid #e0a800;
+    }
+  }
+
+  @media (max-width: 900px) {
+    >.row {
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+
+    .font-60 {
+      font-size: 50px !important;
+      line-height: 60px !important;
+    }
+
+    .yellow-header,
+    .green-header {
+      margin: 20px 0 !important;
+    }
+
+    .cards {
+      margin-top: 20px !important;
+    }
+  }
+
+  .tagSelected {
+    font-weight: 600;
+    font-size: 24px;
+    align-items: center;
+    color: #ffffff;
+    background: #784ebc;
+  }
+
+  .greenBorder {
+    border: 10px solid #6faeac;
+  }
+
+  .no-padding {
+    padding: 0 !important;
+  }
+}
+
+.customizer .service-panel-toggle {
+  background: rgba(120, 78, 188, 0.6);
+  display: grid;
+  grid-gap: 15px;
+  text-align: center;
+  padding: 15px;
+  left: 0;
+}
+
+.fab {
+  font-size: 20px;
+}
+
+aside {
+  left: 0;
+  right: 100%;
+  width: 0;
+}
+
+@media (max-width: 900px) {
+  aside {
+    left: 90%;
+    right: 0;
+    width: 0;
+  }
+
+  .blueprint {
+    padding: 60px 0;
+  }
+}

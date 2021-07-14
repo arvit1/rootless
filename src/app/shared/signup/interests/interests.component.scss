@@ -1,0 +1,70 @@
+.interests {
+  .page-count {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 26px;
+    color: #868686;
+    text-align: center;
+  }
+  .addedInteres {
+    padding: 12px;
+    background: #784ebc;
+    border-radius: 4px;
+    color: #fff;
+    margin-right: 5px;
+    cursor: pointer;
+    width: auto;
+    float: left;
+    margin-top: 5px;
+  }
+  .notInteres {
+    padding: 12px;
+    background: #bba6dd;
+    border-radius: 4px;
+    color: #111111;
+    margin-right: 5px;
+    cursor: pointer;
+    width: auto;
+    float: left;
+    margin-top: 5px;
+  }
+  .input {
+    padding: 16px 40px 16px 24px;
+    background: #ffffff;
+    border: 2px solid #111111;
+  }
+  #selectInterest {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 26px;
+    color: #111111;
+    text-align: left;
+  }
+  .inputHeader {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 26px;
+    color: #111111;
+    text-align: left;
+    margin-top: 30px;
+  }
+  .footerText {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: #111111;
+    text-align: left;
+    margin-top: 30px;
+  }
+  .inputDiv {
+    float: left;
+    width: 100%;
+    margin: 30px 0;
+  }
+}

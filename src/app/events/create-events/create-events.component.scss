@@ -1,0 +1,62 @@
+.createEvents {
+  padding-top: 60px;
+  .purple_tab {
+    background: #8e6cc7 !important;
+    color: white;
+    padding: 10px 20px;
+    font-weight: 500 !important;
+    width: 50%;
+    cursor: pointer;
+  }
+
+  .purple_light_tab {
+    background: #bba6dd;
+    color: white;
+    padding: 10px 20px;
+    font-weight: 500;
+    width: 50%;
+    cursor: pointer;
+  }
+
+  .green_background {
+    background: #c2ebe9;
+    color: #121212;
+  }
+
+  .page-count {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 26px;
+    color: #868686;
+    text-align: center;
+  }
+
+  .small {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 18px;
+    color: #111111;
+  }
+  .preferredDates {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: #111111;
+  }
+}
+
+.cardContainer .field {
+  border: 2px solid black;
+  background-color: #fff;
+  padding: 15px;
+  width: 100%;
+}
+
+.cardContainer label {
+  margin-top: 20px;
+  text-transform: uppercase;
+}

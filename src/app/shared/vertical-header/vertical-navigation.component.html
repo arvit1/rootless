@@ -1,0 +1,236 @@
+<!-- ============================================================== -->
+<!-- toggle and nav items -->
+<!-- ============================================================== -->
+<div class="d-flex">
+  <ul class="navbar-nav d-lg-flex order-2 mr-auto ml-auto">
+    <li class="nav-item d-none d-lg-block">
+      <a
+        (click)="toggleSidebar.emit()"
+        class="nav-link sidebartoggler waves-effect waves-light"
+        href="#"
+      >
+        <i class="mdi mdi-menu font-24"></i>
+      </a>
+    </li>
+    <!-- [ngClass]="{ testt: router.url === '/blueprints' }" -->
+    <li class="nav-item" style="width: 150px; text-align: center">
+      <a
+        class="nav-link waves-effect waves-dark blueprint"
+        [ngClass]="{ activeLink: currentRoute === 'blueprints' }"
+        [routerLink]="['/blueprints']"
+      >
+        Blueprints
+      </a>
+    </li>
+    <li class="nav-item" style="width: 120px; text-align: center">
+      <a
+        class="nav-link waves-effect waves-dark experts"
+        [routerLink]="['/experts']"
+        [ngClass]="{ activeLink: currentRoute === 'experts' }"
+      >
+        Experts
+      </a>
+    </li>
+    <li class="nav-item dropdown" style="width: 130px; text-align: center">
+      <a
+        class="nav-link waves-effect waves-dark courses"
+        [routerLink]="['/courses']"
+        [ngClass]="{ activeLink: currentRoute === 'courses' }"
+      >
+        Courses
+      </a>
+    </li>
+    <li
+      class="nav-item dropdown drop-down community"
+      style="width: 170px; text-align: center"
+    >
+      <a
+        class="nav-link dropdown-toggle nav-link waves-effect waves-dark"
+        href="javascript:void(0)"
+        id="navbarDropdown"
+        role="button"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <span class="d-none d-md-block">Community </span>
+      </a>
+      <div
+        class="dropdown-menu"
+        aria-labelledby="navbarDropdown"
+        style="top: 74px; line-height: 30px; width: 170px; left: 0px !important"
+      >
+        <a
+          class="dropdown-item"
+          [routerLink]="['/events']"
+          [ngClass]="{ activeLink: currentRoute === 'events' }"
+          >Events</a
+        >
+        <!-- <a
+          class="dropdown-item"
+          [routerLink]="['/forum']"
+          [ngClass]="{ activeLink: currentRoute === 'forum' }"
+          >Forum</a
+        > -->
+      </div>
+    </li>
+  </ul>
+  <!-- ============================================================== -->
+  <!-- Right side toggle and nav items -->
+  <!-- ============================================================== -->
+  <ul class="navbar-nav order-3 d-lg-flex">
+    <!-- ============================================================== -->
+    <!-- search -->
+    <!-- ============================================================== -->
+    <!-- <li class="nav-item" placement="bottom-right">
+      <a
+        class="nav-link dropdown-toggle waves-effect waves-dark"
+        [routerLink]="['/search']"
+      >
+        <img src="assets/images/searchIcon.svg" />
+      </a>
+    </li> -->
+    <!-- ============================================================== -->
+    <!-- Comment -->
+    <!-- ============================================================== -->
+    <!-- <li class="nav-item" placement="bottom-right">
+      <a
+        class="nav-link dropdown-toggle waves-effect waves-dark"
+        [routerLink]="['/notifications']"
+      >
+        <img src="assets/images/newsIcon.svg" />
+      </a>
+    </li> -->
+    <!-- ============================================================== -->
+    <!-- End Comment -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- User profile and search -->
+    <!-- ============================================================== -->
+    <li
+      class="nav-item"
+      placement="bottom-right"
+      [ngClass]="{ 'd-none': user !== '' }"
+    >
+      <a
+        class="nav-link dropdown-toggle waves-effect waves-dark"
+        [routerLink]="['/login']"
+      >
+        <img
+          src="{{
+            profilePic !== '' ? profilePic : 'assets/images/menuIcons.svg'
+          }}"
+          class="rounded-circle"
+          width="{{ profilePic !== '' ? 37 : '31' }}"
+        />
+      </a>
+    </li>
+
+    <li
+      class="nav-item menuRight"
+      ngbDropdown
+      placement="bottom-right"
+      [ngClass]="{ 'd-none': user === '' }"
+    >
+      <a
+        ngbDropdownToggle
+        class="nav-link text-muted waves-effect waves-dark pro-pic"
+        href="javascript:void(0)"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <img
+          src="{{
+            profilePic !== '' ? profilePic : 'assets/images/menuIcons.svg'
+          }}"
+          alt="user"
+          class="rounded-circle"
+          width="{{ profilePic !== '' ? 37 : '31' }}"
+          *ngIf="profilePic && user"
+        />
+        <div class="menuProfileImg" *ngIf="!profilePic && user">
+          {{ firstName.charAt(0) }}
+          {{ lastName.charAt(0) }}
+        </div>
+      </a>
+      <div
+        class="dropdown-menu-right user-dd"
+        ngbDropdownMenu
+        style="line-height: 20px"
+      >
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" (click)="goToMyProfile()">
+          <img
+            src="{{
+              profilePic !== '' ? profilePic : 'assets/images/menuIcons.svg'
+            }}"
+            alt="user"
+            class="rounded-circle m-r-15 m-l-5"
+            width="{{ profilePic !== '' ? 37 : '31' }}"
+          />
+          Profile</a
+        >
+        <div class="dropdown-divider"></div>
+        <a
+          class="dropdown-item"
+          [routerLink]="['/messages']"
+          *ngIf="userRole && userRole === 'EXPERT'"
+        >
+          <img
+            src="assets/images/message.svg"
+            alt="user"
+            class="m-r-15 m-l-5"
+            width="31"
+          />
+          Messages</a
+        >
+        <div
+          class="dropdown-divider"
+          *ngIf="userRole && userRole === 'EXPERT'"
+        ></div>
+        <!-- <a class="dropdown-item" [routerLink]="['/notifications']">
+          <img
+            src="assets/images/bellIcon.svg"
+            alt="user"
+            class="m-r-15 m-l-5"
+            width="27"
+          />
+          <p class="mb-0">Notifications</p></a
+        >
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" [routerLink]="['/saved-content']">
+          <img
+            src="assets/images/pinIcon.svg"
+            alt="user"
+            class="m-r-15 m-l-5"
+            width="21"
+          />Saved content</a
+        >
+        <div class="dropdown-divider"></div> -->
+        <a class="dropdown-item" [routerLink]="['/settings']">
+          <img
+            src="assets/images/settingsIcon.svg"
+            alt="user"
+            class="m-r-15"
+            width="29"
+          />
+          Settings</a
+        >
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="javascript:void(0)" (click)="logout()">
+          <img
+            src="assets/images/signout.svg"
+            alt="user"
+            class="m-r-15 m-l-5"
+            width="25"
+          />
+          Sign out</a
+        >
+      </div>
+    </li>
+    <!-- ============================================================== -->
+    <!-- User profile and search -->
+    <!-- ============================================================== -->
+  </ul>
+</div>

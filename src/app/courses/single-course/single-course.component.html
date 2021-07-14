@@ -1,0 +1,215 @@
+<div class="row profilePage" [ngClass]="{ 'd-none': checkout }" *ngIf="course">
+  <!-- Row -->
+  <div class="headerContent card row col-lg-12">
+    <div class="card-body col-lg-4">
+      <div class="m-t-30 text-center">
+        <img src="{{ course.imageUrl }}" class="profileImg" />
+      </div>
+    </div>
+
+    <div class="card-body col-lg-8" style="padding-left: 90px">
+      <p class="backPrint font-16" [routerLink]="['/courses']">
+        < Back to courses page </p>
+          <div class="row margin-b-t">
+            <h2 class="font-36">{{ course.title }}</h2>
+          </div>
+          <div class="row icon-data-container">
+            <div class="col-sm-12 col-md-2 m-b-10 icon-data">
+              <div class="mb-1">
+                <img src="../../../assets/images/smileIcon.svg" />
+              </div>
+              <span class="font-16">100% satisfaction rate</span>
+            </div>
+            <div class="col-sm-12 col-md-2 m-b-10 icon-data">
+              <div class="mb-1">
+                <img src="../../../assets/images/enrolledIcon.svg" />
+              </div>
+              <span class="font-16">129 enrolled</span>
+            </div>
+            <div class="col-sm-12 col-md-2 m-b-10 icon-data">
+              <div class="mb-1">
+                <img src="../../../assets/images/internetIcon.svg" />
+              </div>
+              <span class="font-16">100% Online</span>
+            </div>
+            <div class="col-sm-12 col-md-2 m-b-10 icon-data">
+              <div class="mb-1">
+                <img src="../../../assets/images/dollarIcon.svg" />
+              </div>
+              <span class="font-16">$20 one time fee or free with Rootless Me membership</span>
+            </div>
+          </div>
+
+          <button *ngIf="userRole === 'COURIOUS'" type="button" class="btn primaryBtn" (click)="upgrade(course.id)">
+            <img src="../../../assets/images/Vector.svg" /> upgrade subscription
+          </button>
+          <button *ngIf="!course.enrollmentId && userRole !== 'COURIOUS'" type="button" class="btn primaryBtn"
+            (click)="enroll(course.id)">
+            <img src="../../../assets/images/Vector.svg" /> enroll now
+          </button>
+          <button *ngIf="course.enrollmentId" type="button" class="btn primaryBtn"
+            [routerLink]="['/courses/view/', course.id]">
+            <img src="../../../assets/images/Vector.svg" /> already enrolled
+          </button>
+    </div>
+  </div>
+
+  <!-- Row -->
+  <!-- Column -->
+  <div class="col-lg-4 col-xlg-3 col-md-5">
+    <div class="card">
+      <div class="card-body underPictureData">
+        <h1 class="name">
+          {{ course.title }}
+        </h1>
+        <p class="bio">
+          A course by
+          <span class="green-name">{{ getExpert(course.expertId).firstName }}
+            {{ getExpert(course.expertId).lastName }}</span>
+          <img src="../../../assets/images/verified-check-green.svg" class="badge-check-green" />
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- Column -->
+  <!-- Column -->
+  <div class="col-lg-8 col-xlg-9 col-md-7">
+    <div class="card mainContent">
+      <div class="aboutCard margin-b-t">
+        <div>
+          <h1>Instructor</h1>
+          <div class="row">
+            <div class="col-lg-12 no-padding">
+              <div>
+                <div class="card col-lg-4 no-padding">
+                  <img class="card-img-top img-responsive" src="{{ getExpert(course.expertId).profilePhotoUrl }}" />
+                  <div class="card-body">
+                    <h4 class="card-title">
+                      {{ getExpert(course.expertId).firstName }}
+                      {{ getExpert(course.expertId).lastName }}
+                      <img src="assets/images/verified-check-green.svg" class="badge-check-green" />
+                    </h4>
+                    <div class="arrow-up arrow-Green"></div>
+                    <p class="card-text">
+                      <button class="btn btn-success green-btn">
+                        {{ getExpert(course.expertId).profession }}
+                      </button>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="margin-b-t">
+          <h1>Topics</h1>
+          <span>
+            <span *ngFor="let topic of course.topics">
+              <span class="badge badge-primary">{{ topic }}</span>
+            </span>
+          </span>
+        </div>
+        <div class="tagline margin-b-t">
+          <h1>About the course</h1>
+          <div>
+            <p>{{ course.description }}</p>
+          </div>
+          <div class="tagline margin-b-t">
+            <h1>What will you learn</h1>
+            <ul>
+              <li *ngFor="let learning of course.learnings">{{ learning }}</li>
+            </ul>
+          </div>
+          <div class="tagline margin-b-t">
+            <h1>Time to complete</h1>
+            <div>
+              <p>Total length of videos is {{ course.time }} hours.</p>
+            </div>
+          </div>
+          <div class="tagline margin-b-t">
+            <h1>Schedule</h1>
+            <div>
+              <p>
+                Set your own deadlines. The schedule is flexible and totally
+                dependent on your pace.
+              </p>
+            </div>
+          </div>
+          <div class="tagline margin-b-t">
+            <h1>Address</h1>
+            <div>
+              <p>100% online. Whereever you are.</p>
+            </div>
+          </div>
+
+          <div class="certificationsCard" style="display: none">
+            <h1>Certifications</h1>
+            <div class="row" style="margin-top: 0">
+              <div class="col-md-6 p-r-0">
+                <img class="card-img-top img-responsive" src="../../../assets/images/big/img3.jpg"
+                  alt="Card image cap" />
+              </div>
+              <div class="col-md-6">
+                <div class="">
+                  <h1 class="card-title">Lorem ipsum dolor sit lorem ipsum</h1>
+
+                  <p class="card-text">Issued by Authority</p>
+                  <p class="card-date">Sep 2016</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="m-t-100 m-b-100 padding-60" *ngIf="userRole === 'COURIOUS'">
+      <h1 class="m-b-15">Did we convince you yet?</h1>
+      <p class="col-lg-6 col-xlg-6 col-md-5">
+        Our courses are free for Rootless me members of our community. However,
+        you can purchase single courses through a Curious me account. Choose the
+        plan that suits you best...
+      </p>
+      <button href="/dashboard/dashboard1" class="btn yellowBlack-btn padding-20">
+        <img src="../../../assets/images/flowerblack.png" style="width: 30px; margin-right: 10px" />
+        join us now
+      </button>
+    </div>
+    <!-- Column -->
+  </div>
+  <div class="footer col-lg-12">
+    <div class="row">
+      <div class="col"></div>
+      <div class="col">
+        <p *ngIf="!course.enrollmentId && userRole === 'ROOTLESS'">
+          <b>$20</b>
+        </p>
+        <p *ngIf="!course.enrollmentId && userRole === 'ROOTLESS'">
+          standard price
+        </p>
+      </div>
+      <div class="col">
+        <p *ngIf="!course.enrollmentId && userRole === 'ROOTLESS'">
+          <span class="opacity-0-5">$20 </span> <b> Free</b>
+        </p>
+        <p *ngIf="!course.enrollmentId && userRole === 'ROOTLESS'">
+          with Rootless Me membership
+        </p>
+      </div>
+      <div class="col">
+        <button *ngIf="course.enrollmentId" type="button" class="btn primaryBtn"
+          [routerLink]="['/courses/view/', course.id]">
+          <img src="../../../assets/images/Vector.svg" /> to the course
+        </button>
+        <button *ngIf="!course.enrollmentId && userRole !== 'COURIOUS'" type="button" class="btn primaryBtn"
+          (click)="enroll(course.id)">
+          <img src="../../../assets/images/Vector.svg" /> enroll now
+        </button>
+        <button *ngIf="userRole === 'COURIOUS'" type="button" class="btn primaryBtn" (click)="upgrade(course.id)">
+          <img src="../../../assets/images/Vector.svg" /> upgrade subscription
+        </button>
+      </div>
+    </div>
+  </div>
+  <app-checkout-courses [ngClass]="{ 'd-none': checkout === false }">
+  </app-checkout-courses>
+</div>

@@ -1,0 +1,30 @@
+image: node:latest
+
+stages:
+  - build
+  - deploy_stage
+  - deploy_prod
+
+build angular app:
+  stage: build
+  only:
+    - stage
+  artifacts:
+    paths:
+      - ./dist
+  script:
+    - npm install
+    - npm install -g @angular/cli
+    - ng build --prod
+
+deploy to stage:
+  image: python:latest
+  stage: deploy_stage
+  only:
+    - stage
+  dependencies:
+    - build angular app
+  script:
+    - pip install awscli
+    - aws s3 rm s3://$AWS_STAGE_BUCKET/ --recursive
+    - aws s3 cp ./dist/xtreme-admin-angular s3://$AWS_STAGE_BUCKET/ --recursive

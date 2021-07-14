@@ -1,0 +1,132 @@
+.notificationsPage {
+  .nav-tabs {
+    border-bottom: none;
+    margin-top: 50px;
+
+    .nav-link {
+      padding: 0;
+      margin: 0.5rem 1rem;
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 26px;
+      color: #0e0e10;
+    }
+
+    .nav-link.active {
+      color: #784ebc;
+      border: none;
+      border-bottom: 5px solid #784ebc;
+    }
+  }
+
+  .cardContainer .field {
+    border: 2px solid black;
+    background-color: #fff;
+    padding: 15px;
+    width: 100%;
+  }
+
+  .cardContainer label {
+    margin-top: 20px;
+    text-transform: uppercase;
+  }
+
+  .media {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+
+  .media-body p {
+    margin: 0;
+    font-size: 14px;
+  }
+
+  .media-body span {
+    font-size: 12px;
+    display: block;
+    margin: 0 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: #a1aab2;
+    white-space: nowrap;
+  }
+
+  .m-b-2 {
+    margin-bottom: 5px;
+  }
+
+  .nav-tabs {
+    padding: 0 60px;
+  }
+
+  .twitterButton {
+    background: #c2ebe9;
+    color: black;
+    font-weight: 500;
+    border-color: black;
+    margin-top: 20px;
+  }
+
+  .facebookButton {
+    background: #fff;
+    color: black;
+    font-weight: 500;
+    border-color: black;
+    margin-top: 20px;
+  }
+
+  .googleButton {
+    background: #c2ebe9;
+    color: black;
+    font-weight: 500;
+    border-color: black;
+    margin-top: 20px;
+  }
+
+  .purple-btn-tags {
+    background-color: #bba6dd;
+    color: #000;
+    font-size: 18px;
+    border: none;
+    margin-right: 10px;
+    border-radius: 4px;
+  }
+
+  .gray-btn-tags {
+    background-color: #f0f0f0;
+    color: #000;
+    font-size: 18px;
+    border: none;
+    margin-right: 10px;
+    border-radius: 4px;
+    margin-top: 10px;
+  }
+
+  .addedInteres {
+    padding: 12px;
+    background: #784ebc;
+    border-radius: 4px;
+    color: #fff;
+    margin-right: 5px;
+  }
+
+  .notInteres {
+    padding: 12px;
+    background: #bba6dd;
+    border-radius: 4px;
+    color: #111111;
+    margin-right: 5px;
+  }
+
+  .input {
+    padding: 16px 40px 16px 24px;
+    background: #ffffff;
+    border: 2px solid #111111;
+  }
+}
+
+.container-fluid {
+  padding: 0 !important;
+}

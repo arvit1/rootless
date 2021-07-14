@@ -1,0 +1,199 @@
+.notificationsPage {
+  .nav-tabs {
+    border-bottom: none;
+    margin-top: 50px;
+
+    .nav-link {
+      padding: 0;
+      margin: 0.5rem 1rem;
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 26px;
+      color: #0e0e10;
+    }
+
+    .nav-link.active {
+      color: #784ebc;
+      border: none;
+      border-bottom: 5px solid #784ebc;
+    }
+  }
+  .media {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  .media-body p {
+    margin: 0;
+    font-size: 14px;
+  }
+  .media-body span {
+    font-size: 12px;
+    display: block;
+    margin: 0 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: #a1aab2;
+    white-space: nowrap;
+  }
+  .m-b-2 {
+    margin-bottom: 5px;
+  }
+  .nav-tabs {
+    padding: 0 60px;
+  }
+  .purple-btn {
+    background-color: #bba6dd;
+    color: #000;
+    font-size: 13px;
+    border: none;
+    margin-right: 10px;
+  }
+  .blogsCard {
+    div {
+      margin-top: 50px;
+
+      .primaryBtn {
+        width: 100%;
+      }
+
+      .cards {
+        div {
+          margin-top: 0;
+        }
+
+        .card-body {
+          padding: 0 1.25rem;
+
+          .card-title {
+            font-family: Poppins;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 26px;
+            color: #111111;
+          }
+
+          .card-text {
+            font-family: Poppins;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 24px;
+            color: #525252;
+          }
+
+          .card-text-colored {
+            color: #784ebc;
+          }
+
+          .card-date {
+            font-family: Poppins;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 24px;
+            color: #111111;
+          }
+
+          .badge {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+  .tab-content {
+    padding: 0 60px;
+  }
+  .blueprintCard {
+    margin-bottom: 100px;
+    padding: 1.25em;
+    .col-lg-6.col-sm-12 {
+      margin-top: 30px;
+    }
+    .card-title {
+      font-family: Poppins;
+      font-size: 36px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 40px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: #784ebc;
+    }
+
+    .card-company {
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 26px;
+      color: #111111;
+    }
+
+    .card-location {
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 24px;
+      color: #111111;
+      margin-bottom: 5px;
+    }
+
+    .card-desc {
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 24px;
+      color: #111111;
+      margin: 0 0 10px 0;
+    }
+    .img-responsive {
+      border: 10px solid #784ebc;
+    }
+
+    .statisticsContainer {
+      div {
+        span {
+          border: 5px solid #784ebc;
+        }
+      }
+    }
+
+    .tags {
+      .btn {
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 18px;
+        text-transform: lowercase;
+      }
+
+      .btn-white {
+        background: #f0f0f0;
+        border: 1px solid #784ebc;
+        color: #784ebc;
+      }
+
+      .btn-teal {
+        color: #ffffff;
+        background: #784ebc;
+        margin-left: 10px;
+      }
+    }
+    .card-body {
+      padding-bottom: 0;
+      padding-right: 10px;
+      padding-left: 10px;
+      padding-top: 0;
+    }
+  }
+}
+.container-fluid {
+  padding: 0 !important;
+}

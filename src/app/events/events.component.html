@@ -1,0 +1,400 @@
+<div class="events">
+  <div class="col-lg-11 col-sm-12" style="margin: 70px 0">
+    <h1 class="font-55 black-color no-margin col-lg-6">Rootless Events</h1>
+    <p class="margin-b-t font-20 black-color no-margin col-lg-6">
+      Gain experience and knowledge by getting to know likeminded rootless
+      individuals.
+    </p>
+  </div>
+  <div class="green-header margin-b-t">
+    <h4>upcoming events</h4>
+  </div>
+  <div
+    class="row feture-tabs aos-init aos-animate padding-b-t-40 d-flex eventsDiv margin-b-t"
+    data-aos="fade-up"
+  >
+    <div
+      class="row cards col-md-5 margin-b-t"
+      *ngFor="let event of upcommingEvents"
+    >
+      <div class="col-md-5 p-r-0">
+        <img
+          class="card-img-top img-responsive"
+          src="{{ event.imgUrl }}"
+          alt="Card image cap"
+        />
+      </div>
+      <div class="col-md-6 right-card">
+        <div class="card-body">
+          <h1 class="card-title">{{ event.title }}</h1>
+          <p class="card-hosts" *ngFor="let from of event.from">
+            {{ from.firstName + " " + from.lastName }}
+          </p>
+          <p class="card-date">
+            {{ event.date | amDateFormat: "ddd, MMM D, YYYY h:mm A Z" }}
+          </p>
+          <!--TODO Sat, Mar 13, 2021 7:30 PM CET-->
+          <span>
+            <p
+              class="btn btn-success green-btn-tags"
+              *ngFor="let tag of event.tags"
+            >
+              {{ tag }}
+            </p>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="margin-b-t">
+    <h1 class="m-b-15">Howdy, future Rootless Self</h1>
+    <p>
+      Not Rootless yet? It's alright, because you can start your rootless
+      journey, right now, for free! You're Welcome...
+    </p>
+    <button
+      href="/dashboard/dashboard1"
+      class="btn yellowBlack-btn padding-20"
+      [routerLink]="['/signup']"
+    >
+      <img
+        src="assets/images/flowerblack.png"
+        style="width: 30px; margin-right: 10px"
+      />
+      start free trial
+    </button>
+  </div>
+  <div class="margin-b-t">
+    <h1 class="m-b-15">Explore series of events</h1>
+    <p>
+      Dolor nisl sapien rhoncus ullamcorper bibendum ut in sed. Pharetra pretium
+      eros lectus bibendum porttitor. Diam sagittis.
+    </p>
+  </div>
+  <div class="col-lg-12 margin-b-t eventsSlider">
+    <ngb-carousel>
+      <ng-template ngbSlide>
+        <div
+          class="row feture-tabs aos-init aos-animate padding-b-t-40 justify-content-center"
+          data-aos="fade-up"
+        >
+          <div class="col-lg-6 margin-auto">
+            <img src="assets/images/slide1.png"/>
+          </div>
+          <div class="col-lg-6 d-flex margin-auto">
+            <div class="card">
+              <div class="card-body">
+                <h1>Do-it-yourself: creating a business from scratch</h1>
+                <p class="font-20">
+                  Non amet sollicitudin sapien pharetra, interdum elementum,
+                  fringilla. A, cursus quam vel ultricies purus ac a, netus
+                  donec. Viverra lectus faucibus eget faucibus donec adipiscing
+                  nulla bibendum scelerisque. Sed elementum commodo maecenas
+                  tempus in nunc, libero et vivamus. Congue turpis vivamus arcu
+                  egestas facilisi libero venenatis enim. Hac tristique tempus
+                  faucibus morbi. Elit lacus ipsum lacus sed neque commodo
+                  placerat. Viverra ut mattis nec sit est.
+                </p>
+                <div class="margin-auto width-40">
+                  <button
+                    class="btn yellowBlack-btn padding-20"
+                  >
+                    <img
+                      src="assets/images/flowerblack.png"
+                      style="width: 30px; margin-right: 10px"
+                    />
+                    check the series
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div
+          class="row feture-tabs aos-init aos-animate padding-b-t-40 justify-content-center"
+          data-aos="fade-up"
+        >
+          <div class="col-lg-6 margin-auto">
+            <img src="assets/images/big/img2.jpg"/>
+          </div>
+          <div class="col-lg-6 d-flex margin-auto">
+            <div class="card">
+              <div class="card-body">
+                <h1>Do-it-yourself: creating a business from scratch</h1>
+                <p class="font-20">
+                  Non amet sollicitudin sapien pharetra, interdum elementum,
+                  fringilla. A, cursus quam vel ultricies purus ac a, netus
+                  donec. Viverra lectus faucibus eget faucibus donec adipiscing
+                  nulla bibendum scelerisque. Sed elementum commodo maecenas
+                  tempus in nunc, libero et vivamus. Congue turpis vivamus arcu
+                  egestas facilisi libero venenatis enim. Hac tristique tempus
+                  faucibus morbi. Elit lacus ipsum lacus sed neque commodo
+                  placerat. Viverra ut mattis nec sit est.
+                </p>
+                <div class="margin-auto width-40">
+                  <button
+                    href="/dashboard/dashboard1"
+                    class="btn yellowBlack-btn padding-20"
+                  >
+                    <img
+                      src="assets/images/flowerblack.png"
+                      style="width: 30px; margin-right: 10px"
+                    />
+                    check the series
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div
+          class="row feture-tabs aos-init aos-animate padding-b-t-40 justify-content-center"
+          data-aos="fade-up"
+        >
+          <div class="col-lg-6 margin-auto">
+            <img src="assets/images/big/img3.jpg"/>
+          </div>
+          <div class="col-lg-6 d-flex margin-auto">
+            <div class="card">
+              <div class="card-body">
+                <h1>Do-it-yourself: creating a business from scratch</h1>
+                <p class="font-20">
+                  Non amet sollicitudin sapien pharetra, interdum elementum,
+                  fringilla. A, cursus quam vel ultricies purus ac a, netus
+                  donec. Viverra lectus faucibus eget faucibus donec adipiscing
+                  nulla bibendum scelerisque. Sed elementum commodo maecenas
+                  tempus in nunc, libero et vivamus. Congue turpis vivamus arcu
+                  egestas facilisi libero venenatis enim. Hac tristique tempus
+                  faucibus morbi. Elit lacus ipsum lacus sed neque commodo
+                  placerat. Viverra ut mattis nec sit est.
+                </p>
+                <div class="margin-auto width-40">
+                  <button
+                    href="/dashboard/dashboard1"
+                    class="btn yellowBlack-btn padding-20"
+                  >
+                    <img
+                      src="assets/images/flowerblack.png"
+                      style="width: 30px; margin-right: 10px"
+                    />
+                    check the series
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+  </div>
+  <div class="row margin-b-t">
+    <div class="col-lg-12 col-sm-12">
+      <div class="row cards" style="margin-top: 0">
+        <div class="col-md-3 p-r-0 vertical-tab">
+          <p class="title">TOPICS</p>
+          <ul>
+            <li>All</li>
+            <li>Music</li>
+            <li>Fashion</li>
+            <li>Photography</li>
+            <li>Cinematography</li>
+            <li>Programming</li>
+            <li>Graphic Design</li>
+            <li>Engineering</li>
+            <li>Entrepreneurship</li>
+            <li>Finance</li>
+          </ul>
+          <p class="see-more">See more</p>
+        </div>
+        <div class="col-md-8 row">
+          <div class="ml-auto">
+            <input placeholder="Search for something" class="searchBlog"/>
+            <i class="ti-search" style="-webkit-text-stroke-width: 1px"></i>
+          </div>
+          <div class="row">
+            <div class="col-lg-4 col-md-6">
+              <div class="card">
+                <img
+                  src="assets/images/big/img1.jpg"
+                  alt="Card image cap"
+                  class="card-img-top img-responsive"
+                />
+                <h3 class="img-title">Getting the community together</h3>
+                <div class="card-body white-bg">
+                  <h4 class="card-title">Card title</h4>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                  <a href="#" class="btn btn-primary white-btn">event</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="card">
+                <img
+                  src="assets/images/big/img2.jpg"
+                  alt="Card image cap"
+                  class="card-img-top img-responsive"
+                />
+                <h3 class="img-title">Getting the community together</h3>
+                <div class="card-body white-bg">
+                  <h4 class="card-title">Card title</h4>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                  <a href="#" class="btn btn-primary white-btn">event</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="card">
+                <img
+                  src="assets/images/big/img3.jpg"
+                  alt="Card image cap"
+                  class="card-img-top img-responsive"
+                />
+                <h3 class="img-title">Getting the community together</h3>
+                <div class="card-body white-bg">
+                  <h4 class="card-title">Card title</h4>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                  <a href="#" class="btn btn-primary white-btn">event</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-12 margin-b-t ml-auto mr-auto">
+    <div>
+      <div class="bookedEvents col-sm-6 ml-auto mr-auto">
+        <h1>All Events in One Calendar</h1>
+        <p>
+          Pick and book from a variety of events that we offer. Get to know new
+          people and learn new things.
+        </p>
+      </div>
+      <div class="col-xs-12 p-b-20 row">
+        <div class="col-lg-6 col-sm-12 p-b-20">
+          <app-fullcalendar></app-fullcalendar>
+        </div>
+        <div class="col-lg-6 col-sm-12 p-b-20">
+          <div class="row cards margin-b-t">
+            <div class="col-md-6 p-r-0">
+              <img
+                class="card-img-top img-responsive"
+                src="assets/images/image2.png"
+                alt="Card image cap"
+              />
+            </div>
+            <div class="col-md-6 right-card b-yellow">
+              <div class="card-body">
+                <h1 class="card-title">
+                  Discovering new music through painting
+                </h1>
+                <p class="card-hosts">
+                  with Arnon, Greta Bajrami and Mary Elliot
+                </p>
+                <p class="card-date">Sat, Mar 13, 2021 7:30 PM CET</p>
+                <span>
+                  <p class="btn btn-success green-btn-tags">webinar</p>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 p-b-20">
+        <p class="mostBookedEvents">most booked events</p>
+        <div class="col-md-12 row">
+          <div class="row">
+            <div class="col-lg-3 col-md-6 mr-auto ml-auto">
+              <div class="card">
+                <img
+                  src="assets/images/big/img1.jpg"
+                  alt="Card image cap"
+                  class="card-img-top img-responsive"
+                />
+                <h3 class="img-title">Getting the community together</h3>
+                <div class="card-body white-bg">
+                  <h4 class="card-title">Card title</h4>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                  <a href="#" class="btn btn-primary yellow-btn">event</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mr-auto ml-auto">
+              <div class="card">
+                <img
+                  src="assets/images/big/img2.jpg"
+                  alt="Card image cap"
+                  class="card-img-top img-responsive"
+                />
+                <h3 class="img-title">Getting the community together</h3>
+                <div class="card-body white-bg">
+                  <h4 class="card-title">Card title</h4>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                  <a href="#" class="btn btn-primary yellow-btn">event</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mr-auto ml-auto">
+              <div class="card">
+                <img
+                  src="assets/images/big/img3.jpg"
+                  alt="Card image cap"
+                  class="card-img-top img-responsive"
+                />
+                <h3 class="img-title">Getting the community together</h3>
+                <div class="card-body white-bg">
+                  <h4 class="card-title">Card title</h4>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                  <a href="#" class="btn btn-primary yellow-btn">event</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="beforeyougo col-sm-6 margin-b-t ml-auto mr-auto" id="beforeyougo">
+    <div>
+      <div class="beforeyou">
+        <h1>Do you want to be a speaker in one of our events?</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Metus sed
+          pretium id non amet.
+        </p>
+        <div class="col-xs-12 p-b-20">
+          <button class="btn yellowBlack-btn padding-20 full-width">
+            <img
+              src="assets/images/flowerblack.png"
+              style="width: 30px; margin-right: 10px"
+            />
+            apply to be a speaker
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

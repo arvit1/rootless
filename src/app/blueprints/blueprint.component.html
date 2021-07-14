@@ -1,0 +1,235 @@
+<div class="blueprint">
+  <div class="row" style="margin: 70px 0; padding: 0 60px">
+    <div class="col-lg-8 col-sm-12">
+      <h1 class="font-60">Explore our blueprint library</h1>
+      <p class="font-24">
+        Our blueprints will provide you with incredible stories and statistics
+        to get you started.
+      </p>
+    </div>
+    <div class="col-lg-2 col-sm-12">
+      <a href="#">
+        <h2 class="h2">
+          <img src="assets/images/downarrowpurp.png" class="arrowpurp" />
+          see'em all
+        </h2>
+      </a>
+    </div>
+  </div>
+  <div class="yellow-header">
+    <h4>blueprint of the month</h4>
+  </div>
+  <div class="row aos-init aos-animate padding-b-t-20" data-aos="fade-up" style="padding: 0 60px"
+    *ngFor="let monthBlueprint of monthBlueprints">
+    <div class="col-lg-4 justify-content-left blueprintFront no-padding">
+      <a [routerLink]="['/blueprints', monthBlueprint.id]">
+        <div class="overlay1">
+          <div *ngIf="industries && monthBlueprint" class="text1">
+            <h4>Magazine</h4>
+            <h5>{{ getIndustryName(monthBlueprint.industryId) }}</h5>
+          </div>
+        </div>
+        <img src="{{ monthBlueprint.photo }}" class="img-fluid d-block w-100" />
+      </a>
+    </div>
+    <div class="col-lg-8 d-flex">
+      <div class="card blueprintOfTheMonth">
+        <div class="card-body">
+          <h1>
+            {{
+            monthBlueprint.firstName + " " + monthBlueprint.lastName
+            | uppercase
+            }}
+          </h1>
+          <h4>{{ monthBlueprint.company }}</h4>
+          <p>
+            <i class="fa fa-map-marker-alt"></i> {{ monthBlueprint.location }}
+          </p>
+          <p>
+            {{ monthBlueprint.description }}
+          </p>
+
+          <div class="statisticsContainer">
+            <div *ngFor="let stat of monthBlueprint.stats | keyvalue">
+              <span>{{ stat.value }}</span>
+              <p>{{ stat.key }}</p>
+            </div>
+          </div>
+          <div class="tags">
+            <button (click)="getMediaUrl(blueprint.pdfFile)" class="btn btn-white">
+              download
+            </button>
+            <button class="btn btn-yellow" [routerLink]="['/blueprints', monthBlueprint.id]">
+              read more
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="green-header margin-b-t">
+    <h4>tailored just for you</h4>
+  </div>
+  <div class="row blueprintCard" style="padding: 0 60px">
+    <div class="col-lg-4 col-sm-12" *ngFor="let forYouBlueprint of tailoredBlueprints">
+      <div class="row cards" style="margin-top: 0">
+        <div class="col-md-7 p-r-0 no-padding">
+          <a [routerLink]="['/blueprints', forYouBlueprint.id]"></a>
+          <div class="overlay1">
+            <div *ngIf="industries && forYouBlueprint" class="text1">
+              <h4>Magazine</h4>
+              <h5>{{ getIndustryName(forYouBlueprint.industryId) }}</h5>
+            </div>
+          </div>
+          <img class="card-img-top img-responsive greenBorder" src="{{ forYouBlueprint.photo }}" alt="Card image cap" />
+        </div>
+        <div class="col-md-5">
+          <div class="card-body">
+            <h1 class="card-title">
+              {{ forYouBlueprint.firstName + " " + forYouBlueprint.lastName }}
+            </h1>
+            <p class="card-company">{{ forYouBlueprint.company }}</p>
+            <p class="card-location">
+              <i class="fa fa-map-marker-alt"></i>
+              {{ forYouBlueprint.location }}
+            </p>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <p class="card-desc">
+            {{ forYouBlueprint.description }}
+          </p>
+          <div class="statisticsContainer">
+            <div *ngFor="let statistic of forYouBlueprint.statistics | slice: 0:3">
+              <span>{{ statistic.rank }}</span>
+              <p>{{ statistic.description }}</p>
+            </div>
+          </div>
+          <div class="tags">
+            <button (click)="getMediaUrl(blueprint.pdfFile)" class="btn btn-white">
+              download
+            </button>
+            <button class="btn btn-teal" [routerLink]="['/blueprints', forYouBlueprint.id]">
+              read more
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="padding: 0 60px">
+    <div class="col-lg-12 col-sm-12">
+      <div class="row cards" style="margin-top: 0">
+        <div class="col-md-3 p-r-0 vertical-tab">
+          <p class="title">INDUSTRIES</p>
+          <ul>
+            <li (click)="setIndustry(null)">All</li>
+            <li *ngFor="let industry of industries" [class.selectedIndustry]="industry.id === selectedIndustry"
+              (click)="setIndustry(industry.id)">
+              {{ industry.name }}
+            </li>
+          </ul>
+          <p class="see-more">See more</p>
+        </div>
+        <div class="col-md-9 row">
+          <div>
+            <p>ALL</p>
+            <p>{{ paging.total }} blueprints</p>
+          </div>
+          <div class="ml-auto">
+            <input placeholder="Search for something" class="searchBlog" (keyup.enter)="onEnter()" [(ngModel)]="search"
+              name="search" />
+            <i class="ti-search" style="-webkit-text-stroke-width: 1px"></i>
+          </div>
+          <div class="row w-100">
+            <div class="row blueprintCard2 w-100">
+              <div class="col-lg-4 col-sm-12" *ngFor="let blueprint of blueprints">
+                <div class="cards" style="margin-top: 0">
+                  <div class="col-md-12 p-r-0 no-padding">
+                    <div class="overlay1">
+                      <div *ngIf="industries && blueprint" class="text1">
+                        <h4>Magazine</h4>
+                        <h5>{{ getIndustryName(blueprint.industryId) }}</h5>
+                      </div>
+                    </div>
+                    <img class="card-img-top img-responsive" src="{{ blueprint.photo }}" alt="Card image cap" />
+                  </div>
+                  <div class="col-md-12 no-padding mt-3">
+                    <div class="card-body">
+                      <h1 class="card-title">
+                        {{ blueprint.firstName + " " + blueprint.lastName }}
+                      </h1>
+                      <p class="card-company">{{ blueprint.company }}</p>
+                      <p class="card-location">
+                        <i class="fa fa-map-marker-alt"></i>
+                        {{ blueprint.location }}
+                      </p>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="tags">
+                        <button (click)="getMediaUrl(blueprint.pdfFile)" class="btn btn-white">
+                          download
+                        </button>
+                        <button class="btn btn-teal" [routerLink]="['/blueprints', blueprint.id]">
+                          read more
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 p-b-20 margin-auto">
+              <button class="btn whiteBlack-btn padding-20 full-width" (click)="loadMore()">
+                <img src="assets/images/flowerblack.png" style="width: 30px; margin-right: 10px" />
+                load more
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row shareStory">
+    <div class="col-md-6 col-sm-12 margin-b-t b-teal text-center" *ngIf="userRole">
+      <div>
+        <h1>Do you want to share your story?</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Metus sed
+          pretium id non amet.
+        </p>
+        <div class="col-xs-12 p-b-20">
+          <button class="btn yellowBlack-btn padding-20 full-width" [routerLink]="['/blueprints/apply']">
+            <img src="assets/images/flowerblack.png" style="width: 30px; margin-right: 10px" />
+            apply to get featured in blueprint
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 margin-b-t b-yellow text-center" [ngClass]="{
+      'col-md-6': userRole != '',
+      'col-md-12': userRole === ''
+    }">
+      <div>
+        <h1>Get access to all the blueprints</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Metus sed
+          pretium id non amet.
+        </p>
+        <div class="col-xs-12 p-b-20">
+          <button class="btn yellowBlack-btn padding-20 full-width" [routerLink]="['/signup']">
+            <img src="assets/images/flowerblack.png" style="width: 30px; margin-right: 10px" />
+            create totally free account
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<aside class="customizer">
+  <a href="javascript:void(0)" class="service-panel-toggle">
+    <i class="fab fa-facebook"></i>
+    <i class="fab fa-instagram"></i>
+    <i class="fab fa-twitter"></i>
+  </a>
+</aside>

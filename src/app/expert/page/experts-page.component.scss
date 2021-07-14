@@ -1,0 +1,199 @@
+.expertsPage {
+  color: #373737;
+  padding: 60px;
+
+  .margin-b-t {
+    margin: 60px 0;
+  }
+
+  .white-btn {
+    background: white;
+    color: black;
+    font-size: 13px;
+    border: none;
+    border-radius: 5px;
+  }
+
+  .yellow-btn {
+    background-color: #ffdb70;
+    color: #000;
+    font-size: 13px;
+    border: none;
+    margin-right: 10px;
+  }
+
+  .green-btn {
+    width: 100%;
+    background-color: #6faeac;
+    color: #fff;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 400;
+    text-align: left;
+    border: none;
+  }
+
+  .purple-btn {
+    width: 100%;
+    background-color: #784ebc;
+    color: #fff;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 400;
+    text-align: left;
+    border: none;
+  }
+
+  .yellowBlack-btn {
+    background: #ffc20a;
+    color: black;
+    font-weight: 500;
+    border-color: black;
+  }
+
+  .yellow-header {
+    background-color: #feecb7;
+    padding: 10px 0;
+
+    h4 {
+      color: #dfa803;
+    }
+  }
+
+  .green-header {
+    background-color: #e0f4f3;
+    padding: 10px 0;
+
+    h4,
+    a {
+      color: #6faeac;
+    }
+  }
+
+  .purple-header {
+    background-color: #dcd2ed;
+    padding: 10px 0;
+
+    h4 {
+      color: #784ebc;
+    }
+  }
+
+  .purple-border {
+    border: 10px solid #784ebc;
+  }
+
+  .card-body {
+    padding: 1.25rem 0;
+  }
+
+  .yellow-bg {
+    background: #ffc20a;
+    padding: 20px;
+  }
+
+  .img-title {
+    color: white;
+    margin-top: -66px;
+    margin-left: 10px;
+    font-weight: 500;
+  }
+
+  .green-tags {
+  }
+
+  .green-btn-tags {
+    background-color: rgb(194 235 233);
+    color: #000;
+    font-size: 13px;
+    border: none;
+    margin-right: 10px;
+  }
+
+  .green-bg {
+    border: 1px solid #6faeac;
+    padding: 20px;
+  }
+  .arrow-up {
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    margin-left: auto;
+    margin-right: 30px;
+  }
+
+  .arrow-Green {
+    border-bottom: 15px solid #6faeac;
+  }
+  .coursesCard {
+    .card-title {
+      color: white;
+      margin-top: -70px;
+      margin-bottom: 30px;
+      font-size: 30px;
+      font-weight: 400;
+    }
+  }
+  .green-header a,
+  .purple-header a {
+    text-decoration: underline;
+    margin-left: 10px;
+    text-transform: lowercase;
+  }
+  .blogsCard {
+    .card-title {
+      font-size: 20px;
+    }
+    .card-text {
+      margin: 0;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    .purple-btn-tags {
+      background: #bba6dd;
+      border: none;
+      font-size: 14px;
+      color: #111111;
+      border-radius: 4px;
+    }
+    .col-md-4 {
+      align-items: center;
+      display: flex;
+    }
+    .card-text-colored {
+      color: #784ebc;
+    }
+    .badge-check {
+      width: 17px;
+    }
+  }
+  .tags {
+    .btn {
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 18px;
+      text-transform: lowercase;
+    }
+
+    .btn-white {
+      background: #f0f0f0;
+      border: 1px solid #784ebc;
+      color: #784ebc;
+    }
+
+    .btn-teal {
+      color: #ffffff;
+      background: #784ebc;
+      margin-left: 10px;
+    }
+  }
+}
+@media (max-width: 900px) {
+  .expertsPage {
+    margin: 0;
+    padding: 60px 10px;
+  }
+}

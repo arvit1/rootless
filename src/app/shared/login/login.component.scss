@@ -1,0 +1,14 @@
+.loginPage {
+  margin-top: 60px;
+}
+.m-t-5 {
+  margin-top: 100px;
+}
+@media (max-width: 900px) {
+  .yellowFlower {
+    display: none;
+  }
+  .m-t-5 {
+    margin-top: 20px;
+  }
+}

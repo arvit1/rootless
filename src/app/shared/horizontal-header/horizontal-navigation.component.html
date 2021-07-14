@@ -1,0 +1,181 @@
+<!-- ============================================================== -->
+<!-- toggle and nav items -->
+<!-- ============================================================== -->
+<ul class="navbar-nav">
+  <li class="nav-item d-none">
+    <a (click)="toggleSidebar.emit()" class="nav-link sidebartoggler waves-effect waves-light"
+      href="javascript:void(0)">
+      <i class="mdi mdi-menu font-24"></i>
+    </a>
+  </li>
+  <!-- ============================================================== -->
+  <!-- mega menu -->
+  <!-- ============================================================== -->
+</ul>
+
+<!-- Navbar Header for horizontal only -->
+<div class="navbar-header d-none d-lg-block">
+  <!-- This is for the sidebar toggle which is visible on mobile only -->
+  <a (click)="showMobileMenu = !showMobileMenu" class="nav-toggler waves-effect waves-light d-block d-lg-none"
+    href="javascript:void(0)">
+    <i [ngClass]="showMobileMenu ? 'fa fa-times' : 'fa fa-bars'"></i>
+  </a>
+  <!-- ============================================================== -->
+  <!-- Logo -->
+  <!-- ============================================================== -->
+  <a class="navbar-brand" [routerLink]="user !== '' ? ['/experts/feed'] : ['/#/']">
+    <!-- Logo icon -->
+    <b class="logo-icon">
+      <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+      <!-- Dark Logo icon -->
+      <img src="assets/images/rootlesslogo.png" alt="homepage" class="dark-logo" />
+      <!-- Light Logo icon -->
+      <img src="assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
+    </b>
+    <!--End Logo icon -->
+    <!-- Logo text -->
+    <span class="logo-text">
+      <!-- dark Logo text -->
+      <img src="assets/images/rootlesslogo.png" alt="homepage" class="dark-logo" />
+      <!-- Light Logo text -->
+      <img src="assets/images/logo-light-text.png" class="light-logo" alt="homepage" />
+    </span>
+  </a>
+  <!-- ============================================================== -->
+  <!-- End Logo -->
+  <!-- ============================================================== -->
+  <!-- ============================================================== -->
+  <!-- Toggle which is visible on mobile only -->
+  <!-- ============================================================== -->
+  <a class="topbartoggler d-block d-lg-none waves-effect waves-light" href="javascript:void(0)"
+    (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent">
+    <i class="ti-more"></i>
+  </a>
+</div>
+
+<!-- ============================================================== -->
+<!-- Right side toggle and nav items -->
+<!-- ============================================================== -->
+<ul class="navbar-nav float-md-right">
+  <!-- ============================================================== -->
+  <!-- create new -->
+  <!-- ============================================================== -->
+  <li class="nav-item dropdown" ngbDropdown placement="bottom-right">
+    <a ngbDropdownToggle class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown" role="button"
+      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <!-- <i class="flag-icon flag-icon-{{ selectedLanguage.icon }}"></i> -->
+    </a>
+    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" ngbDropdownMenu>
+      <span class="dropdown-item" href="#" *ngFor="let lang of languages" (click)="changeLanguage(lang)">
+        <!-- <i class="flag-icon flag-icon-{{ lang.icon }}"></i> -->
+        <span>{{ lang.language }}
+          <span *ngIf="lang.type">({{ lang.type }})</span>
+        </span>
+      </span>
+    </div>
+  </li>
+  <!-- ============================================================== -->
+  <!-- Comment -->
+  <!-- ============================================================== -->
+  <li class="nav-item" placement="bottom-right">
+    <a class="nav-link dropdown-toggle waves-effect waves-dark" href="javascript:void(0)">
+      <img src="assets/images/newsIcons.svg" />
+    </a>
+  </li>
+  <!-- ============================================================== -->
+  <!-- End Comment -->
+  <!-- ============================================================== -->
+  <!-- ============================================================== -->
+  <!-- Messages -->
+  <!-- ============================================================== -->
+  <li class="nav-item dropdown" ngbDropdown placement="bottom-right">
+    <a ngbDropdownToggle class="nav-link dropdown-toggle waves-effect waves-dark" href="javascript:void(0)" id="2"
+      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <i class="font-24 mdi mdi-comment-processing"></i>
+    </a>
+    <div class="dropdown-menu dropdown-menu-right mailbox" aria-labelledby="2" ngbDropdownMenu>
+      <ul class="list-style-none">
+        <li>
+          <div class="drop-title text-white bg-danger">
+            <h4 class="m-b-0 m-t-5">5 New</h4>
+            <span class="font-light">Messages</span>
+          </div>
+        </li>
+        <li>
+          <div class="message-center message-body" [perfectScrollbar]="config">
+            <!-- Message -->
+            <a href="javascript:void(0)" class="message-item" *ngFor="let mymessage of mymessages">
+              <span class="user-img">
+                <img src="{{ mymessage.useravatar }}" alt="user" class="rounded-circle" />
+                <span class="profile-status {{ mymessage.status }} pull-right"></span>
+              </span>
+              <span class="mail-contnet">
+                <h5 class="message-title">{{ mymessage.from }}</h5>
+                <span class="mail-desc">{{ mymessage.subject }}</span>
+                <span class="time">{{ mymessage.time }}</span>
+              </span>
+            </a>
+          </div>
+        </li>
+        <li>
+          <a class="nav-link text-center link" href="javascript:void(0);">
+            <b>See all e-Mails</b>
+            <i class="fa fa-angle-right"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </li>
+  <!-- ============================================================== -->
+  <!-- End Messages -->
+  <!-- ============================================================== -->
+  <!-- ============================================================== -->
+  <!-- User profile and search -->
+  <!-- ============================================================== -->
+  <li class="nav-item dropdown" ngbDropdown placement="bottom-right">
+    <a ngbDropdownToggle class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic"
+      href="javascript:void(0)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <img src="assets/images/users/1.jpg" alt="user" class="rounded-circle" width="31" />
+    </a>
+    <div class="dropdown-menu dropdown-menu-right user-dd" ngbDropdownMenu>
+      <div class="d-flex no-block align-items-center p-15 bg-primary text-white m-b-10">
+        <div class="">
+          <img src="assets/images/users/1.jpg" alt="user" class="img-circle" width="60" />
+        </div>
+        <div class="m-l-10">
+          <h4 class="m-b-0">Steave Jobs</h4>
+          <p class="m-b-0">varun@gmail.com</p>
+        </div>
+      </div>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="javascript:void(0)">
+        <i class="ti-user m-r-5 m-l-5"></i> Profile</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="javascript:void(0)">
+        <i class="ti-wallet m-r-5 m-l-5"></i> Messages</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="javascript:void(0)">
+        <i class="ti-email m-r-5 m-l-5"></i> Notifications</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="javascript:void(0)">
+        <i class="ti-settings m-r-5 m-l-5"></i> Saved content</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="javascript:void(0)">
+        <i class="ti-settings m-r-5 m-l-5"></i> Settings</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="javascript:void(0)">
+        <i class="ti-settings m-r-5 m-l-5"></i> Help</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="javascript:void(0)" (click)="logout()">
+        <i class="fa fa-power-off m-r-5 m-l-5"></i> Sign out</a>
+      <div class="dropdown-divider"></div>
+      <div class="p-l-30 p-10">
+        <a href="javascript:void(0)" class="btn btn-sm btn-success btn-rounded">View Profile</a>
+      </div>
+    </div>
+  </li>
+  <!-- ============================================================== -->
+  <!-- User profile and search -->
+  <!-- ============================================================== -->
+</ul>

@@ -1,0 +1,150 @@
+<div class="row profilePage">
+  <!-- Row -->
+  <div class="headerContent card row col-lg-12">
+    <div class="card-body col-lg-4">
+      <div class="m-t-30 text-center">
+        <img src="{{ event.imgUrl }}" class="profileImg" />
+      </div>
+    </div>
+
+    <div class="card-body col-lg-8">
+      <div class="row margin-b-t">
+        <h2 class="font-36">{{ event.title }}</h2>
+      </div>
+      <div class="row icon-data-container">
+        <div class="col-sm-12 col-md-2 m-b-10 icon-data">
+          <img src="assets/images/people.png" />
+          <span>with&nbsp;</span>
+          <span *ngIf="event.from.length === 1">{{
+            event.from[0].firstName + " " + event.from[0].lastName
+          }}</span>
+          <span *ngIf="event.from.length > 1">
+            <span
+              *ngFor="let from of event.from; let i = index"
+              class="font-16"
+            >
+              <span *ngIf="i < event.from.length - 1">{{
+                from.firstName + " " + from.lastName + ","
+              }}</span>
+              <span *ngIf="event.from.length - 1 === i">
+                and {{ from.firstName + " " + from.lastName }}</span
+              >
+            </span>
+          </span>
+        </div>
+        <div class="col-sm-12 col-md-2 m-b-10 icon-data">
+          <img src="assets/images/money.png" />
+          <span class="font-16"
+            >${{ event.fee }} one time fee or free with Rootless Me
+            membership</span
+          >
+        </div>
+        <div class="col-sm-12 col-md-2 m-b-10 icon-data">
+          <img src="assets/images/calendar.png" />
+          <span class="font-16">{{
+            event.date | amDateFormat: "ddd, MMM D, YYYY h:mm A Z"
+          }}</span>
+        </div>
+      </div>
+      <button type="button" class="btn primaryBtn">
+        <!--        (click)="setEditingProfile(true)"-->
+        <!--      >-->
+        <img src="assets/images/Vector.svg" />
+        book now
+      </button>
+    </div>
+  </div>
+
+  <!-- Row -->
+  <!-- Column -->
+  <div class="col-lg-4 col-xlg-3 col-md-5">
+    <div class="card">
+      <div class="card-body underPictureData">
+        <h1 class="name">
+          {{ aboutData.name }} <img src="assets/images/verified-check.svg" />
+        </h1>
+        <p class="bio">{{ aboutData.bio }}</p>
+      </div>
+    </div>
+  </div>
+  <!-- Column -->
+  <!-- Column -->
+  <div class="col-lg-8 col-xlg-9 col-md-7">
+    <div class="card mainContent">
+      <div class="aboutCard margin-b-t">
+        <div>
+          <h1>Speakers</h1>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="card-deck">
+                <div class="card" *ngFor="let from of event.from">
+                  <img
+                    class="card-img-top img-responsive"
+                    src="{{ 'from.imgUrl' }}"
+                    alt="Card image cap"
+                  />
+                  <div class="card-body">
+                    <h4 class="card-title">
+                      {{ from.firstName + " " + from.lastName }}
+                    </h4>
+                    <p class="card-text">
+                      <button class="btn btn-success green-btn m-t-20">
+                        {{ 'from.profession' }}
+                      </button>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="margin-b-t">
+          <h1>Topics</h1>
+          <span>
+            <span *ngFor="let expertise of aboutData.expertise">
+              <span class="badge badge-primary">{{ expertise }}</span>
+            </span>
+          </span>
+        </div>
+      </div>
+      <div class="tagline margin-b-t">
+        <h1>Tagline</h1>
+        <div class="row">
+          <div class="col-md-2">
+            <img src="assets/images/quote.svg" />
+          </div>
+          <div class="col-md-10">
+            <span class="taglineText">{{ aboutData.tagline }}</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h1>What you bring to the table</h1>
+        <ul *ngFor="let ability of aboutData.bringToTable">
+          <li>{{ ability }}</li>
+        </ul>
+      </div>
+      <div class="certificationsCard">
+        <h1>Certifications</h1>
+        <div class="row" style="margin-top: 0">
+          <div class="col-md-6 p-r-0">
+            <img
+              class="card-img-top img-responsive"
+              src="assets/images/big/img3.jpg"
+              alt="Card image cap"
+            />
+          </div>
+          <div class="col-md-6">
+            <div class="">
+              <h1 class="card-title">Lorem ipsum dolor sit lorem ipsum</h1>
+
+              <p class="card-text">Issued by Authority</p>
+              <p class="card-date">Sep 2016</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-signup></app-signup>

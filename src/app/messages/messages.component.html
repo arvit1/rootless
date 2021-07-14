@@ -1,0 +1,394 @@
+<div class="row messagesPage">
+  <div class="col-lg-12 col-sm-12" style="padding: 60px">
+    <h1 class="font-55 black-color no-margin" style="width: 50%">Messages</h1>
+    <p class="margin-b-t font-25 black-color no-margin">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    </p>
+  </div>
+  <div class="col-lg-12 col-xlg-12 col-md-12">
+    <div class="card mainContent">
+      <!-- <div style="
+          justify-content: flex-end;
+          display: flex;
+          margin-top: 60px;
+          margin-bottom: -90px;
+          padding: 0 60px;
+        ">
+        <button class="black_btn" style="margin-right: 20px">
+          mark all as read
+        </button>
+      </div> -->
+      <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+        <li [ngbNavItem]="1">
+          <!-- <a ngbNavLink>All</a> -->
+          <ng-template ngbNavContent>
+            <div class="container-fluid">
+              <a href="javascript:void(0)" class="btn btn-success show-left-part d-block d-md-none fa fa-bars"></a>
+              <div class="main-part" *ngIf="hireMessages.length !== 0">
+                <div class="left-part bg-white fixed-left-part">
+                  <div class="position-relative" style="height: 100%">
+                    <ul class="mailbox list-style-none">
+                      <li>
+                        <div class="message-center ps ps--active-y" style="height: calc(100vh - 267px)">
+                          <!-- <div>
+                            <a class="message-item active"><span class="user-img"><img alt="user" width="100"
+                                  src="../../assets/images/users/1.jpg" /><span
+                                  class="profile-status online pull-right"></span></span>
+                              <div class="mail-contnet">
+                                <p class="time text-uppercase">9:30AM</p>
+                                <h5 class="message-title">Steve Rogers</h5>
+                                <span class="mail-desc">Hey Banner, where are you?</span>
+                              </div>
+                            </a>
+                          </div> -->
+                          <div *ngFor="let msg of hireMessages">
+                            <a class=" message-item active" id="{{msg.rootlessId}}" (click)="setActive(msg.rootlessId)">
+                              <span class=" user-img">
+                                <img alt="user" width="100" src="{{msg.rootless.profilePhotoUrl}}" />
+                                <span class="profile-status online pull-right"></span>
+                              </span>
+                              <div class="mail-contnet">
+                                <!-- <p class="time text-uppercase">9:30AM</p> -->
+                                <h5 class="message-title">{{msg.rootless.firstName}} {{msg.rootless.lastName}}</h5>
+                                <!-- <span class="mail-desc">Hey Banner, where are you?</span> -->
+                              </div>
+                            </a>
+                          </div>
+                          <div class="ps__rail-x" style="left: 0px; bottom: 0px">
+                            <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px"></div>
+                          </div>
+                          <div class="ps__rail-y" style="top: 0px; right: 0px; height: 256px">
+                            <div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 153px"></div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="right-part">
+                  <div class="card mb-0">
+                    <div class="card-body py-0 pr-0">
+                      <div class="chat-box p-r-15" style="height: calc(100vh - 350px); overflow-y: auto">
+                        <!-- <ul class="chat-list">
+                          <li class="chat-item odd">
+                            <div class="chat-img">
+                              <img alt="avatar" src="../../assets/images/users/6.jpg" />
+                            </div>
+                            <div class="chat-content">
+                              <div class="box bg-light-info">
+                                Hi, How are you ?
+                              </div>
+                            </div>
+
+                            <div class="chat-time text-lowercase">9.30 am</div>
+
+                          </li>
+                          <li class="chat-item even">
+                            <div class="chat-img">
+                              <img alt="avatar" src="../../assets/images/users/1.jpg" />
+                            </div>
+                            <div class="chat-content">
+                              <div class="box bg-light-info">
+                                Hey Bruce, I am Fine
+                              </div>
+                            </div>
+
+                            <div class="chat-time text-lowercase">9.30 am</div>
+
+                          </li>
+                          <li class="chat-item odd">
+                            <div class="chat-img">
+                              <img alt="avatar" src="../../assets/images/users/6.jpg" />
+                            </div>
+                            <div class="chat-content">
+                              <div class="box bg-light-info">
+                                What are you doing nowadays ?
+                              </div>
+                            </div>
+
+                            <div class="chat-time text-lowercase">9.31 am</div>
+
+                          </li>
+                          <li class="chat-item even">
+                            <div class="chat-img">
+                              <img alt="avatar" src="../../assets/images/users/1.jpg" />
+                            </div>
+                            <div class="chat-content">
+                              <div class="box bg-light-info">Nothing Much.</div>
+                            </div>
+
+                            <div class="chat-time text-lowercase">9.31 am</div>
+
+                          </li>
+                          <li class="chat-item odd">
+                            <div class="chat-img">
+                              <img alt="avatar" src="../../assets/images/users/6.jpg" />
+                            </div>
+                            <div class="chat-content">
+                              <div class="box bg-light-info">yes</div>
+                            </div>
+
+                            <div class="chat-time text-lowercase">9.32 am</div>
+
+                          </li>
+                          <li class="chat-item even">
+                            <div class="chat-img">
+                              <img alt="avatar" src="../../assets/images/users/1.jpg" />
+                            </div>
+                            <div class="chat-content">
+                              <div class="box bg-light-info">
+                                Do you have interest in IOS ?
+                              </div>
+                            </div>
+
+                            <div class="chat-time text-lowercase">9.32 am</div>
+
+                          </li>
+                          <li class="chat-item odd">
+                            <div class="chat-img">
+                              <img alt="avatar" src="../../assets/images/users/6.jpg" />
+                            </div>
+                            <div class="chat-content">
+                              <div class="box bg-light-info">
+                                Yes, not more.
+                              </div>
+                            </div>
+
+                            <div class="chat-time text-lowercase">9.33 am</div>
+
+                          </li>
+
+
+                        </ul> -->
+                        <p>User: {{selectedMsg.rootless.firstName}} {{selectedMsg.rootless.lastName}}</p>
+                        <p>Phone: {{selectedMsg.phone}}</p>
+                        <p>Email: {{selectedMsg.email}}</p>
+                        <p>Preff comm: {{selectedMsg.prefComm}}</p>
+                        <p>Reason: {{selectedMsg.reason}}</p>
+                      </div>
+                    </div>
+                    <!-- <div class="card-body">
+                      <form novalidate="" class="chat-app-input row ng-untouched ng-pristine ng-valid">
+                        <div class="col-9">
+                          <input type="text" placeholder="Type your message and enter" class="form-control border-0" />
+                        </div>
+                        <div class="col-3">
+                          <button type="button" class="btn-circle btn-lg btn-cyan float-right text-white border-0"
+                            style="background: white; outline: none !important">
+                            <i class="fas fa-paper-plane" style="color: black"></i>
+                          </button>
+                        </div>
+                      </form>
+                    </div> -->
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </ng-template>
+        </li>
+        <!-- <li [ngbNavItem]="2">
+          <a ngbNavLink>Read</a>
+          <ng-template ngbNavContent>
+            <div class="container-fluid">
+              <a href="javascript:void(0)" class="btn btn-success show-left-part d-block d-md-none fa fa-bars"></a>
+              <div class="main-part">
+                <div class="left-part bg-white fixed-left-part">
+                  <div class="position-relative" style="height: 100%">
+                    <ul class="mailbox list-style-none">
+                      <li>
+                        <div class="message-center ps ps--active-y" style="height: calc(100vh - 267px)">
+                          <div>
+                            <a class="message-item active"><span class="user-img"><img alt="user" width="100"
+                                  src="../../assets/images/users/1.jpg" /><span
+                                  class="profile-status online pull-right"></span></span>
+                              <div class="mail-contnet">
+                                <p class="time text-uppercase">9:30AM</p>
+                                <h5 class="message-title">Steve Rogers</h5>
+                                <span class="mail-desc">Hey Banner, where are you?</span>
+                              </div>
+                            </a>
+                          </div>
+                          <div>
+                            <a class="message-item"><span class="user-img"><img alt="user" width="100"
+                                  src="../../assets/images/users/2.jpg" /><span
+                                  class="profile-status online pull-right"></span></span>
+                              <div class="mail-contnet">
+                                <p class="time text-uppercase">10:30AM</p>
+                                <h5 class="message-title">Ram</h5>
+                                <span class="mail-desc">ram ram ram .....</span>
+                              </div>
+                            </a>
+                          </div>
+                          <div>
+                            <a class="message-item"><span class="user-img"><img alt="user" width="100"
+                                  src="../../assets/images/users/3.jpg" /><span
+                                  class="profile-status online pull-right"></span></span>
+                              <div class="mail-contnet">
+                                <p class="time text-uppercase">11:30AM</p>
+                                <h5 class="message-title">Shyam</h5>
+                                <span class="mail-desc">shyam shyam .....</span>
+                              </div>
+                            </a>
+                          </div>
+                          <div>
+                            <a class="message-item"><span class="user-img"><img alt="user" width="100"
+                                  src="../../assets/images/users/4.jpg" /><span
+                                  class="profile-status online pull-right"></span></span>
+                              <div class="mail-contnet">
+                                <p class="time text-uppercase">8:30AM</p>
+                                <h5 class="message-title">Mark</h5>
+                                <span class="mail-desc">mark mark ......</span>
+                              </div>
+                            </a>
+                          </div>
+                          <div>
+                            <a class="message-item"><span class="user-img"><img alt="user" width="100"
+                                  src="../../assets/images/users/5.jpg" /><span
+                                  class="profile-status online pull-right"></span></span>
+                              <div class="mail-contnet">
+                                <p class="time text-uppercase">6:30AM</p>
+                                <h5 class="message-title">Robin</h5>
+                                <span class="mail-desc">robin robin ......</span>
+                              </div>
+                            </a>
+                          </div>
+
+                          <div class="ps__rail-x" style="left: 0px; bottom: 0px">
+                            <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px"></div>
+                          </div>
+                          <div class="ps__rail-y" style="top: 0px; right: 0px; height: 256px">
+                            <div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 153px"></div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="right-part">
+                  <div class="card mb-0">
+                    <div class="card-body py-0 pr-0">
+                      <div class="chat-box p-r-15" style="height: calc(100vh - 350px); overflow-y: auto">
+                        <ul class="chat-list">
+                          <li class="chat-item odd">
+                            <div class="chat-img">
+                              <img alt="avatar" src="../../assets/images/users/6.jpg" />
+                            </div>
+                            <div class="chat-content">
+                              <div class="box bg-light-info">
+                                Hi, How are you ?
+                              </div>
+                            </div>
+
+                            <div class="chat-time text-lowercase">9.30 am</div>
+
+                          </li>
+                          <li class="chat-item even">
+                            <div class="chat-img">
+                              <img alt="avatar" src="../../assets/images/users/1.jpg" />
+                            </div>
+                            <div class="chat-content">
+                              <div class="box bg-light-info">
+                                Hey Bruce, I am Fine
+                              </div>
+                            </div>
+
+                            <div class="chat-time text-lowercase">9.30 am</div>
+
+                          </li>
+                          <li class="chat-item odd">
+                            <div class="chat-img">
+                              <img alt="avatar" src="../../assets/images/users/6.jpg" />
+                            </div>
+                            <div class="chat-content">
+                              <div class="box bg-light-info">
+                                What are you doing nowadays ?
+                              </div>
+                            </div>
+
+                            <div class="chat-time text-lowercase">9.31 am</div>
+
+                          </li>
+                          <li class="chat-item even">
+                            <div class="chat-img">
+                              <img alt="avatar" src="../../assets/images/users/1.jpg" />
+                            </div>
+                            <div class="chat-content">
+                              <div class="box bg-light-info">Nothing Much.</div>
+                            </div>
+
+                            <div class="chat-time text-lowercase">9.31 am</div>
+
+                          </li>
+                          <li class="chat-item odd">
+                            <div class="chat-img">
+                              <img alt="avatar" src="../../assets/images/users/6.jpg" />
+                            </div>
+                            <div class="chat-content">
+                              <div class="box bg-light-info">yes</div>
+                            </div>
+
+                            <div class="chat-time text-lowercase">9.32 am</div>
+
+                          </li>
+                          <li class="chat-item even">
+                            <div class="chat-img">
+                              <img alt="avatar" src="../../assets/images/users/1.jpg" />
+                            </div>
+                            <div class="chat-content">
+                              <div class="box bg-light-info">
+                                Do you have interest in IOS ?
+                              </div>
+                            </div>
+
+                            <div class="chat-time text-lowercase">9.32 am</div>
+
+                          </li>
+                          <li class="chat-item odd">
+                            <div class="chat-img">
+                              <img alt="avatar" src="../../assets/images/users/6.jpg" />
+                            </div>
+                            <div class="chat-content">
+                              <div class="box bg-light-info">
+                                Yes, not more.
+                              </div>
+                            </div>
+
+                            <div class="chat-time text-lowercase">9.33 am</div>
+
+                          </li>
+
+
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <form novalidate="" class="chat-app-input row ng-untouched ng-pristine ng-valid">
+                        <div class="col-9">
+                          <input type="text" placeholder="Type your message and enter" class="form-control border-0" />
+                        </div>
+                        <div class="col-3">
+                          <button type="button" class="btn-circle btn-lg btn-cyan float-right text-white border-0"
+                            style="background: white; outline: none !important">
+                            <i class="fas fa-paper-plane" style="color: black"></i>
+                          </button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </ng-template>
+        </li>
+        <li [ngbNavItem]="3">
+          <a ngbNavLink>Unread</a>
+          <ng-template ngbNavContent> </ng-template>
+        </li> -->
+      </ul>
+
+      <div [ngbNavOutlet]="nav" class="mt-2"></div>
+    </div>
+  </div>
+</div>

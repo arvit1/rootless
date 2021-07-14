@@ -1,0 +1,477 @@
+/* Before you go */
+.about-us {
+  form {
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    margin: 15% auto;
+  }
+
+  .beforeyougo h1 {
+    font-family: "Poppins", sans-serif;
+    font-size: 60px;
+    color: black;
+    font-weight: 600;
+  }
+
+  .beforeyougo {
+    padding: 20px;
+  }
+
+  .inputone {
+    display: inline-block;
+    border: 2px solid black;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    font-size: 20px;
+    margin: 40px auto;
+    width: 80%;
+  }
+
+  .inputtwo {
+    display: inline-block;
+    border: 2px solid black;
+    background: #ffc20a;
+    color: black;
+    padding: 15px 0px;
+    font-weight: bold;
+    font-size: 18px;
+    width: 60%;
+  }
+
+  .blackflower1 {
+    margin-right: 2%;
+  }
+  .titleDiv {
+    width: 90px;
+    min-width: 90px;
+    background: #8e6bc7;
+    h2 {
+      color: white;
+      font-weight: 800;
+      font-size: 35px;
+      transform: rotate(270deg);
+      position: relative;
+      top: 80%;
+      text-transform: uppercase;
+    }
+  }
+  .tab-content {
+    display: flex;
+    height: 100%;
+    .tab-pane {
+      align-self: flex-end;
+      // background-image: url('../assets/images/quotes.png');
+      .title_name {
+        background-repeat: no-repeat;
+        background-position: left;
+        height: 104px;
+      }
+      h1 {
+        width: 30%;
+        margin-left: 30px;
+        font-size: 40px;
+      }
+    }
+  }
+  .arrow-left {
+    width: 0px;
+    height: 0px;
+    border-top: 40px solid transparent;
+    border-bottom: 40px solid transparent;
+    border-right: 30px solid #8e6bc7;
+    margin-top: 30px;
+  }
+  .arrow-right {
+    width: 0px;
+    height: 0px;
+    border-top: 40px solid transparent;
+    border-bottom: 40px solid transparent;
+    border-left: 30px solid #8e6bc7;
+    margin-top: 30px;
+  }
+  .banner {
+    position: relative;
+    width: 100%;
+    height: 20vh;
+    overflow: hidden;
+  }
+  .banner video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    border: 1px solid white;
+  }
+  .banner h1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    font-weight: 600;
+    font-size: 110px;
+    text-align: center;
+    -webkit-animation: anim-text-color 16s infinite linear;
+    animation: anim-text-color 16s infinite linear;
+    background-color: #ffffff;
+    mix-blend-mode: screen !important;
+    font-family: "Raleway", sans-serif;
+  }
+
+  #videoTutorial,
+  #videoTutorial2,
+  #videoTutorial3 {
+    width: 100%;
+    margin-bottom: -70px;
+  }
+  #explain h2 {
+    text-align: center;
+    font-weight: lighter;
+    font-size: 38px;
+    padding-top: 35px;
+    padding-bottom: 150px;
+  }
+  .fade-in {
+    animation: fadeIn ease 5s;
+    -webkit-animation: fadeIn ease 5s;
+    -moz-animation: fadeIn ease 5s;
+    -o-animation: fadeIn ease 5s;
+    -ms-animation: fadeIn ease 5s;
+    display: block !important;
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @-moz-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @-webkit-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @-o-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @-ms-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .mySlides,
+  .mySlides {
+    display: none;
+  }
+  .mySlides,
+  .meetour {
+    margin: 10% 8%;
+  }
+  .mySlides {
+    padding: 30px;
+  }
+  /* Slideshow container */
+  .slideshow-container {
+    /* max-width: 1000px; */
+    position: relative;
+    margin: auto;
+  }
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+    opacity: 0.5;
+  }
+  /*-- Enough is enoug - Choose where you want to go - From rootless to rootes --*/
+  .choosewhereyouwanttogo h1,
+  .enoughisenough h1,
+  .fromrootlesstorooted h1 {
+    font-size: 60px;
+  }
+  .choosewhereyouwanttogotwo h2,
+  .enoughisenoughtwo h2,
+  .fromrootlesstorootedtwo h2 {
+    font-size: 30px;
+    margin: 0;
+  }
+  .choosewhereyouwanttogotwo,
+  .enoughisenoughtwo,
+  .fromrootlesstorootedtwo {
+    margin: 0;
+    width: 100%;
+  }
+  .enoughisenough,
+  .fromrootlesstorooted,
+  .choosewhereyouwanttogo {
+    width: 100%;
+  }
+
+  /* enoughisenough */
+  .enoughisenough,
+  .fromrootlesstorooted {
+    width: 50%;
+  }
+  .enoughisenough h1 {
+    color: #88bcba;
+    font-weight: 700;
+    font-size: 80px;
+    font-family: "Poppins", sans-serif;
+  }
+
+  /* The typing effect */
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  .enoughisenoughtwo {
+    float: right;
+    margin-top: -100px;
+    width: 50%;
+
+    color: #000000;
+    font-size: 32px;
+    font-weight: 300;
+    font-family: "Poppins", sans-serif;
+    line-height: 60px;
+  }
+  /* choosewhereyouwanttogo */
+
+  .choosewhereyouwanttogo {
+    width: 80%;
+    float: right;
+
+    color: #ffc20a;
+    font-weight: 700;
+    font-size: 80px;
+    font-family: "Poppins", sans-serif;
+    text-align: right;
+  }
+
+  .choosewhereyouwanttogotwo {
+    width: 100%;
+    float: left;
+    color: #000000;
+    font-size: 32px;
+    font-weight: 300;
+    font-family: "Poppins", sans-serif;
+    line-height: 60px;
+    padding-top: 10px;
+  }
+
+  /* fromrootlesstorooted */
+
+  .fromrootlesstorooted h1 {
+    color: #8e6bc7;
+    font-weight: 700;
+    font-size: 80px;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .fromrootlesstorootedtwo {
+    float: right;
+    width: 50%;
+    color: #000000;
+    font-size: 32px;
+    font-weight: 300;
+    font-family: "Poppins", sans-serif;
+    line-height: 60px;
+    margin-top: -100px;
+  }
+}
+.customizer .service-panel-toggle {
+  background: rgba(120, 78, 188, 0.6);
+  display: grid;
+  grid-gap: 15px;
+  text-align: center;
+  padding: 15px;
+  left: 0;
+}
+.fab {
+  font-size: 20px;
+}
+aside {
+  left: 0;
+  right: 100%;
+  width: 0;
+}
+.stats {
+  margin-top: 100px !important;
+  .box {
+    height: 200px;
+    padding: 0;
+    p {
+      font-weight: 800;
+      font-size: 80px;
+      line-height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-transform: uppercase;
+      color: #111111;
+      height: 100%;
+    }
+  }
+  .firstBox {
+    background: rgb(89, 161, 157);
+    background: linear-gradient(
+      -45deg,
+      #784ebc,
+      #8e6bc7,
+      #ffc20a,
+      #ff4b0a,
+      #6faeac,
+      #c2ebe9
+    );
+    background-size: 400% 400%;
+    animation: gradient 25s ease infinite;
+    &:hover {
+      p {
+        color: white;
+      }
+    }
+  }
+  .secondBox {
+    border: 5px solid #88bcba;
+    &:hover {
+      background: #88bcba;
+      p {
+        color: white;
+      }
+    }
+  }
+  .thirdBox {
+    border: 5px solid #8e6bc7;
+    &:hover {
+      background: #8e6bc7;
+      p {
+        color: white;
+      }
+    }
+  }
+  .forthBox {
+    border: 5px solid #ffc20a;
+    &:hover {
+      background: #ffc20a;
+      p {
+        color: white;
+      }
+    }
+  }
+  .fifthBox {
+    border: 5px solid #ff652d;
+    &:hover {
+      background: #ff652d;
+      p {
+        color: white;
+      }
+    }
+  }
+  h3 {
+    text-transform: uppercase;
+  }
+}
+
+@media (max-width: 900px) {
+  .col-md-7 {
+    padding: 0 !important;
+  }
+
+  .stats .col-lg-4 {
+    margin-top: 20px !important;
+    margin-left: 0 !important;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.redflower-text,
+.purpleflower-text,
+.greenflower-text,
+.yellowflower-text {
+  padding-top: 10px;
+  display: flex;
+  h3 {
+    text-decoration: underline;
+    padding-top: 5px;
+    margin-left: 10px;
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: lowercase;
+  }
+}
+.sectiononflowerred {
+  width: 40px;
+}
+@media (max-width: 900px) {
+  aside {
+    left: 90%;
+    right: 0;
+    width: 0;
+  }
+}

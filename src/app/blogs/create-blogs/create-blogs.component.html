@@ -1,0 +1,56 @@
+<div class="container createBlog">
+  <div class="row">
+    <div class="col-lg-2">
+      <h1 class="backPrint no-margin">
+        < Back to profile</h1>
+          <div class="col-lg-8 col-xlg-9 col-md-7 no-margin d-block" style="padding: 0">
+            <div class="card mainContent">
+              <p class="body titlePrint">Create a blog post</p>
+            </div>
+          </div>
+    </div>
+
+    <div class="col-lg-8">
+      <div>
+        <!-- Form -->
+        <div class="row">
+          <form class="form-horizontal m-t-20" [formGroup]="blogForm">
+            <div>
+              <div>
+                <img [src]="coverPhotoUrl" class="responsive-img" />
+                <input type="file" required class="btn whiteBlack-btn padding-20 full-width uploadButton"
+                  formControlName="photoUrl" (change)="uploadFile($event)" />
+              </div>
+              <input type="text" class="form-control mt-5" placeholder="Add a title" formControlName="title" />
+              <div style="height: 200px; display: block; margin-top: 20px">
+                <quill-editor [style]="{ height: '100px' }" formControlName="content"></quill-editor>
+              </div>
+              <input type="text" class="form-control tags" placeholder="Add tags on enter key separated by comma"
+                formControlName="tags" />
+              <select formControlName="industryId" class="form-control mt-5"
+                style="padding: 10px !important; height: 54px">
+                <option value="" selected="true" disabled>
+                  Select an option or add custom
+                </option>
+                <option *ngFor="let industry of industries" value="{{industry.id}}">{{industry.name}}</option>
+              </select>
+              <div class="form-group" style="padding: 20px; padding-left: 0">
+                <div class="col-xs-12 p-b-20">
+                  <button type="submit" (click)="onSubmit($event, false)"
+                    class="btn whiteBlack-btn padding-20 full-width" [disabled]="blogForm.invalid">
+                    save draft
+                  </button>
+                  <button type="submit" (click)="onSubmit($event, true)"
+                    class="btn yellowBlack-btn padding-20 full-width" style="width: auto; margin-left: 20px"
+                    [disabled]="blogForm.invalid">
+                    publish blog
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

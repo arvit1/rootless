@@ -1,0 +1,74 @@
+<div class="container createEvents" style="padding-top: 60px">
+  <div class="row">
+    <div class="col-lg-6">
+      <h1 class="font-55 black-color no-margin">Host an event</h1>
+      <div class="col-lg-8 col-xlg-9 col-md-7 no-margin d-block">
+        <div class="card mainContent">
+          <p class="body font-25">
+            Fill the necessary information to host an event with the rootless
+            team
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div>
+        <!-- Form -->
+        <div class="row">
+          <div class="col-12">
+            <form class="form-horizontal m-t-20" [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+              <div style="padding: 20px; padding-top: 0">
+                <div class="form-group">
+                  <label id="courseName" class="control-label col-form-label">Event Name*</label>
+                  <input formControlName="title" type="text" class="form-control" placeholder="E.g. Slow growth" aria-label="courseName" aria-describedby="basic-addon1"/>
+                </div>
+                <div class="form-group">
+                  <label id="" class="control-label col-form-label">Description*</label>
+                  <textarea formControlName="description" class="form-control" placeholder="Describe shortly what the event will be about" rows="1"></textarea>
+                </div>
+                <div class="form-group">
+                  <label id="purpose" class="control-label col-form-label">Purpose*</label>
+                  <textarea formControlName="purpose" class="form-control" placeholder="Describe shortly the purpose of this event" rows="2"></textarea>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-form-label">Duration (hours)*</label>
+                  <input formControlName="duration" type="text" class="form-control" placeholder="Enter preferred duration in hours" aria-label="time" aria-describedby="basic-addon1"/>
+                </div>
+                <div class="form-group">
+                  <label id="participants" class="control-label col-form-label">Max number of participants*</label>
+                  <textarea formControlName="maxParticipants" class="form-control" placeholder="Enter your preferred max number of participants" rows="2"></textarea>
+                </div>
+                <div class="form-group">
+                  <label id="location" class="control-label col-form-label">Location*</label>
+                  <input formControlName="location" type="text" class="form-control" placeholder="Enter your preferred location" aria-label="location" aria-describedby="basic-addon1"/>
+                </div>
+                <div class="form-group">
+                  <label id="time" class="control-label col-form-label">Time*</label>
+                  <input formControlName="date" type="datetime-local" class="form-control" placeholder="Enter your preferred time slot" value="2008-05-13T22:33:00"/>
+                </div>
+                <div class="form-group">
+                  <label id="dates" class="control-label col-form-label">Your preferred dates</label>
+                  <p class="preferredDates">
+                    Please select the dates when you would like to host the
+                    event with the rootless team
+                  </p>
+                  <app-fullcalendar (datesClicked)="addDates($event)"></app-fullcalendar>
+                </div>
+              </div>
+              <div class="form-group text-center" style="padding: 20px">
+                <div class="col-xs-12 p-b-20">
+                  <button type="submit" class="btn yellowBlack-btn padding-20 full-width">
+                    <img src="assets/images/flowerblack.png" style="width: 30px; margin-right: 10px"/>
+                    submit form
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<img src="assets/images/yellowFlower.png" style="width: 20%; position: fixed; bottom: -100px; left: 0"/>

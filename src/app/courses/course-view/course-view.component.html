@@ -1,0 +1,197 @@
+<div class="coursesView">
+  <div class="col-12 row text-center">
+    <div class="col-1 center">
+      <p
+        class="backPrint font-16 center"
+        [routerLink]="['/courses', course.id]"
+      >
+        < Back
+      </p>
+    </div>
+    <div class="col-10 text-left">
+      <b class="font-16">Overall progress: {{ completion }}%</b>
+      <p>
+        <ngb-progressbar type="info" [value]="completion"></ngb-progressbar>
+      </p>
+    </div>
+    <div class="col-1 center">
+      <img src="../../../assets/images/emojione_trophy.png" class="center" />
+    </div>
+  </div>
+  <div class="col-12 row text-center mt-5 videoDiv">
+    <div
+      class="center top"
+      [ngClass]="{
+        'col-lg-11': content === false,
+        'col-lg-8': content === true
+      }"
+    >
+      <video
+        controls
+        style="width: 100%"
+        id="courseVideo"
+        *ngIf="currentVideoUrl"
+        (ended)="setWatched()"
+        [src]="currentVideoUrl"
+        type="video/mp4"
+      ></video>
+    </div>
+    <div
+      class="center d-block"
+      [ngClass]="{
+        'col-lg-1': content === false,
+        'col-lg-4': content === true
+      }"
+    >
+      <div
+        [ngClass]="{
+          'd-block': content === false,
+          'd-none': content === true
+        }"
+      >
+        <img
+          class="float-right arrow-green"
+          src="../../../assets/images/arrow-green.svg"
+          (click)="showContent()"
+        />
+        <p class="float-left contentTitle">COURSE CONTENT</p>
+      </div>
+
+      <div
+        class="col-12 courseContent"
+        [ngClass]="{
+          'd-none': content === false,
+          'd-inline': content === true
+        }"
+      >
+        <p class="float-left">COURSE CONTENT</p>
+        <img
+          class="float-right cursor-pointer"
+          src="../../../assets/images/group.png"
+          (click)="showContent()"
+        />
+      </div>
+      <div
+        class="col-12"
+        [ngClass]="{
+          'd-none': content === false,
+          'd-block': content === true
+        }"
+      >
+        <ul class="list-unstyled m-t-40" *ngIf="videos">
+          <li
+            class="media"
+            *ngFor="let video of videos; index as i"
+            (click)="setCurrentVideo(i)"
+            [class.current-video]="i === currentVideoIndex"
+          >
+            <label class="container checkboxContainer">
+              <input
+                type="checkbox"
+                [checked]="video.watched"
+                (change)="setWatched()"
+                [disabled]="video.watched"
+              />
+              <span class="checkmark"></span>
+            </label>
+            <div class="text-left">
+              <p class="font-18 no-margin">{{ i + 1 }}. {{ video.title }}</p>
+              <span class="time"
+                ><img src="../../../assets/images/play.png" />
+                <b> {{ video.length }} min</b></span
+              >
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 row mt-5 tabs d-inline">
+    <p class="title">The Basics of construction industry</p>
+    <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+      <li [ngbNavItem]="1">
+        <a ngbNavLink>About</a>
+        <ng-template ngbNavContent>
+          <div class="aboutCard margin-b-t" *ngIf="course">
+            <div>
+              <h1>Instructor</h1>
+              <div class="row">
+                <div class="col-lg-12 no-padding">
+                  <div>
+                    <div class="card col-lg-4 no-padding">
+                      <img
+                        class="card-img-top img-responsive"
+                        src="{{ getExpert(course.expertId).profilePhotoUrl }}"
+                        alt="Card image cap"
+                      />
+                      <div class="card-body no-padding">
+                        <h4 class="card-title">
+                          {{ getExpert(course.expertId).firstName }}
+                          {{ getExpert(course.expertId).lastName }}
+                          <img
+                            src="assets/images/verified-check-green.svg"
+                            class="badge-check-green"
+                          />
+                        </h4>
+                        <div class="arrow-up arrow-Greenn"></div>
+                        <p class="card-text">
+                          <button class="btn btn-success green-btn">
+                            {{ getExpert(course.expertId).profession }}
+                          </button>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="margin-b-t">
+              <h1>Topics</h1>
+              <span>
+                <span *ngFor="let topic of course.topics">
+                  <span class="badge badge-primary">{{ topic }}</span>
+                </span>
+              </span>
+            </div>
+            <div class="tagline margin-b-t">
+              <h1>About the course</h1>
+              <div>
+                <p>{{ course.description }}</p>
+              </div>
+              <div class="tagline margin-b-t">
+                <h1>What will you learn</h1>
+                <ul>
+                  <li *ngFor="let learning of course.learnings">
+                    {{ learning }}
+                  </li>
+                </ul>
+              </div>
+              <div class="tagline margin-b-t">
+                <h1>Time to complete</h1>
+                <div>
+                  <p>Total length of videos is {{ course.time }} hours.</p>
+                </div>
+              </div>
+              <div class="tagline margin-b-t">
+                <h1>Schedule</h1>
+                <div>
+                  <p>
+                    Set your own deadlines. The schedule is flexible and totally
+                    dependent on your pace.
+                  </p>
+                </div>
+              </div>
+              <div class="tagline margin-b-t">
+                <h1>Address</h1>
+                <div>
+                  <p>100% online. Whereever you are.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </li>
+    </ul>
+    <div [ngbNavOutlet]="nav" class="mt-2"></div>
+  </div>
+</div>

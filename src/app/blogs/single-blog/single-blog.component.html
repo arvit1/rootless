@@ -1,0 +1,124 @@
+<div class="col-lg-8 entries blog margin-auto" *ngIf="blog && experts.length !== 0">
+  <article class="entry entry-single">
+    <div class="entry-img text-center">
+      <img src="{{ blog.coverPhotoUrl }}" class="img-fluid" />
+    </div>
+
+    <h2 class="entry-title">
+      <a href="#">{{ blog.title }}</a>
+    </h2>
+
+    <div class="entry-meta">
+      <div class="card-text no-margin">
+        <div class="entry-img">
+          <img src="{{ getExpert(blog.userId).profilePhotoUrl }}" class="img-fluid" style="max-width: 60px;" />
+        </div>
+        <span>{{getTime(blog.createDate)}}</span>
+        <span class="card-text-colored">
+          {{ getExpert(blog.userId).firstName }}
+        </span>
+      </div>
+    </div>
+
+    <div class="entry-content">
+      <div [innerHTML]="blog.content" class="font-16"></div>
+    </div>
+
+    <div class="entry-footer">
+      <i class="bi bi-tags green-tags"></i>
+      <ul class="tags" *ngFor="let tag of blog.tags">
+        <li>
+          <a href="#" class="green-btn-tags">{{ tag }}</a>
+        </li>
+      </ul>
+    </div>
+  </article>
+  <!-- End blog entry -->
+
+  <div class="blog-author d-flex align-items-center">
+    <!-- <img src="{{ blog.author.imgUrl }}" class="rounded-circle float-left" /> -->
+    <div>
+      <h4>
+        <!-- WRITTEN BY<span>&nbsp;{{ blog.author.firstName }} {{ blog.author.lastName }}</span> -->
+      </h4>
+      <div class="social-links">
+        <a href="https://twitters.com/#"><i class="fa fa-twitter"></i></a>
+        <a href="https://facebook.com/#"><i class="fa fa-facebook"></i></a>
+        <a href="https://instagram.com/#"><i class="fa fa-instagram"></i></a>
+      </div>
+      <p class="comment-text d-none">
+        - “Music was my dream since I was a kid. I started producing music since
+        a young age.”
+      </p>
+    </div>
+  </div>
+  <!-- End blog author bio -->
+
+  <div class="blog-comments d-none">
+    <h4 class="comments-count">Comments (5)</h4>
+
+    <!-- <div id="comment-2" class="comment" *ngFor="let comment of blog.comments">
+      <div class="d-flex">
+        <div class="comment-img rounded-circle">
+          <img src="{{ comment.author.imgUrl }}" class="rounded-circle" />
+        </div>
+        <div>
+          <h5>
+            <a href="">{{ comment.author.firstName }} {{ comment.author.lastName }}</a>
+            <a href="#" class="reply"><i class="bi bi-reply-fill"></i> Reply</a>
+          </h5>
+          <time datetime="2020-01-01">{{ comment.date }}</time>
+          <p class="comment-text">
+            {{ comment.text }}
+          </p>
+        </div>
+      </div>
+
+      <div id="comment-reply-1" class="comment comment-reply" *ngFor="let reply1 of comment.comments">
+        <div class="d-flex">
+          <div class="comment-img rounded-circle">
+            <img src="{{ reply1.author.imgUrl }}" class="rounded-circle" />
+          </div>
+          <div>
+            <h5>
+              <a href="">{{ reply1.author.firstName }} {{ reply1.author.lastName }}</a>
+              <a href="#" class="reply"><i class="bi bi-reply-fill"></i> Reply</a>
+            </h5>
+            <time datetime="2020-01-01">{{ reply1.date }}</time>
+            <p class="comment-text">
+              {{ reply1.text }}
+            </p>
+          </div>
+        </div>
+
+        <div id="comment-reply-2" class="comment comment-reply" *ngFor="let reply2 of reply1.comments">
+          <div class="d-flex">
+            <div class="comment-img rounded-circle">
+              <img src="{{ reply2.author.imgUrl }}" class="rounded-circle" />
+            </div>
+            <div>
+              <h5>
+                <a href="">{{ reply2.author.firstName }} {{ reply2.author.lastName }}</a>
+                <a href="#" class="reply"><i class="bi bi-reply-fill"></i> Reply</a>
+              </h5>
+              <time datetime="2020-01-01">{{ reply2.date }}</time>
+              <p class="comment-text">
+                {{ reply2.text }}
+              </p>
+            </div>
+          </div>
+        </div>
+        End comment reply #2
+      </div>
+      End comment reply #1
+    </div> -->
+    <!-- End comment #2-->
+  </div>
+  <!-- End blog comments -->
+</div>
+
+<!-- <textarea
+name="comment"
+class="form-control"
+placeholder="Your Comment*"
+></textarea> -->

@@ -1,0 +1,453 @@
+<div class="row profilePage">
+  <!-- Row -->
+  <div class="headerContent card row col-lg-12">
+    <div class="card-body col-lg-4">
+      <div class="m-t-30 text-center">
+        <input type="file" accept="image/*" #file class="d-none" (change)="uploadFile($event)" />
+        <img [src]="aboutData.profilePhotoUrl" *ngIf="aboutData.profilePhotoUrl" class="profileImg"
+          (click)="editingProfile && file.click()" style="margin-left: 30px; margin-right: 20px" />
+        <div *ngIf="!aboutData.profilePhotoUrl" class="avatarProfile" style="margin-left: 30px; margin-right: 20px"
+          (click)="editingProfile && file.click()">
+          {{ aboutData.firstName.charAt(0) }}
+          {{ aboutData.lastName.charAt(0) }}
+        </div>
+      </div>
+    </div>
+
+    <div class="card-body col-lg-8">
+      <div class="row" style="margin-bottom: 20px">
+        <h1>{{ aboutData.profession }}</h1>
+        <a href="#" class="btn">
+          <img src="../../assets/images/facebook.svg" />
+        </a>
+        <a href="#" class="btn">
+          <img src="../../assets/images/instagram.svg" />
+        </a>
+        <a href="#" class="btn">
+          <img src="../../assets/images/twitter.svg" />
+        </a>
+      </div>
+      <div class="row icon-data-container">
+        <div class="col-sm-12 col-md-2 m-b-10 icon-data">
+          <img src="../../assets/images/smile.svg" />
+          <span>100% response rate</span>
+        </div>
+        <div class="col-sm-12 col-md-2 m-b-10 icon-data">
+          <img src="../../assets/images/users.svg" />
+          <span>129 followers</span>
+        </div>
+        <div class="col-sm-12 col-md-2 m-b-10 icon-data">
+          <img src="../../assets/images/phone.svg" />
+          <span>100 min calls</span>
+        </div>
+        <div class="col-sm-12 col-md-2 m-b-10 icon-data">
+          <img src="../../assets/images/check.svg" />
+          <span style="margin-top: 10px; line-height: 15px">26 questions answered</span>
+        </div>
+        <div class="col-sm-12 col-md-2 m-b-10 icon-data">
+          <img src="../../assets/images/event.svg" />
+          <span>13 events hosted</span>
+        </div>
+        <div class="col-sm-12 col-md-2 m-b-10 icon-data">
+          <img src="../../assets/images/stock.svg" />
+          <span>$24bn market size</span>
+        </div>
+      </div>
+      <button *ngIf="!editingProfile && myProfile" type="button" class="btn primaryBtn"
+        (click)="setEditingProfile(true)">
+        <img src="../../assets/images/Vector.svg" class="imgMargin" /> edit
+        profile
+      </button>
+      <button *ngIf="!myProfile && hired" type="button" class="btn primaryBtn" [routerLink]="['/experts/hire', userId]">
+        <img src="../../assets/images/Vector.svg" /> hire
+        {{ aboutData.firstName }}
+      </button>
+      <button *ngIf="editingProfile" type="button" class="btn secondaryWhite" (click)="setEditingProfile(false)">
+        <img src="../../assets/images/flower-white.svg" class="imgMargin" />
+        cancel
+      </button>
+      <button *ngIf="editingProfile" type="button" class="btn primaryBtn" (click)="saveProfile()">
+        <img src="../../assets/images/Vector.svg" class="imgMargin" /> save
+        changes
+      </button>
+    </div>
+  </div>
+
+  <!-- Row -->
+  <!-- Column -->
+  <div class="col-lg-4 col-xlg-3 col-md-5">
+    <div class="card">
+      <div class="card-body underPictureData">
+        <h1 *ngIf="!editingProfile" class="name">
+          {{ aboutData.firstName }} {{ aboutData.lastName }}
+          <img src="../../assets/images/verified-check.svg" />
+        </h1>
+        <h1 *ngIf="editingProfile">
+          <input type="text" class="name editBackground" [(ngModel)]="editingData.firstName" name="name"
+            [size]="editingData.firstName.length + 1" />
+          <input type="text" class="name editBackground" [(ngModel)]="editingData.lastName" name="lastName"
+            [size]="editingData.lastName.length + 1" />
+          <img src="../../assets/images/verified-check.svg" />
+        </h1>
+        <p *ngIf="!editingProfile" class="bio">{{ aboutData.quote }}</p>
+        <p *ngIf="editingProfile; editBackground" class="bio">
+          <textarea type="text" class="bio editBackground editTextarea" [(ngModel)]="editingData.quote"
+            name="bio"></textarea>
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- Column -->
+  <!-- Column -->
+  <div class="col-lg-8 col-xlg-9 col-md-7">
+    <div class="card mainContent">
+      <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+        <li [ngbNavItem]="1">
+          <a ngbNavLink>About</a>
+          <ng-template ngbNavContent>
+            <div class="aboutCard">
+              <div>
+                <h1>About you</h1>
+                <p *ngIf="!editingProfile">{{ aboutData.about }}</p>
+                <textarea *ngIf="editingProfile" type="text" class="editBackground editTextarea"
+                  [(ngModel)]="editingData.about" name="aboutYou" rows="5"></textarea>
+              </div>
+              <div class="tagline">
+                <h1>Tagline</h1>
+                <div class="row">
+                  <div class="col-md-2">
+                    <img src="../../assets/images/quote.svg" />
+                  </div>
+                  <div class="col-md-10">
+                    <span *ngIf="!editingProfile" class="taglineText">{{
+                      aboutData.tagline
+                      }}</span>
+                    <textarea *ngIf="editingProfile" type="text" class="editBackground editTextarea taglineText"
+                      [(ngModel)]="editingData.tagline" name="tagline" rows="2"></textarea>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h1>What you bring to the table</h1>
+                <ul *ngFor="let ability of aboutData.bringsToTable">
+                  <li>{{ ability }}</li>
+                </ul>
+              </div>
+              <div>
+                <h1>Areas of expertise</h1>
+                <span *ngIf="!editingProfile">
+                  <span *ngFor="let expertise of aboutData.expertise">
+                    <span class="badge badge-primary">{{ expertise }}</span>
+                  </span>
+                </span>
+                <div [formGroup]="form" *ngIf="editingProfile">
+                  <div class="editor-tag">
+                    <span class="badge" *ngFor="let tag of editingData.expertise">
+                      {{ tag }}
+                      <span class="remove-tag" (click)="removeTag(tag)">×</span>
+                    </span>
+                    <input placeholder="Add more tags separated by comma" #tagInput type="text" class="input-tag"
+                      (keyup)="onKeyUp($event)" (keydown)="onKeyDown($event)" size="32" formControlName="expertise" />
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h1>Blueprint</h1>
+                <p>
+                  In his blueprint, Arnon shares his story on how he became a
+                  music producer starting from zero.
+                </p>
+                <a href="#" class="btn downloadBlueprint">download blueprint</a>
+                <a href="#" class="btn seeBlueprint">see blueprint page</a>
+              </div>
+              <!-- <div class="certificationsCard">
+                <h1>Certifications</h1>
+                <div class="row" style="margin-top: 0">
+                  <div class="col-md-6 p-r-0">
+                    <img class="card-img-top img-responsive" src="../../assets/images/big/img3.jpg"
+                      alt="Card image cap" />
+                  </div>
+                  <div class="col-md-6">
+                    <div class="">
+                      <h1 class="card-title">
+                        Lorem ipsum dolor sit lorem ipsum
+                      </h1>
+
+                      <p class="card-text">Issued by Authority</p>
+                      <p class="card-date">Sep 2016</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="publicationsCard">
+                <h1>Publications</h1>
+                <div class="row" style="margin-top: 0">
+                  <div class="col-md-6 p-r-0">
+                    <img class="card-img-top img-responsive" src="../../assets/images/big/img3.jpg"
+                      alt="Card image cap" />
+                  </div>
+                  <div class="col-md-6">
+                    <div class="card-body">
+                      <p class="badge badge-primary">Music album</p>
+                      <h1 class="card-title">Colors</h1>
+                      <p class="card-text">Issued by Authority</p>
+                      <p>Sep 2016</p>
+                    </div>
+                  </div>
+                </div>
+                <button *ngIf="editingProfile" type="button" class="btn secondaryBlack"
+                  (click)="setEditingProfile(false)">
+                  <img src="../../assets/images/Vector.svg" /> cancel
+                </button>
+                <button *ngIf="editingProfile" type="button" class="btn primaryBtn" (click)="saveProfile()">
+                  <img src="../../assets/images/Vector.svg" /> save changes
+                </button>
+              </div> -->
+              <span class="nextTab">Next: <a (click)="setActiveTab(2)">Blogs</a></span>
+            </div>
+          </ng-template>
+        </li>
+        <li [ngbNavItem]="2" [ngClass]="{ 'd-none': userRole !== 'EXPERT' }">
+          <a ngbNavLink>Blogs</a>
+          <ng-template ngbNavContent>
+            <div class="blogsCard">
+              <div class="" *ngIf="myProfile">
+                <h1>Write about your experiences</h1>
+                <p>
+                  If there is no courses by this expert yet, the button should
+                  say CREATE YOUR FIRST POST
+                </p>
+                <button type="button" class="btn primaryBtn" [routerLink]="['/blog/create']">
+                  <img src="../../assets/images/Vector.svg" /> create a new post
+                </button>
+              </div>
+              <div>
+                <h1>Your blogs</h1>
+                <div *ngIf="expertBlogs">
+                  <div class="row cards" style="margin-top: 0" *ngFor="let blog of expertBlogs">
+                    <div class="col-md-3 p-r-0">
+                      <img class="card-img-top img-responsive" src="{{ blog.coverPhotoUrl }}" alt="Card image cap" />
+                    </div>
+                    <div class="col-md-9">
+                      <div class="card-body">
+                        <h1 class="card-title">
+                          {{ blog.title }}
+                        </h1>
+                        <p class="card-text">
+                          {{ getTime(blog.createDate) }} by
+                          <span class="card-text-colored">{{
+                            aboutData.firstName
+                            }}</span>
+                        </p>
+                        <span>
+                          <p class="badge badge-primary" *ngFor="let tag of blog.tags">
+                            {{ tag }}
+                          </p>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div *ngIf="!expertBlogs">There are no blogs</div>
+              </div>
+              <div>
+                <span class="previousTab">Previous: <a (click)="setActiveTab(1)">About</a></span>
+                <span class="nextTab">Next: <a (click)="setActiveTab(3)">Events</a></span>
+              </div>
+            </div>
+          </ng-template>
+        </li>
+        <!-- <li [ngbNavItem]="3" [ngClass]="{'d-none': userRole !== 'EXPERT'}">
+          <a ngbNavLink>Events</a>
+          <ng-template ngbNavContent>
+            <div class="eventsCard">
+              <div class="">
+                <h1>Talk about your experiences</h1>
+                <p>
+                  If there is no courses by this expert yet, the button should
+                  say HOST YOUR FIRST EVENT
+                </p>
+                <button type="button" class="btn primaryBtn" (click)="saveProfile()">
+                  <img src="../../assets/images/Vector.svg" /> host another event
+                </button>
+              </div>
+              <div>
+                <h1>Your events</h1>
+                <div class="row cards">
+                  <div class="col-md-4 p-r-0">
+                    <img class="card-img-top img-responsive" src="../../assets/images/image2.png"
+                      alt="Card image cap" />
+                  </div>
+                  <div class="col-md-8 b-yellow">
+                    <div class="card-body">
+                      <h1 class="card-title">
+                        Discovering new music through painting
+                      </h1>
+                      <p class="card-hosts">
+                        with Arnon, Greta Bajrami and Mary Elliot
+                      </p>
+                      <p class="card-date">Sat, Mar 13, 2021 7:30 PM CET</p>
+                      <span>
+                        <p class="badge badge-primary">webinar</p>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="row cards">
+                  <div class="col-md-4 p-r-0">
+                    <img class="card-img-top img-responsive" src="../../assets/images/image2.png"
+                      alt="Card image cap" />
+                  </div>
+                  <div class="col-md-8 b-teal">
+                    <div class="card-body">
+                      <h1 class="card-title">What is rootless?</h1>
+                      <p class="card-hosts">
+                        with Arnon, Greta Bajrami and Mary Elliot
+                      </p>
+                      <p class="card-date">Sat, Mar 13, 2021 7:30 PM CET</p>
+                      <span>
+                        <p class="badge badge-yellow">webinar</p>
+                      </span>
+                      <p class="card-pricing">
+                        <b>$20</b> one time fee or <b>free</b> with Rootless Me
+                        membership
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="row cards">
+                  <div class="col-md-4 p-r-0">
+                    <img class="card-img-top img-responsive" src="../../assets/images/image2.png"
+                      alt="Card image cap" />
+                  </div>
+                  <div class="col-md-8 b-purple">
+                    <div class="card-body">
+                      <h1 class="card-title">A rootless guide to success</h1>
+                      <p class="card-hosts">
+                        with Arnon, Greta Bajrami and Mary Elliot
+                      </p>
+                      <p class="card-date">Sat, Mar 13, 2021 7:30 PM CET</p>
+                      <span>
+                        <p class="badge badge-teal">webinar</p>
+                      </span>
+                      <p class="card-pricing">
+                        <b>$20</b> one time fee or <b>free</b> with Rootless Me
+                        membership
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <span class="previousTab">Previous: <a (click)="setActiveTab(2)">Blogs</a></span>
+                <span class="nextTab">Next: <a (click)="setActiveTab(4)">Courses</a></span>
+              </div>
+            </div>
+          </ng-template>
+        </li> -->
+        <li [ngbNavItem]="4" [ngClass]="{ 'd-none': userRole !== 'EXPERT' }">
+          <a ngbNavLink>Courses</a>
+          <ng-template ngbNavContent>
+            <div class="coursesCard">
+              <div class="" *ngIf="myProfile">
+                <h1>Teach your knowledge</h1>
+                <p>
+                  If there is no courses by this expert yet, the button should
+                  say CREATE YOUR FIRST COURSE
+                </p>
+                <button type="button" class="btn primaryBtn" [routerLink]="['/courses/create']">
+                  <img src="../../assets/images/Vector.svg" /> create a new
+                  course
+                </button>
+              </div>
+              <div *ngIf="expertCourses.length !== 0">
+                <h1>Your courses</h1>
+                <div *ngIf="expertCourses">
+                  <div class="row cards" *ngFor="let course of expertCourses">
+                    <div class="col-md-4 p-r-0 p-l-0">
+                      <img class="card-img-top img-responsive" src="{{ course.imageUrl }}" alt="Card image cap" />
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h1 class="card-title">{{ course.title }}</h1>
+                        <p class="card-hosts">
+                          A course by {{ aboutData.firstName }}
+                        </p>
+                        <span>
+                          <p class="badge badge-primary" *ngFor="let topic of course.topics">
+                            {{ topic }}
+                          </p>
+                        </span>
+                        <p class="card-pricing">
+                          <b>$20</b> one time fee or <b>free</b> with Rootless
+                          Me membership
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div *ngIf="expertCourses.length === 0">no courses</div>
+              <div>
+                <span class="previousTab">Previous: <a (click)="setActiveTab(3)">Events</a></span>
+                <span class="nextTab">Next: <a (click)="setActiveTab(5)">Q&A</a></span>
+              </div>
+            </div>
+          </ng-template>
+        </li>
+        <!-- <li [ngbNavItem]="5">
+          <a ngbNavLink>Community</a>
+          <ng-template ngbNavContent>
+            <div class="comunityCard">
+              <div class="">
+                <h1>Create your own Rootless Community</h1>
+                <p>
+                  Ask and Respond to daily Q&A to create your own Rootless
+                  Community.
+                </p>
+                <button type="button" class="btn primaryBtn" (click)="saveProfile()">
+                  <img src="../../assets/images/Vector.svg" /> discuss with rootless
+                  members
+                </button>
+              </div>
+              <div>
+                <div style="display: flex">
+                  <h1>All discussions</h1>
+                  <ng-multiselect-dropdown [placeholder]="'Filter by type'" [data]="discussionsType"
+                    [(ngModel)]="selectedDiscussions" name="selectedDiscussions" [settings]="dropdownSettings"
+                    (onSelect)="onItemSelect($event)" (onSelectAll)="onSelectAll($event)"
+                    style="margin-left: auto; width: 25%">
+                  </ng-multiselect-dropdown>
+                </div>
+                <div class="row cards">
+                  <div style="display: flex">
+                    <h1 class="card-title">
+                      How important is music in your life?
+                    </h1>
+                    <p class="badge badge-yellow">question raised</p>
+                  </div>
+                  <p class="card-text">
+                    3 days ago by <span class="card-text-colored">Arnon</span>
+                  </p>
+                  <span>
+                    <p class="badge badge-primary">Music</p>
+                    <p class="badge badge-primary">Art</p>
+                  </span>
+                </div>
+                <button type="button" class="btn secondaryBlack" (click)="setEditingProfile(false)">
+                  <img src="../../assets/images/Vector.svg" /> load more
+                </button>
+              </div>
+              <div>
+                <span class="previousTab">Previous: <a (click)="setActiveTab(4)">Courses</a></span>
+              </div>
+            </div>
+          </ng-template>
+        </li> -->
+      </ul>
+
+      <div [ngbNavOutlet]="nav" class="mt-2"></div>
+    </div>
+  </div>
+  <!-- Column -->
+</div>

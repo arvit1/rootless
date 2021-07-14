@@ -1,0 +1,345 @@
+.coursesView {
+  padding-top: 20px;
+
+  .backPrint {
+    cursor: pointer;
+  }
+
+  .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
+
+  .top {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+  }
+
+  /* The container */
+  .container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  /* Hide the browser's default checkbox */
+  .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 30px;
+  }
+
+  /* On mouse-over, add a grey background color */
+  .container:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+
+  /* When the checkbox is checked, add a blue background */
+  .container input:checked ~ .checkmark {
+    background-color: #6faeac;
+  }
+
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  /* Show the checkmark when checked */
+  .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+  /* Style the checkmark/indicator */
+  .container .checkmark:after {
+    left: 9px;
+    top: 7px;
+    width: 7px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  .time {
+    b {
+      font-size: 13px;
+      margin-left: 5px;
+    }
+  }
+
+  .videoDiv li {
+    border-bottom: 1px solid #6faeac;
+    padding: 15px 10px;
+    cursor: pointer;
+  }
+
+  .title {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 40px;
+    color: #111111;
+  }
+
+  .tabs {
+    .title,
+    .nav-tabs,
+    .mt-2 {
+      padding: 0 30px;
+    }
+  }
+
+  .nav-tabs {
+    border-bottom: none;
+    margin-top: 50px;
+
+    .nav-link {
+      padding: 0;
+      margin: 0.5rem 1rem;
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 26px;
+      color: #0e0e10;
+    }
+
+    .nav-link.active {
+      color: #6faeac;
+      border: none;
+      border-bottom: 5px solid #6faeac;
+    }
+  }
+
+  .aboutCard {
+    div {
+      p,
+      textarea {
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 100;
+        font-size: 24px;
+        line-height: 30px;
+        color: #111111 !important;
+      }
+
+      ul li {
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 100;
+        font-size: 24px;
+        line-height: 30px;
+        color: #111111 !important;
+        margin-bottom: 15px;
+      }
+
+      .downloadBlueprint {
+        background: #ffffff;
+        border: 2px solid #111111;
+        padding: 10px 24px;
+        box-sizing: border-box;
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 24px;
+        color: #111111 !important;
+        margin-right: 10px;
+      }
+
+      .seeBlueprint {
+        background: #88bcba;
+        border: 2px solid #88bcba;
+        padding: 10px 24px;
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 24px;
+        color: #111111 !important;
+      }
+
+      .nav-link {
+        padding: 0;
+        margin: 0.5rem 1rem;
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 26px;
+        color: #0e0e10;
+        border: none;
+
+        .remove-tag {
+          cursor: pointer;
+        }
+
+        & input {
+          margin: 0;
+          padding-left: 5px;
+          border: none;
+          outline: none;
+          border-radius: 5px;
+          width: 100%;
+        }
+      }
+    }
+
+    .tagline {
+      .col-md-2 {
+        margin-top: 0px;
+      }
+
+      .col-md-10 {
+        margin-left: -55px;
+
+        .taglineText {
+          font-family: Merriweather;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 48px;
+          line-height: 50px;
+          color: #111111 !important;
+        }
+      }
+    }
+
+    .certificationsCard,
+    .publicationsCard {
+      .card-title {
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 26px;
+        color: #111111 !important;
+      }
+
+      .card-text {
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+        color: #88bcba;
+      }
+
+      .card-date {
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 100;
+        font-size: 16px;
+        line-height: 24px;
+        color: #111111 !important;
+      }
+    }
+  }
+
+  .contentTitle {
+    color: #6faeac;
+    transform: rotate(-270deg);
+    font-size: 25px;
+    text-transform: lowercase;
+    white-space: nowrap;
+    margin-top: 100%;
+    text-decoration-line: underline;
+    font-weight: bold;
+  }
+
+  .arrow-green {
+    margin: 20px 10px -20px 0;
+    cursor: pointer;
+  }
+
+  .tab-content {
+    padding: 20px 40px !important;
+  }
+
+  .current-video {
+    background-color: #c2ebe9;
+  }
+  .checkboxContainer {
+    margin: 0;
+    width: auto;
+  }
+  .no-padding {
+    padding: 0;
+  }
+  .arrow-up {
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    margin-left: auto;
+    margin-right: 30px;
+  }
+
+  .arrow-Greenn {
+    border-bottom: 15px solid #6faeac;
+  }
+
+  .green-btn {
+    width: 100%;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    background: #6faeac;
+    color: white;
+    border: none;
+    text-align: left;
+    text-transform: uppercase;
+  }
+  .card-title {
+    padding: 10px 10px 0 10px;
+    font-size: 24px;
+    font-weight: 100;
+  }
+  .badge {
+    background: #c2ebe9;
+    border-radius: 4px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 24px;
+    line-height: 30px;
+    color: #111111 !important;
+    margin: 0 10px 10px 0;
+    padding: 5px 15px;
+  }
+  .display-none {
+    display: none !important;
+  }
+}
+@media (max-width: 900px) {
+  .courseContent {
+    display: none !important;
+  }
+}

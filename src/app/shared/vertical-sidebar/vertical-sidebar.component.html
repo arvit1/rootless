@@ -1,0 +1,136 @@
+<nav class="sidebar-nav">
+  <ul id="sidebarnav">
+    <!-- User Profile-->
+    <li>
+      <div class="user-profile d-flex no-block m-t-20">
+        <div
+          class="dropdown user-content hide-menu overflow-inherit"
+          ngbDropdown
+          placement="bottom-right"
+        >
+          <a
+            ngbDropdownToggle
+            href="javascript:void(0)"
+            class="dropdown-toggle"
+            id="Userdd"
+            role="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            <h5 class="m-b-0 user-name font-medium">
+              {{ firstName }} {{ lastName }}
+              <i class="fa fa-angle-down"></i>
+            </h5>
+            <span class="op-5 user-email">{{ email }} </span>
+          </a>
+          <div
+            class="dropdown-menu dropdown-menu-right menuRight menuRightMobile"
+            aria-labelledby="Userdd"
+            ngbDropdownMenu
+          >
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" (click)="goToMyProfile()">
+              <img
+                src="{{
+                  profilePic !== '' ? profilePic : 'assets/images/menuIcons.svg'
+                }}"
+                alt="user"
+                class="rounded-circle m-r-15 m-l-5"
+                width="{{ profilePic !== '' ? 37 : '31' }}"
+              />
+
+              Profile</a
+            >
+            <div class="dropdown-divider"></div>
+            <!-- <a class="dropdown-item" [routerLink]="['/messages']">
+              <img
+                src="assets/images/message.svg"
+                alt="user"
+                class="m-r-15 m-l-5"
+                width="31"
+              />
+              Messages</a
+            >
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" [routerLink]="['/notifications']">
+              <img
+                src="assets/images/bellIcon.svg"
+                alt="user"
+                class="m-r-15 m-l-5"
+                width="27"
+              />
+              <p class="mb-0">Notifications</p></a
+            >
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" [routerLink]="['/saved-content']">
+              <img
+                src="assets/images/pinIcon.svg"
+                alt="user"
+                class="m-r-15 m-l-5"
+                width="21"
+              />Saved content</a
+            >
+            <div class="dropdown-divider"></div> -->
+            <a class="dropdown-item" [routerLink]="['/settings']">
+              <img
+                src="assets/images/settingsIcon.svg"
+                alt="user"
+                class="m-r-15"
+                width="29"
+              />
+              Settings</a
+            >
+            <div class="dropdown-divider"></div>
+            <a
+              class="dropdown-item"
+              href="javascript:void(0)"
+              (click)="logout()"
+            >
+              <img
+                src="assets/images/signout.svg"
+                alt="user"
+                class="m-r-15 m-l-5"
+                width="25"
+              />
+              Sign out</a
+            >
+            <div class="dropdown-divider"></div>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a
+        class="nav-link sidebar-link waves-effect waves-dark black-color"
+        href="/blueprints"
+      >
+        Blueprints
+      </a>
+    </li>
+    <li class="nav-item">
+      <a
+        class="nav-link sidebar-link waves-effect waves-dark black-color"
+        href="/experts"
+      >
+        Experts
+      </a>
+    </li>
+    <li class="nav-item">
+      <a
+        class="nav-link sidebar-link waves-effect waves-dark black-color"
+        href="/courses"
+      >
+        Courses
+      </a>
+    </li>
+    <!-- <li class="nav-item">
+      <a
+        class="nav-link sidebar-link waves-effect waves-dark black-color"
+        href="javascript:void(0)"
+      >
+        Community
+      </a>
+    </li> -->
+  </ul>
+</nav>

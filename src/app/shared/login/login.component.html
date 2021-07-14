@@ -1,0 +1,207 @@
+<div class="container loginPage">
+  <div class="row">
+    <div class="col-lg-6 col-sm-12">
+      <h1 class="font-55 black-color no-margin" style="width: 50%">
+        Welcome back
+      </h1>
+      <p class="margin-b-t font-25 black-color no-margin">enjoy your jurney</p>
+    </div>
+    <div class="col-lg-6 col-sm-12">
+      <div [ngClass]="{ 'd-none': showRecoverform }">
+        <!-- <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 m-t-10 text-center">
+            <div class="social">
+              <a href="javascript:void(0)" class="btn btn-google" data-toggle="tooltip" title=""
+                data-original-title="Login with Google">
+              </a>
+              <a href="javascript:void(0)" class="btn btn-facebook mr-2" data-toggle="tooltip" title=""
+                data-original-title="Login with Facebook"></a>
+              <a href="javascript:void(0)" class="btn btn-twitter" data-toggle="tooltip" title=""
+                data-original-title="Login with Twitter"></a>
+            </div>
+          </div>
+        </div>
+        <p class="padding-b-t-40 font-25 black-color text-center no-margin">
+          or
+        </p> -->
+        <!-- Form -->
+        <div class="row m-t-5">
+          <div class="col-12">
+            <form
+              class="form-horizontal m-t-20"
+              [formGroup]="loginForm"
+              (ngSubmit)="onSubmit($event)"
+            >
+              <div class="form-group">
+                <label id="Email" class="control-label col-form-label"
+                  >Email</label
+                >
+                <input
+                  type="text"
+                  formControlName="email"
+                  [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+                  class="form-control"
+                  placeholder="Enter your email"
+                  aria-label="email"
+                  aria-describedby="basic-addon1"
+                />
+              </div>
+
+              <div class="form-group">
+                <label id="password" class="control-label col-form-label"
+                  >PASSWORD</label
+                >
+                <input
+                  type="password"
+                  class="form-control"
+                  formControlName="password"
+                  [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+                  placeholder="*********"
+                  aria-label="password"
+                  aria-describedby="basic-addon1"
+                />
+                <div
+                  *ngIf="submitted && f.password.errors"
+                  class="invalid-feedback"
+                >
+                  <div *ngIf="f.password.errors.required">
+                    Password is required
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-12">
+                  <div class="custom-control custom-checkbox d-flex">
+                    <input
+                      type="checkbox"
+                      class="custom-control-input"
+                      id="customCheck1"
+                    />
+                    <label
+                      class="custom-control-label font-14"
+                      id="customCheck1"
+                      >Remember me</label
+                    >
+                    <a
+                      (click)="showRecoverForm()"
+                      href="javascript:void(0)"
+                      id="to-recover"
+                      class="text-dark ml-auto font-14 purple-color"
+                      >Forgot password?</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="form-group text-center">
+                <div class="col-xs-12 p-b-20">
+                  <button
+                    [disabled]="loading"
+                    class="btn yellowBlack-btn padding-20"
+                  >
+                    <img
+                      src="../../../assets/images/flowerblack.png"
+                      style="width: 30px; margin-right: 10px"
+                    />login
+                  </button>
+                  <img
+                    *ngIf="loading"
+                    class="pl-2"
+                    src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="
+                  />
+                </div>
+                <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+              </div>
+              <div class="form-group m-b-0 m-t-10">
+                <div class="col-sm-12 text-center">
+                  No account?
+                  <a [routerLink]="['/signup']" class="text-info m-l-5"
+                    ><b>Join us now</b></a
+                  >
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div id="recoverform" [ngClass]="{ 'd-block': showRecoverform }">
+        <div class="row m-t-20">
+          <!-- Form -->
+          <form class="col-12" action="../../../../index.html">
+            <!-- email -->
+            <div class="form-group row">
+              <div class="col-12">
+                <div class="form-group">
+                  <label id="inputemail" class="control-label col-form-label"
+                    >Email</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter your email"
+                    aria-label="email"
+                    aria-describedby="basic-addon1"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- pwd -->
+            <div class="form-group text-center">
+              <div class="col-xs-12 p-b-20">
+                <button
+                  class="btn yellowBlack-btn padding-20"
+                  href="/dashboard/dashboard1"
+                >
+                  <img
+                    src="../../../assets/images/flowerblack.png"
+                    style="width: 30px; margin-right: 10px"
+                  />
+                  recover my password
+                </button>
+              </div>
+            </div>
+            <div class="form-group m-b-0 m-t-10">
+              <div class="col-sm-12 text-center">
+                Nevermind, I remembered.
+                <a (click)="showRecoverForm()" class="text-info m-l-5"
+                  ><b>Let me login </b></a
+                >
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div id="recoverformSent">
+        <div class="row m-t-20">
+          <!-- Form -->
+          <form class="col-12" action="../../../../index.html">
+            <!-- email -->
+            <div class="form-group row">
+              <div class="col-12">
+                <p class="margin-b-t font-25 black-color no-margin">
+                  If we have an account with your email, we have sent a recovery
+                  link there.
+                </p>
+              </div>
+            </div>
+            <!-- pwd -->
+            <div class="form-group text-center">
+              <div class="col-xs-12 p-b-20">
+                <button
+                  class="btn yellowBlack-btn padding-20"
+                  [routerLink]="['/login']"
+                >
+                  go to login
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<img
+  src="../../../assets/images/yellowFlower.png"
+  class="yellowFlower"
+  style="width: 30%; bottom: -50px; left: 0; position: absolute"
+/>

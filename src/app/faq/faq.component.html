@@ -1,0 +1,1376 @@
+<div id="faq">
+  <div id="header">
+    <div class="input d-flex">
+      <div class="search-icon">
+        <img src="assets/images/search.png" />
+      </div>
+      <input
+        [(ngModel)]="search"
+        placeholder="Search something"
+        (keyup)="searchFunction($event)"
+        name="search"
+      />
+    </div>
+  </div>
+
+  <div class="divFaq">
+    <div class="col-lg-11 col-sm-12" style="margin: 70px 0">
+      <h1 class="font-55 black-color no-margin col-lg-8">FAQs</h1>
+    </div>
+    <div class="col-lg-12">
+      <p class="titleFaq col-lg-12">Getting started</p>
+      <ngb-accordion
+        #a="ngbAccordion"
+        activeIds="custom-panel-1"
+        class="col-lg-12"
+      >
+        <ngb-panel
+          [disabled]="disabled"
+          [cardClass]="disabled ? 'disabled' : ''"
+        >
+          <ng-template ngbPanelHeader>
+            <div class="d-flex align-items-center justify-content-between">
+              <button
+                ngbPanelToggle
+                class="btn btn-link container-fluid text-left pl-0 d-flex"
+              >
+                <img
+                  src="assets/images/arrowFaq.svg"
+                  width="20"
+                  class="titleImg"
+                />
+                <p class="titleP">What is Rootless Me?</p>
+              </button>
+            </div>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+            terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
+            skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+            Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+            single-origin coffee nulla assumenda shoreditch et. Nihil anim
+            keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+            sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+            occaecat craft beer farm-to-table, raw denim aesthetic synth
+            nesciunt you probably haven't heard of them accusamus labore
+            sustainable VHS.
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel
+          [disabled]="disabled"
+          [cardClass]="disabled ? 'disabled' : ''"
+        >
+          <ng-template ngbPanelHeader>
+            <div class="d-flex align-items-center justify-content-between">
+              <button
+                ngbPanelToggle
+                class="btn btn-link container-fluid text-left pl-0 d-flex"
+              >
+                <img
+                  src="assets/images/arrowFaq.svg"
+                  width="20"
+                  class="titleImg"
+                />
+                <p class="titleP">
+                  What are the Benefits of Rootless Community?
+                </p>
+              </button>
+            </div>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+            terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
+            skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+            Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+            single-origin coffee nulla assumenda shoreditch et. Nihil anim
+            keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+            sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+            occaecat craft beer farm-to-table, raw denim aesthetic synth
+            nesciunt you probably haven't heard of them accusamus labore
+            sustainable VHS.
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel
+          [disabled]="disabled"
+          [cardClass]="disabled ? 'disabled' : ''"
+        >
+          <ng-template ngbPanelHeader>
+            <div class="d-flex align-items-center justify-content-between">
+              <button
+                ngbPanelToggle
+                class="btn btn-link container-fluid text-left pl-0 d-flex"
+              >
+                <img
+                  src="assets/images/arrowFaq.svg"
+                  width="20"
+                  class="titleImg"
+                />
+                <p class="titleP">What membership is right for you?</p>
+              </button>
+            </div>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            Head on over to our
+            <span
+              style="text-decoration: underline; cursor: pointer"
+              [routerLink]="['/pricing']"
+              >Membership Page</span
+            >
+            to compare and find out the best membership for you, including a
+            Totally Free Membership.
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel
+          [disabled]="disabled"
+          [cardClass]="disabled ? 'disabled' : ''"
+        >
+          <ng-template ngbPanelHeader>
+            <div class="d-flex align-items-center justify-content-between">
+              <button
+                ngbPanelToggle
+                class="btn btn-link container-fluid text-left pl-0 d-flex"
+              >
+                <img
+                  src="assets/images/arrowFaq.svg"
+                  width="20"
+                  class="titleImg"
+                />
+                <p class="titleP">How does the 7 day free trial work?</p>
+              </button>
+            </div>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            If you haven't been a <b>Rootless Me</b> member in the last 12
+            months, you can sign up for a free trial. To sign up for the
+            <b>Rootless Me</b> free trial, your account must have a current,
+            valid credit card. Payment options, such as; checking accounts, or
+            pre-paid credit cards can't be used. <br />
+            To sign up for the
+            <b>Rootless Me</b>
+            free trial:
+            <br />
+            &#8226; Go to the
+            <span
+              style="text-decoration: underline; cursor: pointer"
+              [routerLink]="['/signup']"
+              >Sign Up Page</span
+            >.
+            <br />
+            &#8226; Select Start your Free Rootless Me Membership. <br />
+            &#8226; Follow the on-screen instructions if prompted. <br /><b
+              >Note:</b
+            >
+            You'll be enrolled in the free trial of Rootless Me and have access
+            to Blueprints, Professional Video Courses, Events, Experts and many
+            more. For more information about Membership access, head on over to
+            our
+            <span
+              style="text-decoration: underline; cursor: pointer"
+              [routerLink]="['/pricing']"
+              >Membership Page</span
+            >.
+            <br />
+            <span style="font-style: italic"
+              >While you won't be charged for your free trial, you'll be
+              upgraded to a paid membership plan automatically at the end of the
+              trial period. For help turning off your Rootless Me membership
+              renewal, go to the Method of Payment tab under your Account.</span
+            >
+          </ng-template>
+        </ngb-panel>
+      </ngb-accordion>
+    </div>
+
+    <div class="col-lg-12" style="margin: 40px 0px">
+      <p class="titleFaq col-lg-12">Membership</p>
+      <ngb-accordion
+        #a="ngbAccordion"
+        activeIds="custom-panel-1"
+        class="col-lg-12"
+      >
+        <ngb-panel
+          [disabled]="disabled"
+          [cardClass]="disabled ? 'disabled' : ''"
+        >
+          <ng-template ngbPanelHeader>
+            <div class="d-flex align-items-center justify-content-between">
+              <button
+                ngbPanelToggle
+                class="btn btn-link container-fluid text-left pl-0 d-flex"
+              >
+                <img
+                  src="assets/images/arrowFaq.svg"
+                  width="20"
+                  class="titleImg"
+                />
+                <p class="titleP">How do I create a membership?</p>
+              </button>
+            </div>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            Head on over to our
+            <span
+              style="text-decoration: underline; cursor: pointer"
+              [routerLink]="['/pricing']"
+              >Membership Page</span
+            >
+            to compare and find out the best membership for you, including a
+            Totally Free Membership.
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel
+          [disabled]="disabled"
+          [cardClass]="disabled ? 'disabled' : ''"
+        >
+          <ng-template ngbPanelHeader>
+            <div class="d-flex align-items-center justify-content-between">
+              <button
+                ngbPanelToggle
+                class="btn btn-link container-fluid text-left pl-0 d-flex"
+              >
+                <img
+                  src="assets/images/arrowFaq.svg"
+                  width="20"
+                  class="titleImg"
+                />
+                <p class="titleP">
+                  What do I do if I can’t remember my password or login in
+                  information?
+                </p>
+              </button>
+            </div>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            Head on over to the
+            <span
+              style="text-decoration: underline; cursor: pointer"
+              [routerLink]="['/login']"
+              >Password Reset Page</span
+            >. If you are not able to reset your account, please contact
+            Rootless at the
+            <span
+              style="text-decoration: underline; cursor: pointer"
+              [routerLink]="['/contact']"
+              >Customer Support Page</span
+            >.
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel
+          [disabled]="disabled"
+          [cardClass]="disabled ? 'disabled' : ''"
+        >
+          <ng-template ngbPanelHeader>
+            <div class="d-flex align-items-center justify-content-between">
+              <button
+                ngbPanelToggle
+                class="btn btn-link container-fluid text-left pl-0 d-flex"
+              >
+                <img
+                  src="assets/images/arrowFaq.svg"
+                  width="20"
+                  class="titleImg"
+                />
+                <p class="titleP">How do I upgrade my membership?</p>
+              </button>
+            </div>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+            terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
+            skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+            Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+            single-origin coffee nulla assumenda shoreditch et. Nihil anim
+            keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+            sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+            occaecat craft beer farm-to-table, raw denim aesthetic synth
+            nesciunt you probably haven't heard of them accusamus labore
+            sustainable VHS.
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel
+          [disabled]="disabled"
+          [cardClass]="disabled ? 'disabled' : ''"
+        >
+          <ng-template ngbPanelHeader>
+            <div class="d-flex align-items-center justify-content-between">
+              <button
+                ngbPanelToggle
+                class="btn btn-link container-fluid text-left pl-0 d-flex"
+              >
+                <img
+                  src="assets/images/arrowFaq.svg"
+                  width="20"
+                  class="titleImg"
+                />
+                <p class="titleP">How do I update my profile on Rootless?</p>
+              </button>
+            </div>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+            terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
+            skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+            Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+            single-origin coffee nulla assumenda shoreditch et. Nihil anim
+            keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+            sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+            occaecat craft beer farm-to-table, raw denim aesthetic synth
+            nesciunt you probably haven't heard of them accusamus labore
+            sustainable VHS.
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel
+          [disabled]="disabled"
+          [cardClass]="disabled ? 'disabled' : ''"
+        >
+          <ng-template ngbPanelHeader>
+            <div class="d-flex align-items-center justify-content-between">
+              <button
+                ngbPanelToggle
+                class="btn btn-link container-fluid text-left pl-0 d-flex"
+              >
+                <img
+                  src="assets/images/arrowFaq.svg"
+                  width="20"
+                  class="titleImg"
+                />
+                <p class="titleP">How do I cancel my membership?</p>
+              </button>
+            </div>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+            terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
+            skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+            Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+            single-origin coffee nulla assumenda shoreditch et. Nihil anim
+            keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+            sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+            occaecat craft beer farm-to-table, raw denim aesthetic synth
+            nesciunt you probably haven't heard of them accusamus labore
+            sustainable VHS.
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel
+          [disabled]="disabled"
+          [cardClass]="disabled ? 'disabled' : ''"
+        >
+          <ng-template ngbPanelHeader>
+            <div class="d-flex align-items-center justify-content-between">
+              <button
+                ngbPanelToggle
+                class="btn btn-link container-fluid text-left pl-0 d-flex"
+              >
+                <img
+                  src="assets/images/arrowFaq.svg"
+                  width="20"
+                  class="titleImg"
+                />
+                <p class="titleP">How do I register for an event?</p>
+              </button>
+            </div>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            To register for an event, you need an account.
+            <p>If you have a Free Rootless Curious Membership:</p>
+            <p class="ml-5">&#8226; Go to the Event you are interested in</p>
+            <p class="ml-5">&#8226; Click on Join Event</p>
+            <p class="ml-5">
+              &#8226; Follow the on-screen instructions if prompted to enter
+              Payment Information
+            </p>
+            <p>If you have a Rootless Me Membership:</p>
+            <p class="ml-5">&#8226; Go to the Event you are interested in</p>
+            <p class="ml-5">&#8226; Click on Join Event</p>
+            <p class="ml-5">
+              &#8226; If the event is free, you will be allset. If the event
+              requires payment, you will be prompted to verify payment
+              information.
+            </p>
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel
+          [disabled]="disabled"
+          [cardClass]="disabled ? 'disabled' : ''"
+        >
+          <ng-template ngbPanelHeader>
+            <div class="d-flex align-items-center justify-content-between">
+              <button
+                ngbPanelToggle
+                class="btn btn-link container-fluid text-left pl-0 d-flex"
+              >
+                <img
+                  src="assets/images/arrowFaq.svg"
+                  width="20"
+                  class="titleImg"
+                />
+                <p class="titleP">How do I download a blueprint?</p>
+              </button>
+            </div>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            <p>
+              &#8226; From the Blueprint library page, click on the blueprint
+              you are interested in.
+            </p>
+            <p>&#8226; Click on the Download button.</p>
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel
+          [disabled]="disabled"
+          [cardClass]="disabled ? 'disabled' : ''"
+        >
+          <ng-template ngbPanelHeader>
+            <div class="d-flex align-items-center justify-content-between">
+              <button
+                ngbPanelToggle
+                class="btn btn-link container-fluid text-left pl-0 d-flex"
+              >
+                <img
+                  src="assets/images/arrowFaq.svg"
+                  width="20"
+                  class="titleImg"
+                />
+                <p class="titleP">
+                  How do I save videos and blueprints on my profile?
+                </p>
+              </button>
+            </div>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+            terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
+            skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+            Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+            single-origin coffee nulla assumenda shoreditch et. Nihil anim
+            keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+            sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+            occaecat craft beer farm-to-table, raw denim aesthetic synth
+            nesciunt you probably haven't heard of them accusamus labore
+            sustainable VHS.
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel
+          [disabled]="disabled"
+          [cardClass]="disabled ? 'disabled' : ''"
+        >
+          <ng-template ngbPanelHeader>
+            <div class="d-flex align-items-center justify-content-between">
+              <button
+                ngbPanelToggle
+                class="btn btn-link container-fluid text-left pl-0 d-flex"
+              >
+                <img
+                  src="assets/images/arrowFaq.svg"
+                  width="20"
+                  class="titleImg"
+                />
+                <p class="titleP">How do I connect with an expert?</p>
+              </button>
+            </div>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+            terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
+            skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+            Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+            single-origin coffee nulla assumenda shoreditch et. Nihil anim
+            keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+            sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+            occaecat craft beer farm-to-table, raw denim aesthetic synth
+            nesciunt you probably haven't heard of them accusamus labore
+            sustainable VHS.
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel
+          [disabled]="disabled"
+          [cardClass]="disabled ? 'disabled' : ''"
+        >
+          <ng-template ngbPanelHeader>
+            <div class="d-flex align-items-center justify-content-between">
+              <button
+                ngbPanelToggle
+                class="btn btn-link container-fluid text-left pl-0 d-flex"
+              >
+                <img
+                  src="assets/images/arrowFaq.svg"
+                  width="20"
+                  class="titleImg"
+                />
+                <p class="titleP">How do I hire an expert?</p>
+              </button>
+            </div>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            <p>
+              &#8226; From the Experts library page, click on the expert you are
+              interested in.
+            </p>
+            <p>&#8226; Click on the Hire Expert button.</p>
+            <p>&#8226; Submit the form.</p>
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel
+          [disabled]="disabled"
+          [cardClass]="disabled ? 'disabled' : ''"
+        >
+          <ng-template ngbPanelHeader>
+            <div class="d-flex align-items-center justify-content-between">
+              <button
+                ngbPanelToggle
+                class="btn btn-link container-fluid text-left pl-0 d-flex"
+              >
+                <img
+                  src="assets/images/arrowFaq.svg"
+                  width="20"
+                  class="titleImg"
+                />
+                <p class="titleP">How do I register for an event?</p>
+              </button>
+            </div>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            To register for an event, you need an account.
+            <p>If you have a Free Rootless Curious Membership:</p>
+            <p class="ml-5">&#8226; Go to the Event you are interested in</p>
+            <p class="ml-5">&#8226; Click on Join Event</p>
+            <p class="ml-5">
+              &#8226; Follow the on-screen instructions if prompted to enter
+              Payment Information
+            </p>
+            <p>If you have a Rootless Me Membership:</p>
+            <p class="ml-5">&#8226; Go to the Event you are interested in</p>
+            <p class="ml-5">&#8226; Click on Join Event</p>
+            <p class="ml-5">
+              &#8226; If the event is free, you will be allset. If the event
+              requires payment, you will be prompted to verify payment
+              information.
+            </p>
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel
+          [disabled]="disabled"
+          [cardClass]="disabled ? 'disabled' : ''"
+        >
+          <ng-template ngbPanelHeader>
+            <div class="d-flex align-items-center justify-content-between">
+              <button
+                ngbPanelToggle
+                class="btn btn-link container-fluid text-left pl-0 d-flex"
+              >
+                <img
+                  src="assets/images/arrowFaq.svg"
+                  width="20"
+                  class="titleImg"
+                />
+                <p class="titleP">How do I obtain online access to an event?</p>
+              </button>
+            </div>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            After registering for an event, you will receive an email with Event
+            information. You will also be able to access this information from
+            your Personal Feed on Rootlessme.com
+          </ng-template>
+        </ngb-panel>
+      </ngb-accordion>
+    </div>
+
+    <div class="col-lg-12" style="margin: 40px 0px">
+      <p class="titleFaq col-lg-12">Billing and Payments</p>
+      <ngb-accordion
+        #a="ngbAccordion"
+        activeIds="custom-panel-1"
+        class="col-lg-12"
+      >
+        <ngb-panel
+          [disabled]="disabled"
+          [cardClass]="disabled ? 'disabled' : ''"
+        >
+          <ng-template ngbPanelHeader>
+            <div class="d-flex align-items-center justify-content-between">
+              <button
+                ngbPanelToggle
+                class="btn btn-link container-fluid text-left pl-0 d-flex"
+              >
+                <img
+                  src="assets/images/arrowFaq.svg"
+                  width="20"
+                  class="titleImg"
+                />
+                <p class="titleP">How do I renew my membership?</p>
+              </button>
+            </div>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+            terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
+            skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+            Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+            single-origin coffee nulla assumenda shoreditch et. Nihil anim
+            keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+            sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+            occaecat craft beer farm-to-table, raw denim aesthetic synth
+            nesciunt you probably haven't heard of them accusamus labore
+            sustainable VHS.
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel
+          [disabled]="disabled"
+          [cardClass]="disabled ? 'disabled' : ''"
+        >
+          <ng-template ngbPanelHeader>
+            <div class="d-flex align-items-center justify-content-between">
+              <button
+                ngbPanelToggle
+                class="btn btn-link container-fluid text-left pl-0 d-flex"
+              >
+                <img
+                  src="assets/images/arrowFaq.svg"
+                  width="20"
+                  class="titleImg"
+                />
+                <p class="titleP">
+                  How do I know when my membership will automatically renew?
+                </p>
+              </button>
+            </div>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+            terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
+            skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+            Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+            single-origin coffee nulla assumenda shoreditch et. Nihil anim
+            keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+            sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+            occaecat craft beer farm-to-table, raw denim aesthetic synth
+            nesciunt you probably haven't heard of them accusamus labore
+            sustainable VHS.
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel
+          [disabled]="disabled"
+          [cardClass]="disabled ? 'disabled' : ''"
+        >
+          <ng-template ngbPanelHeader>
+            <div class="d-flex align-items-center justify-content-between">
+              <button
+                ngbPanelToggle
+                class="btn btn-link container-fluid text-left pl-0 d-flex"
+              >
+                <img
+                  src="assets/images/arrowFaq.svg"
+                  width="20"
+                  class="titleImg"
+                />
+                <p class="titleP">How do I turn off auto renewal?</p>
+              </button>
+            </div>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+            terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
+            skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+            Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+            single-origin coffee nulla assumenda shoreditch et. Nihil anim
+            keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+            sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+            occaecat craft beer farm-to-table, raw denim aesthetic synth
+            nesciunt you probably haven't heard of them accusamus labore
+            sustainable VHS.
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel
+          [disabled]="disabled"
+          [cardClass]="disabled ? 'disabled' : ''"
+        >
+          <ng-template ngbPanelHeader>
+            <div class="d-flex align-items-center justify-content-between">
+              <button
+                ngbPanelToggle
+                class="btn btn-link container-fluid text-left pl-0 d-flex"
+              >
+                <img
+                  src="assets/images/arrowFaq.svg"
+                  width="20"
+                  class="titleImg"
+                />
+                <p class="titleP">How do I change the payment method?</p>
+              </button>
+            </div>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+            terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
+            skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+            Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+            single-origin coffee nulla assumenda shoreditch et. Nihil anim
+            keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+            sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+            occaecat craft beer farm-to-table, raw denim aesthetic synth
+            nesciunt you probably haven't heard of them accusamus labore
+            sustainable VHS.
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel
+          [disabled]="disabled"
+          [cardClass]="disabled ? 'disabled' : ''"
+        >
+          <ng-template ngbPanelHeader>
+            <div class="d-flex align-items-center justify-content-between">
+              <button
+                ngbPanelToggle
+                class="btn btn-link container-fluid text-left pl-0 d-flex"
+              >
+                <img
+                  src="assets/images/arrowFaq.svg"
+                  width="20"
+                  class="titleImg"
+                />
+                <p class="titleP">
+                  How do I request a refund for a webinar or event?
+                </p>
+              </button>
+            </div>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            Head on over to the Customer Support Page to request a refund for a
+            webinar or event.
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel
+          [disabled]="disabled"
+          [cardClass]="disabled ? 'disabled' : ''"
+        >
+          <ng-template ngbPanelHeader>
+            <div class="d-flex align-items-center justify-content-between">
+              <button
+                ngbPanelToggle
+                class="btn btn-link container-fluid text-left pl-0 d-flex"
+              >
+                <img
+                  src="assets/images/arrowFaq.svg"
+                  width="20"
+                  class="titleImg"
+                />
+                <p class="titleP">
+                  How do I find my purchase history and receipts?
+                </p>
+              </button>
+            </div>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+            terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
+            skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+            Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+            single-origin coffee nulla assumenda shoreditch et. Nihil anim
+            keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+            sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+            occaecat craft beer farm-to-table, raw denim aesthetic synth
+            nesciunt you probably haven't heard of them accusamus labore
+            sustainable VHS.
+          </ng-template>
+        </ngb-panel>
+      </ngb-accordion>
+    </div>
+
+    <div class="col-lg-12" style="margin: 40px 0px">
+      <p class="titleFaq col-lg-12">Webinars and Events</p>
+      <ngb-accordion
+        #a="ngbAccordion"
+        activeIds="custom-panel-1"
+        class="col-lg-12"
+      >
+        <ngb-panel
+          [disabled]="disabled"
+          [cardClass]="disabled ? 'disabled' : ''"
+        >
+          <ng-template ngbPanelHeader>
+            <div class="d-flex align-items-center justify-content-between">
+              <button
+                ngbPanelToggle
+                class="btn btn-link container-fluid text-left pl-0 d-flex"
+              >
+                <img
+                  src="assets/images/arrowFaq.svg"
+                  width="20"
+                  class="titleImg"
+                />
+                <p class="titleP">How do I connect with other members?</p>
+              </button>
+            </div>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+            terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
+            skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+            Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+            single-origin coffee nulla assumenda shoreditch et. Nihil anim
+            keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+            sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+            occaecat craft beer farm-to-table, raw denim aesthetic synth
+            nesciunt you probably haven't heard of them accusamus labore
+            sustainable VHS.
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel
+          [disabled]="disabled"
+          [cardClass]="disabled ? 'disabled' : ''"
+        >
+          <ng-template ngbPanelHeader>
+            <div class="d-flex align-items-center justify-content-between">
+              <button
+                ngbPanelToggle
+                class="btn btn-link container-fluid text-left pl-0 d-flex"
+              >
+                <img
+                  src="assets/images/arrowFaq.svg"
+                  width="20"
+                  class="titleImg"
+                />
+                <p class="titleP">How do I sign up for an event or webinar?</p>
+              </button>
+            </div>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            To register for an event, you need an account.
+            <p>If you have a Free Rootless Curious Membership:</p>
+            <p class="ml-5">&#8226; Go to the Event you are interested in</p>
+            <p class="ml-5">&#8226; Click on Join Event</p>
+            <p class="ml-5">
+              &#8226; Follow the on-screen instructions if prompted to enter
+              Payment Information
+            </p>
+            <p>If you have a Rootless Me Membership:</p>
+            <p class="ml-5">&#8226; Go to the Event you are interested in</p>
+            <p class="ml-5">&#8226; Click on Join Event</p>
+            <p class="ml-5">
+              &#8226; If the event is free, you will be allset. If the event
+              requires payment, you will be prompted to verify payment
+              information.
+            </p>
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel
+          [disabled]="disabled"
+          [cardClass]="disabled ? 'disabled' : ''"
+        >
+          <ng-template ngbPanelHeader>
+            <div class="d-flex align-items-center justify-content-between">
+              <button
+                ngbPanelToggle
+                class="btn btn-link container-fluid text-left pl-0 d-flex"
+              >
+                <img
+                  src="assets/images/arrowFaq.svg"
+                  width="20"
+                  class="titleImg"
+                />
+                <p class="titleP">
+                  Why do some events cost extra money for Rootless Me members?
+                </p>
+              </button>
+            </div>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+            terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
+            skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+            Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+            single-origin coffee nulla assumenda shoreditch et. Nihil anim
+            keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+            sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+            occaecat craft beer farm-to-table, raw denim aesthetic synth
+            nesciunt you probably haven't heard of them accusamus labore
+            sustainable VHS.
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel
+          [disabled]="disabled"
+          [cardClass]="disabled ? 'disabled' : ''"
+        >
+          <ng-template ngbPanelHeader>
+            <div class="d-flex align-items-center justify-content-between">
+              <button
+                ngbPanelToggle
+                class="btn btn-link container-fluid text-left pl-0 d-flex"
+              >
+                <img
+                  src="assets/images/arrowFaq.svg"
+                  width="20"
+                  class="titleImg"
+                />
+                <p class="titleP">How do I join a forum discussion?</p>
+              </button>
+            </div>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+            terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
+            skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+            Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+            single-origin coffee nulla assumenda shoreditch et. Nihil anim
+            keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+            sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+            occaecat craft beer farm-to-table, raw denim aesthetic synth
+            nesciunt you probably haven't heard of them accusamus labore
+            sustainable VHS.
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel
+          [disabled]="disabled"
+          [cardClass]="disabled ? 'disabled' : ''"
+        >
+          <ng-template ngbPanelHeader>
+            <div class="d-flex align-items-center justify-content-between">
+              <button
+                ngbPanelToggle
+                class="btn btn-link container-fluid text-left pl-0 d-flex"
+              >
+                <img
+                  src="assets/images/arrowFaq.svg"
+                  width="20"
+                  class="titleImg"
+                />
+                <p class="titleP">How do I ask a form question?</p>
+              </button>
+            </div>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+            terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
+            skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+            Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+            single-origin coffee nulla assumenda shoreditch et. Nihil anim
+            keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+            sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+            occaecat craft beer farm-to-table, raw denim aesthetic synth
+            nesciunt you probably haven't heard of them accusamus labore
+            sustainable VHS.
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel
+          [disabled]="disabled"
+          [cardClass]="disabled ? 'disabled' : ''"
+        >
+          <ng-template ngbPanelHeader>
+            <div class="d-flex align-items-center justify-content-between">
+              <button
+                ngbPanelToggle
+                class="btn btn-link container-fluid text-left pl-0 d-flex"
+              >
+                <img
+                  src="assets/images/arrowFaq.svg"
+                  width="20"
+                  class="titleImg"
+                />
+                <p class="titleP">How do I tag an expert to a question?</p>
+              </button>
+            </div>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+            terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
+            skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+            Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+            single-origin coffee nulla assumenda shoreditch et. Nihil anim
+            keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+            sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+            occaecat craft beer farm-to-table, raw denim aesthetic synth
+            nesciunt you probably haven't heard of them accusamus labore
+            sustainable VHS.
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel
+          [disabled]="disabled"
+          [cardClass]="disabled ? 'disabled' : ''"
+        >
+          <ng-template ngbPanelHeader>
+            <div class="d-flex align-items-center justify-content-between">
+              <button
+                ngbPanelToggle
+                class="btn btn-link container-fluid text-left pl-0 d-flex"
+              >
+                <img
+                  src="assets/images/arrowFaq.svg"
+                  width="20"
+                  class="titleImg"
+                />
+                <p class="titleP">
+                  How do I send an expert a direct private message?
+                </p>
+              </button>
+            </div>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+            terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
+            skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+            Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+            single-origin coffee nulla assumenda shoreditch et. Nihil anim
+            keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+            sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+            occaecat craft beer farm-to-table, raw denim aesthetic synth
+            nesciunt you probably haven't heard of them accusamus labore
+            sustainable VHS.
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel
+          [disabled]="disabled"
+          [cardClass]="disabled ? 'disabled' : ''"
+        >
+          <ng-template ngbPanelHeader>
+            <div class="d-flex align-items-center justify-content-between">
+              <button
+                ngbPanelToggle
+                class="btn btn-link container-fluid text-left pl-0 d-flex"
+              >
+                <img
+                  src="assets/images/arrowFaq.svg"
+                  width="20"
+                  class="titleImg"
+                />
+                <p class="titleP">How do I hire an expert?</p>
+              </button>
+            </div>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+            terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
+            skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+            Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+            single-origin coffee nulla assumenda shoreditch et. Nihil anim
+            keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+            sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+            occaecat craft beer farm-to-table, raw denim aesthetic synth
+            nesciunt you probably haven't heard of them accusamus labore
+            sustainable VHS.
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel
+          [disabled]="disabled"
+          [cardClass]="disabled ? 'disabled' : ''"
+        >
+          <ng-template ngbPanelHeader>
+            <div class="d-flex align-items-center justify-content-between">
+              <button
+                ngbPanelToggle
+                class="btn btn-link container-fluid text-left pl-0 d-flex"
+              >
+                <img
+                  src="assets/images/arrowFaq.svg"
+                  width="20"
+                  class="titleImg"
+                />
+                <p class="titleP">How do I unsubscribe from Rootless Emails?</p>
+              </button>
+            </div>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+            terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
+            skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+            Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+            single-origin coffee nulla assumenda shoreditch et. Nihil anim
+            keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+            sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+            occaecat craft beer farm-to-table, raw denim aesthetic synth
+            nesciunt you probably haven't heard of them accusamus labore
+            sustainable VHS.
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel
+          [disabled]="disabled"
+          [cardClass]="disabled ? 'disabled' : ''"
+        >
+          <ng-template ngbPanelHeader>
+            <div class="d-flex align-items-center justify-content-between">
+              <button
+                ngbPanelToggle
+                class="btn btn-link container-fluid text-left pl-0 d-flex"
+              >
+                <img
+                  src="assets/images/arrowFaq.svg"
+                  width="20"
+                  class="titleImg"
+                />
+                <p class="titleP">
+                  How do I request another link for my webinar or online class?
+                </p>
+              </button>
+            </div>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+            terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
+            skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+            Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+            single-origin coffee nulla assumenda shoreditch et. Nihil anim
+            keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+            sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+            occaecat craft beer farm-to-table, raw denim aesthetic synth
+            nesciunt you probably haven't heard of them accusamus labore
+            sustainable VHS.
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel
+          [disabled]="disabled"
+          [cardClass]="disabled ? 'disabled' : ''"
+        >
+          <ng-template ngbPanelHeader>
+            <div class="d-flex align-items-center justify-content-between">
+              <button
+                ngbPanelToggle
+                class="btn btn-link container-fluid text-left pl-0 d-flex"
+              >
+                <img
+                  src="assets/images/arrowFaq.svg"
+                  width="20"
+                  class="titleImg"
+                />
+                <p class="titleP">
+                  How do I report inappropriate use by another member?
+                </p>
+              </button>
+            </div>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+            terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
+            skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+            Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+            single-origin coffee nulla assumenda shoreditch et. Nihil anim
+            keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+            sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+            occaecat craft beer farm-to-table, raw denim aesthetic synth
+            nesciunt you probably haven't heard of them accusamus labore
+            sustainable VHS.
+          </ng-template>
+        </ngb-panel>
+      </ngb-accordion>
+    </div>
+
+    <div class="col-lg-12" style="margin: 40px 0px">
+      <p class="titleFaq col-lg-12">Rootless Expert</p>
+      <ngb-accordion
+        #a="ngbAccordion"
+        activeIds="custom-panel-1"
+        class="col-lg-12"
+      >
+        <ngb-panel
+          [disabled]="disabled"
+          [cardClass]="disabled ? 'disabled' : ''"
+        >
+          <ng-template ngbPanelHeader>
+            <div class="d-flex align-items-center justify-content-between">
+              <button
+                ngbPanelToggle
+                class="btn btn-link container-fluid text-left pl-0 d-flex"
+              >
+                <img
+                  src="assets/images/arrowFaq.svg"
+                  width="20"
+                  class="titleImg"
+                />
+                <p class="titleP">
+                  How do I apply to become a Rootless expert?
+                </p>
+              </button>
+            </div>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+            terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
+            skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+            Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+            single-origin coffee nulla assumenda shoreditch et. Nihil anim
+            keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+            sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+            occaecat craft beer farm-to-table, raw denim aesthetic synth
+            nesciunt you probably haven't heard of them accusamus labore
+            sustainable VHS.
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel
+          [disabled]="disabled"
+          [cardClass]="disabled ? 'disabled' : ''"
+        >
+          <ng-template ngbPanelHeader>
+            <div class="d-flex align-items-center justify-content-between">
+              <button
+                ngbPanelToggle
+                class="btn btn-link container-fluid text-left pl-0 d-flex"
+              >
+                <img
+                  src="assets/images/arrowFaq.svg"
+                  width="20"
+                  class="titleImg"
+                />
+                <p class="titleP">
+                  How do I apply to have a blueprint of my story?
+                </p>
+              </button>
+            </div>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+            terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
+            skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+            Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+            single-origin coffee nulla assumenda shoreditch et. Nihil anim
+            keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+            sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+            occaecat craft beer farm-to-table, raw denim aesthetic synth
+            nesciunt you probably haven't heard of them accusamus labore
+            sustainable VHS.
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel
+          [disabled]="disabled"
+          [cardClass]="disabled ? 'disabled' : ''"
+        >
+          <ng-template ngbPanelHeader>
+            <div class="d-flex align-items-center justify-content-between">
+              <button
+                ngbPanelToggle
+                class="btn btn-link container-fluid text-left pl-0 d-flex"
+              >
+                <img
+                  src="assets/images/arrowFaq.svg"
+                  width="20"
+                  class="titleImg"
+                />
+                <p class="titleP">How do I apply to teach a Rootless course?</p>
+              </button>
+            </div>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+            terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
+            skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+            Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+            single-origin coffee nulla assumenda shoreditch et. Nihil anim
+            keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+            sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+            occaecat craft beer farm-to-table, raw denim aesthetic synth
+            nesciunt you probably haven't heard of them accusamus labore
+            sustainable VHS.
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel
+          [disabled]="disabled"
+          [cardClass]="disabled ? 'disabled' : ''"
+        >
+          <ng-template ngbPanelHeader>
+            <div class="d-flex align-items-center justify-content-between">
+              <button
+                ngbPanelToggle
+                class="btn btn-link container-fluid text-left pl-0 d-flex"
+              >
+                <img
+                  src="assets/images/arrowFaq.svg"
+                  width="20"
+                  class="titleImg"
+                />
+                <p class="titleP">
+                  How do I apply to host events with Rootless Me?
+                </p>
+              </button>
+            </div>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+            terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
+            skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+            Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+            single-origin coffee nulla assumenda shoreditch et. Nihil anim
+            keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+            sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+            occaecat craft beer farm-to-table, raw denim aesthetic synth
+            nesciunt you probably haven't heard of them accusamus labore
+            sustainable VHS.
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel
+          [disabled]="disabled"
+          [cardClass]="disabled ? 'disabled' : ''"
+        >
+          <ng-template ngbPanelHeader>
+            <div class="d-flex align-items-center justify-content-between">
+              <button
+                ngbPanelToggle
+                class="btn btn-link container-fluid text-left pl-0 d-flex"
+              >
+                <img
+                  src="assets/images/arrowFaq.svg"
+                  width="20"
+                  class="titleImg"
+                />
+                <p class="titleP">How do I get charged for Rootless Leads?</p>
+              </button>
+            </div>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+            terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
+            skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+            Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+            single-origin coffee nulla assumenda shoreditch et. Nihil anim
+            keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+            sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+            occaecat craft beer farm-to-table, raw denim aesthetic synth
+            nesciunt you probably haven't heard of them accusamus labore
+            sustainable VHS.
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel
+          [disabled]="disabled"
+          [cardClass]="disabled ? 'disabled' : ''"
+        >
+          <ng-template ngbPanelHeader>
+            <div class="d-flex align-items-center justify-content-between">
+              <button
+                ngbPanelToggle
+                class="btn btn-link container-fluid text-left pl-0 d-flex"
+              >
+                <img
+                  src="assets/images/arrowFaq.svg"
+                  width="20"
+                  class="titleImg"
+                />
+                <p class="titleP">
+                  How do I obtain a refund for a Rootless Lead?
+                </p>
+              </button>
+            </div>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+            terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
+            skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+            Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+            single-origin coffee nulla assumenda shoreditch et. Nihil anim
+            keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+            sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+            occaecat craft beer farm-to-table, raw denim aesthetic synth
+            nesciunt you probably haven't heard of them accusamus labore
+            sustainable VHS.
+          </ng-template>
+        </ngb-panel>
+      </ngb-accordion>
+    </div>
+
+    <div class="margin-b-t">
+      <h1 class="m-b-15">You did not find your question?</h1>
+      <p>
+        Contact us now to ask your personalized question. We will do our best to
+        answer it shortly.
+      </p>
+      <a class="btn btn-success yellowBlack-btn m-t-20" href="/contact">
+        to contact form
+      </a>
+    </div>
+  </div>
+</div>

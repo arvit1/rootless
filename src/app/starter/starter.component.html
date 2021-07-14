@@ -1,0 +1,906 @@
+<div id="engji">
+  <!-- <body onscroll="onScrollFunction()"> -->
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex justify-content-center align-items-center">
+    <div class="container position-relative">
+      <h1>FROM ROOTLESS<br />TO ROOTED</h1>
+      <h2>A community of Rootless Citizens of the world</h2>
+      <div class="block center">
+        <div style="margin-bottom: 120px; margin-top: 20px">
+          <a [routerLink]="['/pricing']" class="btn-get-started"
+            ><img
+              src="../assets/images/flowerblack.png"
+              style="width: 40px; margin-right: 20px"
+            />start free trial</a
+          >
+        </div>
+        <a class="downarrow"
+          ><img
+            src="../assets/images/arrowDown.svg"
+            onclick="goToSection('main')"
+        /></a>
+      </div>
+    </div>
+  </section>
+  <!-- End Hero -->
+  <main id="main">
+    <!-- <section id="explain" class="explain" style="max-height: 800px;overflow: scroll;"> -->
+    <section id="explain" class="explain">
+      <div class="container" style="padding: 200px 0">
+        <div class="banner">
+          <video autoplay playsinline [muted]="true" loop>
+            <source
+              src="https://res.cloudinary.com/yllza/video/upload/v1626210804/videoCompressed_aftl5i.mp4"
+              type="video/mp4"
+            />
+          </video>
+          <h1>[ root-lis, root- ]</h1>
+        </div>
+        <!-- <h1>[ root-lis, root- ]</h1> -->
+        <h2>
+          having no place or position in society; <br />
+          not in accord with the enviroment;
+        </h2>
+      </div>
+
+      <video
+        id="videoDesktop"
+        controls
+        [muted]="true"
+        style="width: 100%; display: none"
+        class="desktop"
+      >
+        <source
+          id="mp4"
+          src="https://res.cloudinary.com/yllza/video/upload/v1626173997/video_c6ouio.mp4"
+          type="video/mp4"
+        />
+      </video>
+
+      <video
+        id="videoMobile"
+        controls
+        [muted]="true"
+        style="width: 100%; display: none"
+        class="mobile"
+      >
+        <source
+          id="mp4"
+          src="https://res.cloudinary.com/yllza/video/upload/v1626212115/Rootless600x800_ueqmv5.mp4"
+          type="video/mp4"
+        />
+      </video>
+    </section>
+
+    <div
+      class="slideshow-container"
+      style="display: grid; margin: 0 60px; margin-top: 200px"
+      id="parahraphsSection"
+    >
+      <div class="container">
+        <div class="mySlides fade">
+          <div class="enoughisenough">
+            <h1>Enough is enough</h1>
+          </div>
+          <div class="enoughisenoughtwo">
+            <h2>
+              Let's face it. You may have had a tough life with sparse
+              opportunities and many stereotypes. Maybe you've been labeled a
+              few thing too... right? So have we! Enough is enough.
+            </h2>
+          </div>
+        </div>
+        <div class="mySlides fade">
+          <div class="choosewhereyouwanttogo">
+            <h1>Choose where you want to go</h1>
+          </div>
+          <div class="choosewhereyouwanttogotwo">
+            <h2>
+              Just because we grew up on the wrong side of the tracks, doesn't
+              mean that we need to stay there. Regardless of where your roots
+              began, you can choose where you want to go.
+            </h2>
+          </div>
+        </div>
+        <div class="mySlides fade">
+          <div class="fromrootlesstorooted">
+            <h1>From rootless to rooted</h1>
+          </div>
+          <div class="fromrootlesstorootedtwo">
+            <h2>
+              That's why we call ourselves Rootless. Stereotypes, labels,
+              stigmas, beliefs, upbringing be damned. From Rootless to Rooted,
+              that's what it means!
+            </h2>
+          </div>
+        </div>
+      </div>
+      <a class="prev" onclick="plusSlides2(-1)"
+        ><img src="assets/images/arrowLeft.svg"
+      /></a>
+      <a class="next" onclick="plusSlides2(1)"
+        ><img src="assets/images/arrowRight.svg"
+      /></a>
+    </div>
+  </main>
+  <!--Whats on the table-->
+  <section id="whats-on-the-table" class="whats-on-the-table">
+    <div class="container" data-aos="fade-up">
+      <div class="section-title" data-aos="fade-up" data-aos-delay="100">
+        <h1>What's on the table?</h1>
+        <p>
+          We will provide with research, statistics, incredible stories and on
+          point <br />
+          guidance from our experts who once were rootless too.
+        </p>
+      </div>
+      <div
+        class="section-oneandtwo"
+        style="display: flex; justify-content: center"
+      >
+        <div class="section-one" data-aos="fade-right" data-aos-delay="100">
+          <div class="imageDiv">
+            <img src="../assets/images/knowledge.png" class="img1" />
+          </div>
+          <h2>BLUEPRINT LIBRARY</h2>
+          <h1>Knowledge</h1>
+          <p>
+            Downloadable research and <br />
+            statistics for a particualr <br />
+            indusry paired with insight from <br />
+            a local enterpreneur.
+          </p>
+          <div class="greenflower-text">
+            <img
+              src="../assets/images/flowergreen.png"
+              class="sectiononflowergreen"
+            />
+            <h3>see more</h3>
+          </div>
+        </div>
+        <div class="section-two" data-aos="fade-left" data-aos-delay="100">
+          <div class="imageDiv">
+            <img src="../assets/images/empowerment.png" class="img2" />
+          </div>
+          <h2>EXPERT LIBRARY</h2>
+          <h1>Enpowerment</h1>
+          <p>
+            Not your irdubart coaches. <br />
+            These experts were once <br />
+            Rootless too. The Rootless <br />
+            Experts have been verified and <br />
+            carefully selected by our team.
+          </p>
+          <div class="yellowflower-text">
+            <img
+              src="../assets/images/floweryellow.png"
+              class="sectiononfloweryellow"
+            />
+            <h3>see more</h3>
+          </div>
+        </div>
+      </div>
+      <div
+        class="section-threeandfour"
+        style="display: flex; justify-content: center"
+      >
+        <div class="section-one" data-aos="fade-right" data-aos-delay="100">
+          <div class="imageDiv">
+            <img src="../assets/images/guidance.png" class="img3" />
+          </div>
+          <h2>EXPERT COURSES</h2>
+          <h1 style="background-color: #784ebc">Guidance</h1>
+          <p>
+            Rootless Experts are verified <br />
+            mentors that will provide <br />
+            tutoring through webinars, <br />
+            podcasts, and custom created <br />
+            courses for their particular <br />
+            industry.
+          </p>
+          <div class="purpleflower-text">
+            <img
+              src="../assets/images/flowerpurple.png"
+              class="sectiononflowerpurple"
+            />
+            <h3 style="color: #784ebc; padding-left: 15px">see more</h3>
+          </div>
+        </div>
+        <div class="section-two" data-aos="fade-left" data-aos-delay="100">
+          <div class="imageDiv">
+            <img src="../assets/images/networking.png" class="img4" />
+          </div>
+          <h2>FORUM & EVENTS</h2>
+          <h1 style="background-color: #ff4b0a">Networking</h1>
+          <p>
+            Rootless has a dedication team <br />
+            monitoring your daily inquires. <br />
+            Ask us anything.
+          </p>
+          <div class="redflower-text">
+            <img
+              src="../assets/images/flowerred.png"
+              class="sectiononflowerred"
+            />
+            <h3 style="color: #ff4b0a">see more</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--Join Rootless-->
+  <section id="joinrootless">
+    <div class="join container" style="text-align: left">
+      <h1 data-aos="fade-up" data-aos-delay="100">Join Rootless if you...</h1>
+      <div id="changeText">
+        <h2>create your own definition of success</h2>
+      </div>
+      <div
+        [routerLink]="['/pricing']"
+        class="start-btn"
+        style="text-align: left"
+      >
+        <a class="start-btn-two"
+          ><img
+            src="../assets/images/flowerblack.png"
+            style="width: 40px; margin-right: 20px"
+          />start your free trial now</a
+        >
+      </div>
+      <div class="explore" style="text-align: left">
+        <a href="courses.html" class="explore"
+          ><img
+            src="../assets/images/downarrowpurp.png"
+            style="width: 15px; margin-right: 18px"
+          />Next up: Explore our blueprints</a
+        >
+      </div>
+    </div>
+  </section>
+  <!-- Explore our blueprints -->
+  <section class="allblueprints container">
+    <section class="blueprints">
+      <div class="our-blueprints" data-aos="fade-down" data-aos-delay="100">
+        <h1>Explore our blueprints</h1>
+        <h2>
+          Our blueprints will provide you with incredible stories <br />
+          and statistics to get you started.
+        </h2>
+        <img src="../assets/images/flowergreen.png" class="flowergreen" />
+        <h3>to the blueprint library</h3>
+      </div>
+    </section>
+    <section class="blueprint-left">
+      <section class="blueprint-photos">
+        <div class="mary">
+          <div class="container1">
+            <img src="../assets/images/mary1.png" class="maryimg" />
+            <div class="overlay1">
+              <div class="text1">
+                <h4>Magazine</h4>
+                <h5>Industry</h5>
+              </div>
+            </div>
+          </div>
+          <h1>Mary Elliot</h1>
+          <h2>Elliot & Co</h2>
+          <img src="../assets/images/mapicon.png" class="mapicon1" />
+          <h3>Boston</h3>
+        </div>
+        <div class="arnon">
+          <div class="container2">
+            <img src="../assets/images/arnon.png" class="arnonimg" />
+            <div class="overlay2">
+              <div class="text2">
+                <h4>Music</h4>
+                <h5>Industry</h5>
+              </div>
+            </div>
+          </div>
+          <h1>Arnon</h1>
+          <h2>
+            Music <br />
+            Producer
+          </h2>
+          <img src="../assets/images/mapicon.png" class="mapicon2" />
+          <h3>Tirana</h3>
+        </div>
+      </section>
+      <section class="blueprint-photos-two">
+        <div class="lauren-luela">
+          <div class="container3">
+            <img src="../assets/images/lauren.png" class="lauren-luelaimg" />
+            <div class="overlay3">
+              <div class="text3">
+                <h4>Beauty</h4>
+                <h5>Industry</h5>
+              </div>
+            </div>
+          </div>
+          <h1>
+            Lauren & <br />
+            Luela
+          </h1>
+          <h2>LUELLE</h2>
+          <img src="../assets/images/mapicon.png" class="mapicon3" />
+          <h3>New York</h3>
+        </div>
+        <div class="derek">
+          <div class="container4">
+            <img src="../assets/images/derek1.png" class="derekimg" />
+            <div class="overlay4">
+              <div class="text4">
+                <h4>Banking</h4>
+                <h5>Industry</h5>
+              </div>
+            </div>
+          </div>
+          <h1>
+            Derek <br />
+            Anderson
+          </h1>
+          <h2>Poerpay</h2>
+          <img src="../assets/images/mapicon.png" class="mapicon4" />
+          <h3>LA</h3>
+        </div>
+      </section>
+    </section>
+    <section class="blueprint-photos-three">
+      <div class="greta">
+        <div class="container5">
+          <img src="../assets/images/greta1.jpeg" class="gretaimg" />
+          <div class="overlay5">
+            <div class="text5">
+              <h4>Construction</h4>
+              <h5>Industry</h5>
+              <h6>
+                Enterpreneur of <br />
+                the month
+              </h6>
+            </div>
+          </div>
+        </div>
+        <h1>Greta Bajrami Campoverde</h1>
+        <h2>Golden Group Roofing</h2>
+        <img src="../assets/images/mapicon.png" class="mapicon5" />
+        <h3>Massachusetts</h3>
+      </div>
+    </section>
+  </section>
+  <!-- Follow your passion -->
+  <section class="followyourpassion">
+    <div class="follow" data-aos="fade-right" data-aos-delay="100">
+      <h1>
+        Follow your <br />
+        passion and <br />
+        life will <br />
+        reward you.
+      </h1>
+      <a [routerLink]="['/blueprints']" class="seeblueprintsbutton">
+        <img src="../assets/images/icon-reverse.png" class="icon-reverse" />
+        see blueprints
+      </a>
+      <p>
+        <img src="../assets/images/downarrow.png" class="whitedownarrow" />
+        Next up: Meet our experts
+      </p>
+    </div>
+    <div class="derekanderson">
+      <h1>
+        Derek <br />
+        Anderson
+      </h1>
+    </div>
+  </section>
+  <section class="meetourexperts">
+    <div class="meetour" data-aos="fade-left" data-aos-delay="100">
+      <h1>Meet our experts</h1>
+      <p>
+        Our experts are verified mentors that will provide <br />
+        tutoring through webinars, workshops and courses.
+      </p>
+      <a href=""
+        ><img src="../assets/images/icon.png" class="yellowicon" />to the expert
+        library</a
+      >
+    </div>
+
+    <div
+      class="sliders profileSlider"
+      style="display: grid; margin-top: 100px; width: 100%; padding: 0 60px"
+      id="parahraphsSection"
+    >
+      <ngb-carousel>
+        <ng-template ngbSlide>
+          <div class="container">
+            <div class="phototext">
+              <div class="arnonphoto">
+                <img src="../assets/images/arnon1.png" class="arnonphoto1" />
+              </div>
+              <div class="arnontext">
+                <h1>Music Producer</h1>
+                <h2 class="enterpreneur">Enterpreneur</h2>
+                <h2 class="artist">Artist</h2>
+                <h2 class="olympics">
+                  Olympics <br />
+                  Gymnast
+                </h2>
+              </div>
+            </div>
+            <div class="viewprofile">
+              <div class="arnontik">
+                <h1>
+                  Arnon
+                  <img src="../assets/images/tikpurple.png" class="tikpurple" />
+                </h1>
+                <p>
+                  - "Music was my dream since i was a kid. I started <br />
+                  producing music since a young age."
+                </p>
+              </div>
+              <div class="arnonview">
+                <a href=""
+                  ><img
+                    src="../assets/images/flowerpurple.png"
+                    class="purpleflower"
+                  />
+                  view profile</a
+                >
+              </div>
+            </div>
+          </div>
+        </ng-template>
+        <ng-template ngbSlide>
+          <div class="container">
+            <div class="phototext2">
+              <div class="gretaphoto">
+                <img src="../assets/images/greta1.jpeg" class="gretaphoto1" />
+              </div>
+              <div style="overflow: hidden" class="gretatext">
+                <div id="sliderText" style="transition: transform 0.5s ease">
+                  <h2 class="firstTab addColor" onclick="slider(0)">
+                    Enterpreneur
+                  </h2>
+                  <h2 class="artist2" onclick="slider(70,'artist2')">Artist</h2>
+                  <h2 class="olympics2" onclick="slider(170,'olympics2')">
+                    Olympics <br />
+                    Gymnast
+                  </h2>
+                  <h2 class="footballer2" onclick="slider(330,'footballer2')">
+                    Footballer
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <div class="viewprofile2">
+              <div class="gretatik">
+                <div class="gretaandphoto">
+                  <h1>
+                    Greta Bajrami
+                    <img
+                      src="../assets/images/tikpurple.png"
+                      class="tikpurple2"
+                    />
+                  </h1>
+                </div>
+                <p>- "A series of downhills can help you reach far."</p>
+              </div>
+              <div class="gretaview">
+                <a href=""
+                  ><img
+                    src="../assets/images/flowerpurple.png"
+                    class="purpleflower2"
+                  />
+                  view profile</a
+                >
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </ngb-carousel>
+    </div>
+  </section>
+  <!-- Are you and expert at what you do -->
+  <section class="expert">
+    <div class="areyouanexpert" data-aos="fade-down" data-aos-delay="100">
+      <h1>Are you an expert at what you do?</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br />
+        Metus sed pretium id non amet.
+      </p>
+      <a [routerLink]="['/experts/pricing']" class="a1"
+        ><img src="../assets/images/flowerblack.png" class="blackflower" />
+        apply to join the rootless experts</a
+      >
+      <h2 class="h2">
+        <img src="../assets/images/downarrowpurp.png" class="arrowpurp" />
+        Next up: Get to action with our courses
+      </h2>
+    </div>
+  </section>
+  <section class="getinvolved">
+    <div class="getinvolvedin">
+      <h1>Get involved in our forum</h1>
+      <p>The place where all your questions get answered.</p>
+      <a href=""
+        ><img src="../assets/images/flowergreen.png" class="greenflower" />to
+        the forum</a
+      >
+      <!-- Jason -->
+      <div class="jason">
+        <div class="jasonin">
+          <div class="jasonleft">
+            <div class="jasonimage">
+              <img src="../assets/images/jasonimage.png" class="jasonimg" />
+            </div>
+            <div class="updownarrow">
+              <div class="uparrow">
+                <img src="../assets/images/arrowup.png" class="arrowup" />
+                <p>0</p>
+              </div>
+              <div class="downarrow123">
+                <img src="../assets/images/arrowdown.png" class="arrowdown" />
+                <p>0</p>
+              </div>
+            </div>
+          </div>
+          <div class="jasonright">
+            <div class="jasontop">
+              <h1>Jason</h1>
+              <h2>21.01.2021 asked to</h2>
+              <p>
+                Arnon
+                <img src="../assets/images/tikgray.png" class="tikgray" />
+              </p>
+            </div>
+            <div class="jasonmid">
+              <p>
+                Donec hac nisl sapien ullamcorper tincidunt diam tinteger
+                malesuada. Quis vaiurs tellus orci, platea <br />
+                aenean fermetum diam enim. Est et nulla quis nunc curabitur. Et
+                cum tincidunt tristique cras. Ac <br />
+                euismod in massa sed molestie velit porttitor tincidunt arcu.
+                Mauris aliquam aenean in duis. Feugiat <br />
+                urna dui, diam proin tempor senctus auctor est. Ipsum dictum
+                marius nunc, sit tortor. Elementum?
+              </p>
+            </div>
+            <div class="jasonbot">
+              <div class="musicart">
+                <h1 class="music">Music</h1>
+                <h1>Art</h1>
+              </div>
+              <div class="commentshare">
+                <img
+                  src="../assets/images/commentgreen.png"
+                  class="greencomment"
+                />
+                <p>0</p>
+                <img src="../assets/images/sharegreen.png" class="greenshare" />
+                <p>21</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Amelie -->
+      <div class="amelie">
+        <div class="ameliein">
+          <div class="amelieleft">
+            <div class="amelieimage">
+              <img src="../assets/images/amelie.png" class="amelieimg" />
+            </div>
+            <div class="updownarrow2">
+              <div class="uparrow2">
+                <img src="../assets/images/arrowup.png" class="arrowup" />
+                <p>0</p>
+              </div>
+              <div class="downarrow2">
+                <img src="../assets/images/arrowdown.png" class="arrowdown" />
+                <p>0</p>
+              </div>
+            </div>
+          </div>
+          <div class="amelieright">
+            <div class="amelietop">
+              <h1>Amelie</h1>
+              <h2>2 days ago asked to</h2>
+              <p>
+                Arnon
+                <img src="../assets/images/tikgray.png" class="tikgray" />
+              </p>
+            </div>
+            <div class="ameliemid">
+              <p>
+                Rhoncus libero, felis tempor urna tincidunt posuere quisque
+                consectetur. Pellentesque malasuda elit <br />
+                ornare tristique sollictudin. Adipsicing eget odio vehicula arcu
+                vitae pharetra massa porta arcvu?
+              </p>
+            </div>
+            <div class="ameliebot">
+              <div class="musicart2">
+                <h1 class="instagram">Instagram</h1>
+                <h1 class="buisness">Buisness</h1>
+                <h1 class="music2">Music</h1>
+                <h1>Art</h1>
+              </div>
+              <div class="commentshare">
+                <img
+                  src="../assets/images/commentgreen.png"
+                  class="greencomment2"
+                />
+                <p>81</p>
+                <img src="../assets/images/sharegreen.png" class="greenshare" />
+                <p>11</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Milee -->
+      <div class="milee">
+        <div class="mileein">
+          <div class="mileeleft">
+            <div class="mileeimage">
+              <img src="../assets/images/Milee.png" class="mileeimg" />
+            </div>
+            <div class="updownarrow3">
+              <div class="uparrow3">
+                <img src="../assets/images/arrowup.png" class="arrowup" />
+                <p>0</p>
+              </div>
+              <div class="downarrow3">
+                <img src="../assets/images/arrowdown.png" class="arrowdown" />
+                <p>0</p>
+              </div>
+            </div>
+          </div>
+          <div class="mileeright">
+            <div class="mileetop">
+              <h1>Milee</h1>
+              <h2>2 days ago</h2>
+            </div>
+            <div class="mileemid">
+              <p>
+                Rhoncus libero, felis tempor urna tincidunt posuere quisque
+                consectetur. Pellentesque malasuda elit <br />
+                ornare tristique sollictudin. Adipsicing eget odio vehicula arcu
+                vitae pharetra massa porta arcvu?
+              </p>
+            </div>
+            <div class="mileebot">
+              <div class="musicart3">
+                <h1 class="instagram2">Instagram</h1>
+                <h1 class="buisness2">Buisness</h1>
+                <h1 class="music3">Music</h1>
+                <h1>Art</h1>
+              </div>
+              <div class="commentshare3">
+                <img
+                  src="../assets/images/commentgreen.png"
+                  class="greencomment"
+                />
+                <p>3</p>
+                <img src="../assets/images/sharegreen.png" class="greenshare" />
+                <p>0</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Get to action with our courses -->
+  <section class="gettoaction">
+    <div class="getto">
+      <h1>Get to action with our courses</h1>
+    </div>
+    <div class="threevideos">
+      <div class="howtoone">
+        <div class="videoone">
+          <video
+            [muted]="true"
+            id="videoTutorial"
+            onmouseover="hoverVideo('videoTutorial');"
+            onmouseout="hideVideo('videoTutorial')"
+          >
+            <source
+              src="https://res.cloudinary.com/yllza/video/upload/v1626173997/video_c6ouio.mp4"
+              type="video/mp4"
+            />
+          </video>
+          <p>Free</p>
+        </div>
+        <div class="textone">
+          <div class="textone-one">
+            <h1>
+              How to lorem ipsum <br />
+              dolor sit lorem ipsum
+            </h1>
+            <p>
+              A course by <span class="gretaspanone">Greta Bajrami</span
+              ><img src="../assets/images/tikgreen.png" class="tikgreenone" />
+            </p>
+            <div class="h5-one">
+              <h5>Forward thinking</h5>
+              <h5>Enterpreneur</h5>
+            </div>
+            <div class="h5-two">
+              <h5>Process</h5>
+              <h5>Commitment</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="howtotwo">
+        <div class="videotwo">
+          <video
+            [muted]="true"
+            id="videoTutorial2"
+            onmouseover="hoverVideo('videoTutorial2');"
+            onmouseout="hideVideo('videoTutorial2')"
+          >
+            <source
+              src="https://res.cloudinary.com/yllza/video/upload/v1626173997/video_c6ouio.mp4"
+              type="video/mp4"
+            />
+          </video>
+          <p>Free</p>
+        </div>
+        <div class="texttwo">
+          <div class="textone-two">
+            <h1>
+              How to lorem ipsum <br />
+              dolor sit lorem ipsum
+            </h1>
+            <p>
+              A course by <span class="gretaspantwo">Greta Bajrami</span
+              ><img src="../assets/images/tikyellow.png" class="tikgreentwo" />
+            </p>
+            <div class="h5-one-two">
+              <h5>Forward thinking</h5>
+              <h5>Enterpreneur</h5>
+            </div>
+            <div class="h5-two-two">
+              <h5>Process</h5>
+              <h5>Commitment</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="howtothree">
+        <div class="videothree">
+          <video
+            [muted]="true"
+            id="videoTutorial3"
+            onmouseover="hoverVideo('videoTutorial3');"
+            onmouseout="hideVideo('videoTutorial3')"
+          >
+            <source
+              src="https://res.cloudinary.com/yllza/video/upload/v1626173997/video_c6ouio.mp4"
+              type="video/mp4"
+            />
+          </video>
+          <p>Free</p>
+        </div>
+        <div class="textthree">
+          <div class="textone-three">
+            <h1>
+              How to lorem ipsum <br />
+              dolor sit lorem ipsum
+            </h1>
+            <p>
+              A course by <span class="gretaspanthree">Greta Bajrami</span
+              ><img
+                src="../assets/images/tikpurple.png"
+                class="tikgreenthree"
+              />
+            </p>
+            <div class="h5-one-three">
+              <h5>Forward thinking</h5>
+              <h5>Enterpreneur</h5>
+            </div>
+            <div class="h5-two-three">
+              <h5>Process</h5>
+              <h5>Commitment</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tocourse">
+      <a [routerLink]="['/courses']"
+        ><img src="../assets/images/icon-reverse.png" class="iconreverse" />to
+        courses</a
+      >
+    </div>
+  </section>
+  <!-- joint our events -->
+  <section class="joinevents">
+    <div class="joinusin">
+      <h1>Join us in our events</h1>
+      <p>Get to know likeminded rootless individuals</p>
+      <a [routerLink]="['/events']"
+        ><img src="../assets/images/flowerred.png" class="redflower" />to
+        events</a
+      >
+    </div>
+    <div class="threecolors">
+      <div class="purplecolor">
+        <h2>event</h2>
+        <h1>12. MAR</h1>
+        <p>
+          Lorem ipsum dolor sit <br />
+          amet, consectetur <br />
+          adipscing elit. Nisi, amet <br />
+          mauris, sem tortor.
+        </p>
+        <a href="">learn more</a>
+      </div>
+      <div class="yellowgreencolor">
+        <div class="yellowcolor">
+          <h2>workshop</h2>
+          <h1>
+            18. <br />
+            MAR
+          </h1>
+          <p>
+            Lorem ipsum dolor sit amet, <br />
+            consectetur adipscing elit. <br />
+            Nisi, amet mauris, sem tortor.
+          </p>
+          <a href="">learn more</a>
+        </div>
+        <div class="greencolor">
+          <div class="greencolorone">
+            <h2>webinar</h2>
+            <h1>26. MAR</h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur <br />
+              adipscing elit. Nisi, amet mauris, sem tortor.
+            </p>
+            <a href="">learn more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Before you go -->
+  <section class="beforeyougo" id="beforeyougo">
+    <form action="">
+      <div class="beforeyou">
+        <h1>Before you go</h1>
+      </div>
+      <div class="enteremail">
+        <input
+          class="inputone"
+          type="text"
+          placeholder="Enter your email"
+          name="mail"
+          required
+        />
+      </div>
+      <div class="subscribe">
+        <button class="inputtwo" type="submit">
+          <img src="../assets/images/flowerblack.png" class="blackflower1" />
+          subscribe to get a free blueprint
+        </button>
+      </div>
+      <div class="yellowflowerleft">
+        <img src="../assets/images/icon.png" class="yellowfolower-left" />
+      </div>
+    </form>
+  </section>
+
+  <a
+    href="#"
+    id="mydiv"
+    class="back-to-top d-flex align-items-center justify-content-center"
+    #mydiv
+  >
+    <img src="assets/images/next.svg" alt="arrow up" width="15" height="15" />
+  </a>
+
+  <!-- </body> -->
+</div>

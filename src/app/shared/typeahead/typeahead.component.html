@@ -1,0 +1,12 @@
+<input
+  id="typeahead-format"
+  type="text"
+  class="form-control input"
+  [(ngModel)]="model"
+  [ngbTypeahead]="search"
+  [resultFormatter]="formatter"
+  placeholder="{{ placeholder }}"
+  (selectItem)="onSelect($event)"
+/>
+<!-- <hr />
+<pre>Model: {{ model | json }}</pre> -->

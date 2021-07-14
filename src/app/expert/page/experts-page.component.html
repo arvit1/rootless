@@ -1,0 +1,299 @@
+<div class="row expertsPage">
+  <div class="col-12">
+    <div class="">
+      <h1 class="m-b-15" *ngIf="isLoggedIn">
+        Welcome {{ currentUser.firstName }}
+      </h1>
+      <h1 class="m-b-15" *ngIf="!isLoggedIn">Welcome guest</h1>
+      <p class="margin-b-t">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
+        eveniet consequatur vitae possimus atque voluptate aliquid ab hic rerum
+        sit consectetur quidem labore, totam dignissimos, architecto nihil
+        maiores excepturi molestiae.
+      </p>
+    </div>
+    <!-- <div class="yellow-header margin-b-t">
+      <h4>stay active in the community</h4>
+    </div>
+    <div class="row">
+      <div class="col-lg-4" *ngFor="let forum of forums">
+        <div class="card">
+          <div class="card-body">
+            <h3 class="font-normal">{{ forum.question }}</h3>
+            <div class="d-flex no-block align-items-center m-b-15">
+              <span>{{ forum.date }}</span>
+            </div>
+            <div class="ml-auto">
+              <a href="javascript:void(0)" class="link">
+                <i class="ti-comments"></i>
+                {{ forum.comments.length }} Comments</a
+              >
+            </div>
+            <div class="tags">
+              <button
+                class="btn btn-success yellow-btn m-t-20"
+                *ngFor="let tag of forum.tags"
+              >
+                {{ tag }}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <div class="green-header margin-b-t d-flex">
+      <h4 class="ml-0 mr-auto mt-auto mb-auto">
+        get in touch with other experts
+      </h4>
+      <h4 class="ml-auto mr-0 mt-auto mb-auto">
+        <img src="assets/images/s-green-f.png" />
+        <a [routerLink]="['/experts']"> To expert library </a>
+      </h4>
+    </div>
+    <!-- Row -->
+
+    <div class="m-t-30">
+      <div class="row" *ngIf="experts.length !== 0">
+        <div class="col-lg-6 col-md-12" *ngFor="let expert of experts">
+          <div class="card">
+            <img
+              class="card-img-top img-responsive"
+              src="{{ expert.profilePhotoUrl }}"
+              *ngIf="expert.profilePhotoUrl"
+            />
+            <div *ngIf="!expert.profilePhotoUrl" class="avatarProfile">
+              {{ expert.firstName.charAt(0) }}
+              {{ expert.lastName.charAt(0) }}
+            </div>
+            <div class="card-body">
+              <h4 class="card-title">
+                {{ expert.firstName }} {{ expert.lastName }}
+                <img
+                  src="../../../assets/images/verified-check-green.svg"
+                  class="badge-check-green"
+                />
+              </h4>
+              <p class="card-text">{{ expert.quote }}</p>
+              <div class="arrow-up arrow-Green"></div>
+              <p class="card-text">
+                <button class="btn btn-success green-btn">
+                  {{ expert.profession }}
+                </button>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" *ngIf="experts.length === 0">No experts yet</div>
+    </div>
+
+    <div class="purple-header margin-b-t d-flex">
+      <h4 class="ml-0 mr-auto mt-auto mb-auto">
+        read more incredible stories like yours
+      </h4>
+      <h4 class="ml-auto mr-0 mt-auto mb-auto">
+        <img src="../../assets/images/s-purple-f.png" />
+        <a [routerLink]="['/blueprints']"> To blueprint library </a>
+      </h4>
+    </div>
+    <div class="col-12 m-t-30">
+      <div class="card-deck" *ngIf="blueprints.length !== 0">
+        <div class="card" *ngFor="let blueprint of blueprints">
+          <img
+            class="card-img-top img-responsive purple-border"
+            src="{{ blueprint.photo }}"
+            alt="Card image cap"
+          />
+          <div class="card-body">
+            <h4 class="card-title">
+              {{ blueprint.firstName }} {{ blueprints.lastName }}
+            </h4>
+            <p class="card-text">{{ blueprint.company }}</p>
+            <p class="card-location">
+              <i class="fa fa-map-marker-alt"></i>
+              {{ blueprint.location }}
+            </p>
+            <p class="card-text tags row">
+              <button
+                (click)="getMediaUrl(blueprint.pdfFile)"
+                class="btn btn-white col-md-5 col-md-offset-2"
+              >
+                download
+              </button>
+              <button
+                class="btn btn-teal col-md-5 col-md-offset-2"
+                [routerLink]="['/blueprints', blueprint.id]"
+              >
+                Read more
+              </button>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row" *ngIf="blueprints.length === 0">No blueprints yet</div>
+    </div>
+    <!-- TODO apply to get featured in blueprint probably needs signup -->
+    <div class="margin-b-t">
+      <h1 class="m-b-15">Share your story with the rootless community</h1>
+      <p class="margin-b-t">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
+        eveniet consequatur vitae possimus atque voluptate aliquid ab hic rerum
+        sit consectetur quidem labore, totam dignissimos, architecto nihil
+        maiores excepturi molestiae.
+      </p>
+      <button
+        class="btn btn-success yellowBlack-btn m-t-20"
+        [routerLink]="['/blueprints/apply']"
+      >
+        <img
+          src="assets/images/flowerblack.png"
+          style="width: 30px; margin-right: 10px"
+        />
+        apply to get featured in blueprint
+      </button>
+    </div>
+
+    <!-- TODO later -->
+    <!-- <div class="yellow-header margin-b-t">
+      <h4>engage in more events</h4>
+    </div>
+    <div class="row">
+      <div class="col-lg-3 col-md-6" *ngFor="let event of events">
+        <div class="card">
+          <img src="{{ event.imgUrl }}" alt="Card image cap" class="card-img-top img-responsive" />
+          <h3 class="img-title">{{ event.imgTitle }}</h3>
+          <div class="card-body yellow-bg">
+            <h4 class="card-title">{{ event.title }}</h4>
+            <p class="card-text">{{ event.description }}</p>
+            <a href="#" class="btn btn-primary white-btn" *ngFor="let tag of event.tags">{{ tag }}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="margin-b-t">
+      <h1 class="m-b-15">Talk about the experience</h1>
+      <p class="margin-b-t">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
+        eveniet consequatur vitae possimus atque voluptate aliquid ab hic rerum
+        sit consectetur quidem labore, totam dignissimos, architecto nihil
+        maiores excepturi molestiae.
+      </p>
+      <button class="btn btn-success yellowBlack-btn m-t-20" [routerLink]="['/blueprints/apply']">
+        host another event
+      </button>
+    </div> -->
+    <div class="green-header margin-b-t d-flex">
+      <h4 class="ml-0 mr-auto mt-auto mb-auto">checkout other courses</h4>
+      <h4 class="ml-auto mr-0 mt-auto mb-auto">
+        <img src="assets/images/s-green-f.png" />
+        <a [routerLink]="['/courses']"> To all courses </a>
+      </h4>
+    </div>
+
+    <div class="row coursesCard" *ngIf="courses.length !== 0">
+      <div class="col-lg-3 col-md-6" *ngFor="let course of courses">
+        <div class="card">
+          <img
+            src="{{ course.imageUrl }}"
+            alt="Card image cap"
+            class="card-img-top img-responsive"
+          />
+          <!-- <h3 class="img-title">{{ course.imgTitle }}</h3> -->
+          <div class="card-body green-bg">
+            <h4 class="card-title">{{ course.title }}</h4>
+            <p class="card-text">
+              A course by
+              <span class="green-color">
+                {{ getExpert(course.expertId).firstName }}
+                {{ getExpert(course.expertId).lastName }}
+                <img
+                  src="assets/images/verified-check-green.svg"
+                  class="badge-yellow"
+                />
+              </span>
+            </p>
+            <div class="green-tags">
+              <button
+                class="btn btn-success green-btn-tags m-t-20"
+                *ngFor="let topic of course.topics"
+              >
+                {{ topic }}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row" *ngIf="courses.length === 0">No courses yet</div>
+
+    <div class="margin-b-t">
+      <h1 class="m-b-15">Teach your knowledge</h1>
+      <p class="margin-b-t">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
+        eveniet consequatur vitae possimus atque voluptate aliquid ab hic rerum
+        sit consectetur quidem labore, totam dignissimos, architecto nihil
+        maiores excepturi molestiae.
+      </p>
+      <button
+        class="btn btn-success yellowBlack-btn m-t-20"
+        [routerLink]="['/courses/create']"
+      >
+        <img
+          src="assets/images/flowerblack.png"
+          style="width: 30px; margin-right: 10px"
+        />
+        create a new course
+      </button>
+    </div>
+
+    <div class="purple-header margin-b-t d-flex">
+      <h4 class="ml-0 mr-auto mt-auto mb-auto">catch up the latest posts</h4>
+      <h4 class="ml-auto mr-0 mt-auto mb-auto">
+        <img src="../../assets/images/s-purple-f.png" />
+        <a [routerLink]="['/blog']"> To blog posts </a>
+      </h4>
+    </div>
+    <div class="row blogsCard" *ngIf="blogs.length !== 0">
+      <div class="col-lg-4 col-sm-12" *ngFor="let blog of blogs">
+        <div class="row cards" style="margin-top: 0">
+          <div class="col-md-4 p-r-0">
+            <img
+              class="card-img-top img-responsive"
+              src="{{ blog.coverPhotoUrl }}"
+              alt="Card image cap"
+            />
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h1 class="card-title">Discovering new music through painting</h1>
+              <p class="card-text">
+                {{ getTime(blog.createDate) }} by
+                <span class="card-text-colored"
+                  >Arnon
+                  <img
+                    class="badge-check"
+                    src="assets/images/verified-check.svg"
+                /></span>
+              </p>
+              <div class="purple-tags">
+                <button
+                  class="btn btn-success purple-btn-tags"
+                  *ngFor="let tag of blog.tags"
+                >
+                  {{ tag }}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row" *ngIf="blogs.length === 0">No posts yet</div>
+  </div>
+  <!-- End Row -->
+  <aside class="customizer">
+    <div>
+      <p>industries you follow</p>
+    </div>
+  </aside>
+</div>

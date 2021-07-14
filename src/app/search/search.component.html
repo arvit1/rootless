@@ -1,0 +1,258 @@
+<div id="search">
+  <div id="header" class="{{ animation }}">
+    <div class="input d-flex">
+      <div class="search-icon">
+        <img src="../../assets/images/search.png" />
+      </div>
+      <input
+        [(ngModel)]="term"
+        placeholder="search"
+        (keyup)="searchFunction($event)"
+        name="search"
+      />
+    </div>
+  </div>
+  <div style="display: none" class="{{ show }} padding-40">
+    <div class="col-lg-11 col-sm-12" style="margin: 70px 0">
+      <h1 class="font-55 black-color no-margin col-lg-8">
+        Your search results on <span class="searchResult">{{ term }}</span>
+      </h1>
+      <p class="margin-b-t font-20 black-color no-margin col-lg-6">
+        {{ search.size }} results
+      </p>
+    </div>
+    <div id="blueprints" *ngIf="search.blueprints.length">
+      <div class="yellow-header d-flex">
+        <h4 class="ml-0 mr-auto mt-auto mb-auto">
+          {{ search.blueprints.length }} result in blueprints
+        </h4>
+        <h4 class="ml-auto mr-0 mt-auto mb-auto">
+          <img src="../../assets/images/s-yellow-f.png" /> blueprint library
+        </h4>
+      </div>
+
+      <div class="blueprintCard">
+        <div class="col-lg-12 col-sm-12 row">
+          <div
+            class="cards col-lg-4"
+            style="margin-top: 0"
+            *ngFor="let blueprint of search.blueprints"
+          >
+            <div class="col-md-6 p-r-0">
+              <img
+                class="card-img-top img-responsive"
+                src="{{ blueprint.imgUrl }}"
+                alt="Card image cap"
+              />
+            </div>
+            <div class="col-md-7">
+              <div class="card-body">
+                <h1 class="card-title">
+                  {{
+                    blueprint.expert.firstName + " " + blueprint.expert.lastName
+                  }}
+                </h1>
+                <p class="card-company">{{ blueprint.company.name }}</p>
+                <p class="card-location">{{ blueprint.company.location }}</p>
+              </div>
+              <div class="col-md-12">
+                <p class="card-desc">
+                  {{ blueprint.description }}
+                </p>
+
+                <div class="tags">
+                  <button class="btn btn-white">download</button>
+                  <button class="btn btn-teal">read more</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="courses" *ngIf="search.courses.length">
+      <div class="green-header margin-b-t d-flex">
+        <h4 class="ml-0 mr-auto mt-auto mb-auto">
+          {{ search.courses.length }} result courses
+        </h4>
+        <h4 class="ml-auto mr-0 mt-auto mb-auto">
+          <img src="../../assets/images/s-green-f.png" /> courses library
+        </h4>
+      </div>
+      <div class="coursesDiv">
+        <div class="col-lg-12 col-sm-12 row">
+          <div class="card col-lg-3" *ngFor="let course of search.courses">
+            <img
+              src="{{ course.imgUrl }}"
+              alt="Card image cap"
+              class="card-img-top img-responsive"
+            />
+            <h3 class="img-title">{{ course.imgTitle }}</h3>
+            <div class="card-body green-bg">
+              <h4 class="card-title">{{ course.title }}</h4>
+              <p class="card-text">{{ course.description }}</p>
+              <div class="green-tags">
+                <button
+                  class="btn btn-success green-btn-tags m-t-20"
+                  *ngFor="let tag of course.tags"
+                >
+                  {{ tag }}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="events" *ngIf="search.events.length">
+      <div class="purple-header margin-b-t d-flex">
+        <h4 class="ml-0 mr-auto mt-auto mb-auto">
+          {{ search.events.length }} result in events
+        </h4>
+        <h4 class="ml-auto mr-0 mt-auto mb-auto">
+          <img src="../../assets/images/s-purple-f.png" /> events library
+        </h4>
+      </div>
+      <div class="eventsDiv">
+        <div class="col-lg-12 col-sm-12 row">
+          <div class="card col-lg-3" *ngFor="let event of search.events">
+            <img
+              src="{{ event.imgUrl }}"
+              alt="Card image cap"
+              class="card-img-top img-responsive"
+            />
+            <h3 class="img-title">{{ event.imgTitle }}</h3>
+            <div class="card-body purple-bg">
+              <h4 class="card-title">{{ event.title }}</h4>
+              <p class="card-text">{{ event.description }}</p>
+              <div class="purple-tags">
+                <button
+                  class="btn btn-success purple-btn-tags m-t-20"
+                  *ngFor="let tag of event.tags"
+                >
+                  {{ tag }}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="forums" *ngIf="search.forums.length">
+      <div class="yellow-header margin-b-t d-flex">
+        <h4 class="ml-0 mr-auto mt-auto mb-auto">
+          {{ search.forums.length }} results in forum
+        </h4>
+        <h4 class="ml-auto mr-0 mt-auto mb-auto">
+          <img src="../../assets/images/s-yellow-f.png" /> forums library
+        </h4>
+      </div>
+      <div class="forumsDiv">
+        <div class="col-lg-12 col-sm-12 row">
+          <div class="card col-lg-4" *ngFor="let forum of search.forums">
+            <div class="card-body">
+              <h3 class="font-normal">{{ forum.question }}</h3>
+              <div class="d-flex no-block align-items-center m-b-15">
+                <span>
+                  {{ forum.date | amDateFormat: "DD MMM YYYY" }} by
+                  {{ forum.from }}</span
+                >
+              </div>
+              <div class="ml-auto">
+                <a href="javascript:void(0)" class="link">
+                  <i class="ti-comments"></i>
+                  {{ forum.comments.length }} Comments</a
+                >
+              </div>
+              <div class="tags">
+                <button class="btn btn-teal" *ngFor="let tag of forum.tags">
+                  {{ tag }}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="experts" *ngIf="search.experts.length">
+      <div class="green-header margin-b-t d-flex">
+        <h4 class="ml-0 mr-auto mt-auto mb-auto">
+          {{ search.experts.length }} result in experts
+        </h4>
+        <h4 class="ml-auto mr-0 mt-auto mb-auto">
+          <img src="../../assets/images/s-green-f.png" /> experts library
+        </h4>
+      </div>
+      <div class="expertsDiv">
+        <div class="col-lg-12 col-sm-12 row">
+          <div class="card col-lg-3" *ngFor="let expert of search.experts">
+            <img
+              class="card-img-top img-responsive"
+              src="{{ expert.imgUrl }}"
+              alt="Card image cap"
+            />
+            <div class="card-body">
+              <h4 class="card-title">
+                {{ expert.firstName + " " + expert.lastName }}
+              </h4>
+              <p class="card-text">
+                {{ expert.description }}
+              </p>
+              <p class="card-text">
+                <button class="btn btn-success green-btn m-t-20">
+                  {{ expert.profession }}
+                </button>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="blogs" *ngIf="search.blogs.length">
+      <div class="purple-header margin-b-t d-flex">
+        <h4 class="ml-0 mr-auto mt-auto mb-auto">
+          {{ search.blogs.length }} results in blogs
+        </h4>
+        <h4 class="ml-auto mr-0 mt-auto mb-auto">
+          <img src="../../assets/images/s-purple-f.png" /> blogs library
+        </h4>
+      </div>
+      <div class="blogsCard">
+        <div class="col-lg-12 col-sm-12 row">
+          <div
+            class="cards col-lg-3"
+            style="margin-top: 0"
+            *ngFor="let blog of search.blogs"
+          >
+            <div class="col-md-8">
+              <img
+                class="card-img-top img-responsive"
+                src="{{ blog.imgUrl }}"
+                alt="Card image cap"
+              />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h1 class="card-title">{{ blog.title }}</h1>
+                <p class="card-text">
+                  <!-- {{ blog.date | dateAgo }} -->
+                  <span class="card-text-colored">{{
+                    blog.author.firstName
+                  }}</span>
+                </p>
+                <div class="purple-tags">
+                  <button
+                    class="btn btn-success purple-btn-tags"
+                    *ngFor="let tag of blog.tags"
+                  >
+                    {{ tag }}
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

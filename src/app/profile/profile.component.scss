@@ -1,0 +1,672 @@
+.profilePage {
+  .editBackground {
+    background: #f0f0f0;
+  }
+
+  .editTextarea {
+    border: none;
+    resize: none;
+    width: 100%;
+  }
+
+  .headerContent {
+    flex-direction: inherit;
+    background-color: rgba(120, 78, 188, 0.8);
+    margin-bottom: 0;
+
+    .card-body {
+      padding-bottom: 0;
+
+      .profileImg {
+        width: auto;
+        margin-left: 30px;
+        margin-right: 30px;
+        max-width: 300px;
+        cursor: pointer;
+      }
+
+      .avatarProfile{
+        cursor: pointer;
+      }
+
+      h1 {
+        margin-right: 30px;
+        font-family: Poppins;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 55px;
+        letter-spacing: 0em;
+        text-align: left;
+      }
+
+      .icon-data-container {
+        width: 85%;
+
+        .icon-data {
+          display: grid;
+          text-align: center;
+
+          img {
+            margin-left: auto;
+            margin-right: auto;
+            width: 25px;
+            height: 25px;
+            margin-bottom: -5px;
+          }
+          span {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+
+    .col-lg-8 {
+      color: white;
+      margin-top: auto;
+      margin-bottom: 30px;
+    }
+  }
+
+  .underPictureData {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: auto;
+    margin-left: 40px;
+    margin-right: 40px;
+
+    .name {
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 36px;
+      line-height: 40px;
+      text-transform: uppercase;
+      color: #111111;
+      border: none;
+    }
+
+    .bio {
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 24px;
+      color: #111111;
+    }
+  }
+
+  .mainContent {
+    width: 80%;
+
+    .nav-tabs {
+      border-bottom: none;
+      margin-top: 50px;
+
+      .nav-link {
+        padding: 0;
+        margin: 0.5rem 1rem;
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 26px;
+        color: #0e0e10;
+
+        &:hover {
+          border: none;
+          padding: 0;
+        }
+      }
+
+      .nav-link.active {
+        color: #784ebc;
+        border: none;
+        border-bottom: 5px solid #784ebc;
+      }
+    }
+
+    h1 {
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 36px;
+      line-height: 46px;
+      color: #111111;
+    }
+
+    .aboutCard {
+      div {
+        margin-top: 50px;
+
+        p,
+        textarea {
+          font-family: Poppins;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 24px;
+          line-height: 30px;
+          color: #111111;
+        }
+
+        ul li {
+          font-family: Poppins;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 24px;
+          line-height: 30px;
+          color: #111111;
+          margin-bottom: 15px;
+        }
+
+        .downloadBlueprint {
+          background: #ffffff;
+          border: 2px solid #111111;
+          padding: 10px 24px;
+          box-sizing: border-box;
+          font-family: Poppins;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 16px;
+          line-height: 24px;
+          color: #111111;
+          margin-right: 10px;
+        }
+
+        .seeBlueprint {
+          background: #784ebc;
+          border: 2px solid #784ebc;
+          padding: 10px 24px;
+          font-family: Poppins;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 16px;
+          line-height: 24px;
+          color: #ffffff;
+        }
+
+        .nav-link {
+          padding: 0;
+          margin: 0.5rem 1rem;
+          font-family: Poppins;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 24px;
+          line-height: 26px;
+          color: #0e0e10;
+          border: none;
+
+          .remove-tag {
+            cursor: pointer;
+          }
+
+          & input {
+            margin: 0;
+            padding-left: 5px;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            width: 100%;
+          }
+        }
+      }
+
+      .tagline {
+        .col-md-2 {
+          margin-top: 0px;
+        }
+
+        .col-md-10 {
+          margin-left: -55px;
+
+          .taglineText {
+            font-family: Merriweather;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 48px;
+            line-height: 50px;
+            color: #111111;
+          }
+        }
+      }
+
+      .certificationsCard,
+      .publicationsCard {
+        .card-title {
+          font-family: Poppins;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 24px;
+          line-height: 26px;
+          color: #111111;
+        }
+
+        .card-text {
+          font-family: Poppins;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 24px;
+          color: #784ebc;
+        }
+
+        .card-date {
+          font-family: Poppins;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 24px;
+          color: #111111;
+        }
+      }
+    }
+
+    .blogsCard {
+      div {
+        margin-top: 50px;
+
+        .primaryBtn {
+          width: 100%;
+        }
+
+        .cards {
+          div {
+            margin-top: 0;
+          }
+
+          .card-body {
+            padding: 0 1.25rem;
+
+            .card-title {
+              font-family: Poppins;
+              font-style: normal;
+              font-weight: 600;
+              font-size: 24px;
+              line-height: 26px;
+              color: #111111;
+            }
+
+            .card-text {
+              font-family: Poppins;
+              font-style: normal;
+              font-weight: 500;
+              font-size: 14px;
+              line-height: 24px;
+              color: #525252;
+            }
+
+            .card-text-colored {
+              color: #784ebc;
+            }
+
+            .card-date {
+              font-family: Poppins;
+              font-style: normal;
+              font-weight: normal;
+              font-size: 16px;
+              line-height: 24px;
+              color: #111111;
+            }
+
+            .badge {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+
+    .eventsCard {
+      div {
+        margin-top: 50px;
+
+        .primaryBtn {
+          width: 100%;
+        }
+
+        .blogsCard {
+          div {
+            margin-top: 50px;
+
+            .primaryBtn {
+              width: 100%;
+            }
+
+            .cards {
+              div {
+                margin-top: 0;
+              }
+
+              .card-body {
+                padding: 0 1.25rem;
+
+                .card-title {
+                  font-family: Poppins;
+                  font-style: normal;
+                  font-weight: 600;
+                  font-size: 24px;
+                  line-height: 26px;
+                  color: #111111;
+                }
+
+                .card-text {
+                  font-family: Poppins;
+                  font-style: normal;
+                  font-weight: 500;
+                  font-size: 14px;
+                  line-height: 24px;
+                  color: #525252;
+                }
+
+                .card-text-colored {
+                  color: #784ebc;
+                }
+
+                .card-date {
+                  font-family: Poppins;
+                  font-style: normal;
+                  font-weight: normal;
+                  font-size: 16px;
+                  line-height: 24px;
+                  color: #111111;
+                }
+
+                .badge {
+                  font-size: 14px;
+                }
+              }
+            }
+
+            img {
+              height: 100%;
+            }
+          }
+
+          .card-body {
+            .card-title {
+              font-family: Poppins;
+              font-style: normal;
+              font-weight: 600;
+              font-size: 24px;
+              line-height: 26px;
+              color: #111111;
+            }
+
+            .card-hosts {
+              font-family: Poppins;
+              font-style: normal;
+              font-weight: normal;
+              font-size: 12px;
+              line-height: 18px;
+              color: #111111;
+            }
+
+            .card-date {
+              font-family: Poppins;
+              font-style: normal;
+              font-weight: normal;
+              font-size: 20px;
+              line-height: 30px;
+              color: #111111;
+            }
+
+            .comunityCard {
+              div {
+                margin-top: 50px;
+
+                .primaryBtn {
+                  width: 100%;
+                }
+
+                .cards {
+                  margin-bottom: 20px;
+                  display: block;
+                  margin-left: 0;
+                  margin-right: 0;
+
+                  .card-title {
+                    font-family: Poppins;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 24px;
+                    line-height: 26px;
+                    color: #111111;
+                  }
+
+                  .badge {
+                    margin-left: auto;
+                  }
+
+                  .card-text {
+                    font-family: Poppins;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 14px;
+                    line-height: 21px;
+                  }
+
+                  .card-text-colored {
+                    color: #784ebc;
+                  }
+
+                  .card-hosts {
+                    font-family: Poppins;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 16px;
+                    line-height: 24px;
+                    color: #111111;
+                  }
+
+                  .card-pricing {
+                    font-family: Poppins;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 12px;
+                    line-height: 18px;
+                    color: #111111;
+                  }
+
+                  .badge {
+                    font-size: 14px;
+                  }
+                }
+              }
+            }
+
+            .previousTab {
+              font-family: Poppins;
+              font-style: normal;
+              font-weight: normal;
+              font-size: 16px;
+              line-height: 24px;
+              color: #111111;
+
+              .badge {
+                font-size: 14px;
+              }
+            }
+
+            .b-yellow {
+              background: #ffc20a;
+            }
+
+            .b-teal {
+              background: #88bcba;
+            }
+
+            .b-purple {
+              background: #8e6bc7;
+
+              .card-title,
+              .card-hosts,
+              .card-date,
+              .card-pricing {
+                color: white;
+              }
+            }
+          }
+        }
+      }
+
+      .coursesCard {
+        div {
+          margin-top: 50px;
+        }
+
+        .cards {
+          width: 90%;
+          margin-bottom: 20px;
+          border: 1px solid #784ebc;
+
+          div {
+            margin-top: 0;
+
+            img {
+              height: 100%;
+            }
+          }
+
+          .card-body {
+            .card-title {
+              font-family: Poppins;
+              font-style: normal;
+              font-weight: 500;
+              font-size: 24px;
+              line-height: 26px;
+              color: #111111;
+            }
+
+            .card-hosts {
+              font-family: Poppins;
+              font-style: normal;
+              font-weight: normal;
+              font-size: 16px;
+              line-height: 24px;
+              color: #111111;
+            }
+
+            .card-pricing {
+              font-family: Poppins;
+              font-style: normal;
+              font-weight: normal;
+              font-size: 12px;
+              line-height: 18px;
+              color: #111111;
+            }
+
+            .badge {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+
+    .previousTab {
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 24px;
+      color: #111111;
+
+      a {
+        color: #784ebc;
+        cursor: pointer;
+      }
+    }
+
+    .nextTab {
+      float: right;
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 24px;
+      color: #111111;
+
+      a {
+        color: #784ebc;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .primaryBtn {
+    background-color: #ffc20a;
+    border: 2px solid #111111;
+    padding: 10px 50px;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #111111;
+  }
+
+  .secondaryWhite {
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    padding: 10px 50px;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #ffffff;
+    margin-right: 20px;
+  }
+
+  .imgMargin {
+    width: 30px;
+    margin-right: 10px;
+  }
+
+  .secondaryBlack {
+    background-color: transparent;
+    border: 2px solid #111111;
+    padding: 10px 50px;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #111111;
+    margin-right: 20px;
+  }
+
+  .badge {
+    background: #bba6dd;
+    border-radius: 4px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 30px;
+    color: #111111;
+    margin: 0 10px 10px 0;
+    padding: 0 10px;
+  }
+
+  .badge-yellow {
+    background: #ffdb70;
+  }
+
+  .badge-teal {
+    background: #88bcba;
+  }
+
+  .editor-tag {
+    input {
+      border: 1px solid;
+      height: 40px;
+      width: 50%;
+    }
+  }
+}

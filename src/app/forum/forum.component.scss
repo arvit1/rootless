@@ -1,0 +1,235 @@
+.blueprint {
+  padding: 0 60px;
+
+  .margin-b-t {
+    margin: 0 0 60px 0;
+  }
+
+  .row {
+    .font-60 {
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 60px;
+      line-height: 80px;
+      display: flex;
+      align-items: center;
+      color: #373737;
+    }
+
+    .font-24 {
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 24px;
+      line-height: 30px;
+      display: flex;
+      align-items: center;
+      color: #111111;
+    }
+  }
+
+  .yellow-header {
+    background-color: #feecb7;
+    padding: 10px 0;
+
+    h4 {
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 26px;
+      color: #e0a800;
+    }
+  }
+
+  .green-header {
+    background-color: #e0f4f3;
+    padding: 10px 0;
+
+    h4 {
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 26px;
+      color: #6faeac;
+    }
+  }
+
+  .statisticsContainer {
+    display: flex;
+    text-align: center;
+
+    div {
+      width: 120px;
+
+      span {
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 26px;
+        color: #111111;
+        padding: 5px;
+      }
+
+      p {
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 21px;
+        color: #111111;
+        margin-top: 20px;
+      }
+    }
+  }
+
+  .blueprintOfTheMonth {
+    h1 {
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 36px;
+      line-height: 40px;
+      display: flex;
+      align-items: center;
+      text-transform: uppercase;
+      color: #e0a800;
+    }
+
+    h4 {
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 26px;
+      display: flex;
+      align-items: center;
+      color: #111111;
+    }
+
+    p {
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 24px;
+      color: #111111;
+      margin-bottom: 30px;
+    }
+
+    .statisticsContainer {
+      div {
+        span {
+          border: 5px solid #e0a800;
+        }
+      }
+    }
+
+    .tags {
+      .btn {
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 18px;
+        text-transform: lowercase;
+      }
+
+      .btn-white {
+        background: #f0f0f0;
+        border: 1px solid #e0a800;
+        color: #e0a800;
+      }
+
+      .btn-yellow {
+        color: #ffffff;
+        background: #e0a800;
+        margin-left: 10px;
+      }
+    }
+  }
+
+  .blueprintCard {
+    margin-bottom: 100px;
+
+    .card-title {
+      font-family: Poppins;
+      font-size: 36px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 40px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: #6faeac;
+    }
+
+    .card-company {
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 26px;
+      color: #111111;
+    }
+
+    .card-location {
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 24px;
+      color: #111111;
+    }
+
+    .card-desc {
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 24px;
+      color: #111111;
+      margin: 25px 0;
+    }
+
+    .statisticsContainer {
+      div {
+        span {
+          border: 5px solid #6faeac;
+        }
+      }
+    }
+
+    .tags {
+      .btn {
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 18px;
+        text-transform: lowercase;
+      }
+
+      .btn-white {
+        background: #f0f0f0;
+        border: 1px solid #6faeac;
+        color: #6faeac;
+      }
+
+      .btn-teal {
+        color: #ffffff;
+        background: #6faeac;
+        margin-left: 10px;
+      }
+    }
+  }
+  .green-btn {
+    background-color: #c2ebe9;
+    color: #000;
+    font-size: 13px;
+    border: none;
+    margin-right: 10px;
+  }
+}

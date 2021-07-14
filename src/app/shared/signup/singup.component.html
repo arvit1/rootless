@@ -1,0 +1,418 @@
+<div class="container loginPage">
+  <div class="row">
+    <div
+      class="col-sm-12"
+      [ngClass]="{
+        'col-lg-6': interests === false,
+        'col-lg-4': interests === true,
+        'd-none': expert === 'true' && thirdStep === 'true'
+      }"
+    >
+      <h1 class="font-55 black-color no-margin">{{ header }}</h1>
+      <p class="margin-b-t font-25 black-color no-margin">
+        {{ subTitle }}
+      </p>
+      <div
+        class="col-lg-8 col-xlg-9 col-md-7 no-margin padding-b-t-40"
+        [ngClass]="{
+          'd-none': expert === 'true',
+          'd-block': interests === false
+        }"
+        style="display: none"
+      >
+        <div class="card mainContent">
+          <ul
+            ngbNav
+            #nav="ngbNav"
+            [(activeId)]="active"
+            class="nav-tabs"
+            style="margin-bottom: 30px"
+          >
+            <li [ngbNavItem]="1">
+              <a
+                ngbNavLink
+                class="no-margin"
+                style="margin-right: 30px !important; display: grid"
+              >
+                <img
+                  [src]="
+                    active == 1
+                      ? 'assets/images/smiley.svg'
+                      : 'assets/images/smiley-grey.svg'
+                  "
+                  class="margin-auto"
+                  style="margin-bottom: 10px !important"
+                />
+                <!-- curious -->
+                rootless me
+              </a>
+              <ng-template ngbNavContent>
+                <p class="body">
+                  If you join as a Curious Me member, you will enjoy a one week
+                  free trial of the Rootless Me membership. At the end of the
+                  trial your account will remain as a free membership.
+                </p>
+              </ng-template>
+            </li>
+            <!-- <li [ngbNavItem]="2">
+              <a ngbNavLink class="no-margin" style="display: grid"
+                ><img
+                  [src]="
+                    active == 2
+                      ? 'assets/images/smiley.svg'
+                      : 'assets/images/smiley-grey.svg'
+                  "
+                  class="margin-auto"
+                  style="margin-bottom: 10px !important"
+                />rootless
+              </a>
+              <ng-template ngbNavContent>
+                <p class="body">
+                  If you join as a Rootless Me member, you will enjoy a one week
+                  free trial, which you can cancel anytime in your profile
+                  settings. Upon cancelation your account will be converted into
+                  a Curious Me free account.
+                </p>
+              </ng-template>
+            </li> -->
+          </ul>
+
+          <div [ngbNavOutlet]="nav" class="mt-2"></div>
+        </div>
+      </div>
+
+      <div
+        class="col-lg-8 col-xlg-9 col-md-7 no-margin"
+        [ngClass]="{ 'd-block': expert === 'true' }"
+        style="display: none"
+      >
+        <div class="card mainContent">
+          <ul
+            ngbNav
+            #nav="ngbNav"
+            [(activeId)]="active"
+            class="nav-tabs"
+            style="margin-bottom: 30px"
+          >
+            <li [ngbNavItem]="1">
+              <a
+                ngbNavLink
+                class="no-margin"
+                style="margin-right: 30px !important; display: grid"
+              >
+                <img
+                  src="assets/images/expert.svg"
+                  class="margin-auto"
+                  style="margin-bottom: 10px !important; width: 80px"
+                />
+                expert</a
+              >
+              <ng-template ngbNavContent>
+                <p class="body">
+                  If you join as a Rootless Expert member, you will have an
+                  active subscription once your account has been verified. To
+                  register as an expert will require a verification by our team.
+                  If your account is not verified it will be converted into a
+                  Rootless Me account with a free 7 days trial. You can cancel
+                  your subscription anytime in your profile settings. Upon
+                  cancelation your account will be converted into a Curious Me
+                  account.
+                </p>
+              </ng-template>
+            </li>
+          </ul>
+
+          <div [ngbNavOutlet]="nav" class="mt-2"></div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      style="display: none"
+      [ngClass]="{
+        'col-lg-6 d-block': expert === 'true' && thirdStep === 'true'
+      }"
+    >
+      <div class="col-sm-12">
+        <h1 class="font-55 black-color no-margin">Account created!</h1>
+        <div
+          class="col-lg-8 col-xlg-9 col-md-7 no-margin d-block no-padding"
+          style="padding: 0"
+        >
+          <div class="card mainContent">
+            <p class="body font-25">Verification started</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <app-checkout
+      class="col-lg-6 col-sm-12"
+      [ngClass]="{
+        'col-lg-6 d-block': checkout,
+        'col-lg-8': interests === true && thirdStep !== 'true'
+      }"
+      style="display: none"
+      [item]="memberType"
+      (newItemEvent)="addItem($event)"
+      [userData]="userData"
+    >
+    </app-checkout>
+
+    <div
+      class="col-lg-6 col-sm-12"
+      [ngClass]="{ 'd-block': secondStepExpert === 'true' }"
+      style="display: none"
+    >
+      <div>
+        <p class="page-count padding-b-t-40">Step 2 / 3</p>
+        <!-- Form -->
+        <div class="row">
+          <div class="col-12">
+            <form
+              class="form-horizontal m-t-20"
+              [formGroup]="expertForm"
+              (ngSubmit)="nextStepExpert()"
+            >
+              <div style="padding: 20px; padding-top: 0">
+                <!-- <div class="form-group">
+                  <label id="headshot" class="control-label col-form-label">Upload a headshot</label>
+                  <input type="file" accept="image/*" #file class="d-none" (change)="uploadFile($event)" />
+                  <input formControlName="headshot" type="text" class="form-control"
+                    placeholder="Upload a profile headshot" (click)="file.click()" />
+                  <span class="input-group-addon"><img src="assets/images/upload.svg" /></span>
+                </div> -->
+                <div class="form-group">
+                  <label id="profession" class="control-label col-form-label"
+                    >Profession</label
+                  >
+                  <input
+                    formControlName="profession"
+                    type="text"
+                    class="form-control"
+                    placeholder="Profession"
+                  />
+                </div>
+                <div class="form-group">
+                  <label id="about" class="control-label col-form-label"
+                    >About</label
+                  >
+                  <textarea
+                    formControlName="about"
+                    type="text"
+                    class="form-control"
+                    placeholder="Write two paragraphs about yourself"
+                  ></textarea>
+                </div>
+                <div class="form-group">
+                  <label id="tagline" class="control-label col-form-label"
+                    >Tagline</label
+                  >
+                  <input
+                    formControlName="tagline"
+                    type="text"
+                    class="form-control"
+                    placeholder="Write your one sentence tagline"
+                  />
+                </div>
+                <div class="form-group">
+                  <label id="bring" class="control-label col-form-label"
+                    >Brings to the table</label
+                  >
+                  <textarea
+                    formControlName="bringsToTable"
+                    type="text"
+                    class="form-control"
+                    placeholder="Add 3-4 sentences on what you offer to the community"
+                  ></textarea>
+                </div>
+                <div class="form-group">
+                  <label id="expertise" class="control-label col-form-label"
+                    >Areas of expertise</label
+                  >
+                  <input
+                    formControlName="expertise"
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter your areas of expertise separated by commas"
+                  />
+                </div>
+                <!-- <p class="ml-3 mt-5">
+                  <img src="assets/images/plus-black.svg" /> Add certificate
+                </p>
+                <p class="ml-3">
+                  <img src="assets/images/plus-black.svg" /> Add publication
+                </p> -->
+              </div>
+              <div class="form-group text-center" style="padding: 20px">
+                <div class="col-xs-12 p-b-20">
+                  <button
+                    type="submit"
+                    class="btn yellowBlack-btn padding-20 full-width"
+                  >
+                    <img
+                      src="../../../assets/images/flowerblack.png"
+                      style="width: 30px; margin-right: 10px"
+                    />
+                    submit form
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="col-lg-6 col-sm-12"
+      [ngClass]="{ 'd-block': signup, 'd-none': secondStepExpert === 'true' }"
+      style="display: none"
+    >
+      <div>
+        <p class="page-count padding-b-t-40">Step 1 / 3</p>
+        <!-- <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 m-t-10 text-center">
+            <div class="social">
+              <a href="javascript:void(0)" class="btn btn-google" data-toggle="tooltip" title=""
+                data-original-title="Login with Google">
+              </a>
+              <a href="javascript:void(0)" class="btn btn-facebook mr-2" data-toggle="tooltip" title=""
+                data-original-title="Login with Facebook"></a>
+              <a href="javascript:void(0)" class="btn btn-twitter" data-toggle="tooltip" title=""
+                data-original-title="Login with Twitter"></a>
+            </div>
+          </div>
+        </div>
+        <p class="padding-b-t-40 font-25 black-color text-center no-margin">
+          or
+        </p> -->
+        <!-- Form -->
+        <div class="row">
+          <div class="col-12">
+            <form
+              class="form-horizontal m-t-20"
+              [formGroup]="myForm"
+              (ngSubmit)="nextStep()"
+            >
+              <div class="form-group">
+                <label id="name" class="control-label col-form-label"
+                  >Name</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter your name"
+                  aria-label="name"
+                  aria-describedby="basic-addon1"
+                  formControlName="firstName"
+                />
+              </div>
+              <div class="form-group">
+                <label id="surname" class="control-label col-form-label"
+                  >Surname</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter your surname"
+                  aria-label="surname"
+                  formControlName="lastName"
+                  aria-describedby="basic-addon1"
+                />
+              </div>
+              <div class="form-group">
+                <label id="inputemail" class="control-label col-form-label"
+                  >Email</label
+                >
+                <input
+                  formControlName="email"
+                  type="email"
+                  class="form-control"
+                  placeholder="Enter your email"
+                  aria-label="email"
+                  aria-describedby="basic-addon1"
+                />
+              </div>
+              <div class="form-group">
+                <label id="inputpassword" class="control-label col-form-label"
+                  >PASSWORD</label
+                >
+                <input
+                  formControlName="password"
+                  type="password"
+                  class="form-control"
+                  placeholder="*********"
+                  aria-label="password"
+                  aria-describedby="basic-addon1"
+                />
+              </div>
+              <div class="form-group row">
+                <div class="col-md-12">
+                  <div class="custom-control custom-checkbox d-flex">
+                    <input
+                      type="checkbox"
+                      class="custom-control-input"
+                      id="customCheck1"
+                    />
+                    <label
+                      class="custom-control-label font-14"
+                      id="customCheck1"
+                      >Send me weekly emails about the industries I am
+                      interested in</label
+                    >
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="custom-control custom-checkbox d-flex">
+                    <input
+                      type="checkbox"
+                      class="custom-control-input"
+                      id="customCheck2"
+                      formControlName="acceptTerms"
+                    />
+                    <label
+                      class="custom-control-label font-14"
+                      id="customCheck2"
+                      >I have read and I agree to
+                      <a href="" class="link-text">Terms and Conditions </a>as
+                      well as the
+                      <a href="" class="link-text">Privacy Policy</a>.</label
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="form-group text-center">
+                <div class="col-xs-12 p-b-20">
+                  <button
+                    class="btn yellowBlack-btn padding-20 full-width"
+                    type="submit"
+                  >
+                    <img
+                      src="assets/images/flowerblack.png"
+                      style="width: 30px; margin-right: 10px"
+                    />
+                    Join us now
+                  </button>
+                </div>
+              </div>
+              <div class="form-group m-b-0 m-t-10">
+                <div class="col-sm-12 text-center">
+                  Already have an account?
+                  <a [routerLink]="['/login']" class="text-info m-l-5"
+                    ><b>Log in</b></a
+                  >
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<img
+  src="assets/images/yellowFlower.png"
+  style="width: 20%; position: fixed; bottom: -100px; left: 0"
+/>

@@ -1,0 +1,138 @@
+<div class="row notificationsPage">
+  <div class="col-lg-12 col-sm-12" style="padding: 60px">
+    <h1 class="font-55 black-color no-margin" style="width: 50%">
+      Saved content
+    </h1>
+    <p class="margin-b-t font-25 black-color no-margin">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    </p>
+  </div>
+  <div class="col-lg-12 col-xlg-12 col-md-12">
+    <div class="card mainContent">
+      <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+        <li [ngbNavItem]="1">
+          <a ngbNavLink>Blueprints</a>
+          <ng-template ngbNavContent>
+            <div class="row blueprintCard">
+              <div
+                class="col-lg-6 col-sm-12"
+                *ngFor="let blueprint of blueprints"
+              >
+                <div class="row cards" style="margin-top: 0">
+                  <div class="col-md-4 p-r-0">
+                    <img
+                      class="card-img-top img-responsive"
+                      src="{{ blueprint.imgUrl }}"
+                      alt="Card image cap"
+                    />
+                  </div>
+                  <div class="col-md-7">
+                    <div class="card-body">
+                      <h1 class="card-title">
+                        {{
+                          blueprint.expert.firstName +
+                            " " +
+                            blueprint.expert.lastName
+                        }}
+                      </h1>
+                      <p class="card-company">{{ blueprint.company.name }}</p>
+                      <p class="card-location">
+                        {{ blueprint.company.location }}
+                      </p>
+                    </div>
+                    <div class="col-md-12">
+                      <p class="card-desc">
+                        {{ blueprint.description }}
+                      </p>
+
+                      <div class="tags">
+                        <button
+                          class="btn btn-white"
+                          (click)="(blueprint.blueprintUrl)"
+                        >
+                          download
+                        </button>
+                        <!-- <button class="btn btn-teal" [routerLink]="['/blueprints', blueprint.id]">read more</button> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </li>
+        <li [ngbNavItem]="2">
+          <a ngbNavLink>Posts</a>
+          <ng-template ngbNavContent>
+            <div class="row blogsCard" *ngFor="let blog of blogs">
+              <div class="col-lg-12 col-sm-12">
+                <div class="row cards" style="margin-top: 0">
+                  <div class="col-md-4 p-r-0">
+                    <img
+                      class="card-img-top img-responsive"
+                      src="{{ blog.imgUrl }}"
+                      alt="Card image cap"
+                    />
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h1 class="card-title">
+                        {{ blog.title }}
+                      </h1>
+                      <p class="card-text">
+                        {{ blog.date }} days ago by
+                        <span class="card-text-colored">Arnon</span>
+                      </p>
+                      <div class="green-tags">
+                        <button
+                          class="btn btn-success purple-btn"
+                          *ngFor="let tag of blog.tags"
+                        >
+                          {{ tag }}
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--              <button class="btn btn-teal" [routerLink]="['/blog', blog.id]">read more</button>-->
+            </div>
+          </ng-template>
+        </li>
+        <li [ngbNavItem]="3">
+          <a ngbNavLink>Questions</a>
+          <ng-template ngbNavContent>
+            <div class="col-lg-4" *ngFor="let forum of forums">
+              <div class="card">
+                <div class="card-body">
+                  <h3 class="font-normal">
+                    {{ forum.question }}
+                  </h3>
+                  <div class="d-flex no-block align-items-center m-b-15">
+                    <span> {{ forum.date }}</span>
+                  </div>
+                  <div class="ml-auto">
+                    <a href="javascript:void(0)" class="link">
+                      <i class="ti-comments"></i>
+                      {{ forum.comments.length }} Comments</a
+                    >
+                  </div>
+                  <div class="tags">
+                    <button
+                      class="btn btn-success purple-btn m-t-20"
+                      *ngFor="let tag of forum.tags"
+                    >
+                      {{ tag }}
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </li>
+      </ul>
+
+      <div [ngbNavOutlet]="nav" class="mt-2"></div>
+    </div>
+  </div>
+</div>

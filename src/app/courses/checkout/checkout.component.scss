@@ -1,0 +1,87 @@
+.checkout {
+  padding-top: 60px;
+  .purple_tab {
+    background: #8e6cc7 !important;
+    color: white;
+    padding: 10px 20px;
+    font-weight: 500 !important;
+    width: 50%;
+    cursor: pointer;
+  }
+
+  .purple_light_tab {
+    background: #bba6dd;
+    color: white;
+    padding: 10px 20px;
+    font-weight: 500;
+    width: 50%;
+    cursor: pointer;
+  }
+
+  .green_background {
+    background: #c2ebe9;
+    color: #121212;
+  }
+
+  .page-count {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 26px;
+    color: #868686;
+    text-align: center;
+  }
+
+  .small {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 18px;
+    color: #111111;
+  }
+}
+.yellow-color {
+  color: #e0a800;
+  font-size: 40px;
+}
+.card .card-title {
+  font-weight: 200;
+}
+.card-body {
+  padding: 10px;
+}
+.white-bg {
+  background: #fff;
+  padding: 20px;
+}
+.img-title {
+  color: white;
+  margin-top: -66px;
+  margin-left: 10px;
+  font-weight: 500;
+}
+.card-text-colored {
+  color: #6faeac;
+}
+
+.badge-check-green {
+  margin-left: 5px;
+  width: 20px;
+}
+.cardContainer .field {
+  border: 2px solid black;
+  background-color: #fff;
+  padding: 15px;
+  width: 100%;
+}
+
+.cardContainer label {
+  margin-top: 20px;
+  text-transform: uppercase;
+}
+.goBack {
+  font-size: 13px;
+  line-height: 18px;
+  color: #373737;
+  cursor: pointer;
+}

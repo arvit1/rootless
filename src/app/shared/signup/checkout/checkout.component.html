@@ -1,0 +1,124 @@
+<div class="col-sm-12 checkout" [ngClass]="{ 'd-block': checkout }" style="display: none">
+  <div>
+    <p class="page-count padding-b-t-40">Step {{isExpert}} / 3</p>
+    <div class="row" [ngClass]="{ 'd-block': item === 'rootless' }" style="display: none">
+      <div class="col-xs-12 col-sm-12 col-md-12 m-t-10 text-center d-inline-flex" style="padding: 20px">
+        <div class="purple_light_tab purple_tab" [ngClass]="{ purple_tab: annually === true }"
+          (click)="changePeriod('annually')">
+          $120 Annually
+        </div>
+        <div class="purple_light_tab" [ngClass]="{ purple_tab: monthly === true }" (click)="changePeriod('monthly')">
+          $30 Monthly
+        </div>
+      </div>
+    </div>
+    <!-- Form -->
+    <div class="row" [ngClass]="{ 'd-block': item !== 'curious' }" style="display: none">
+      <div class="col-12">
+        <p style="padding: 20px">Payment information</p>
+        <form class="form-horizontal m-t-20" (ngSubmit)="onSubmit($event)" #stripeContainer>
+          <div style="background: #f0f0f0; padding: 20px">
+            <div class="cardContainer" id="example-3">
+              <div class="fieldset">
+                <label for="card-number">Credit Card</label>
+                <div id="card-number" class="field empty"></div>
+                <label for="card-expiry">Expiration</label>
+                <div id="card-expiry" class="field empty"></div>
+                <label for="card-cvc">Security Code</label>
+                <div id="card-cvc" class="field empty"></div>
+              </div>
+            </div>
+          </div>
+          <div style="padding: 20px">
+            <div class="form-group">
+              <label id="inputdiscountcode" class="control-label col-form-label">GIFT OR DISCOUNT CODE
+                (optional)</label>
+              <input type="text" class="form-control" placeholder="" aria-label="discountcode"
+                aria-describedby="basic-addon1" name="howDidYouHearFromUs" [(ngModel)]="howDidYouHearFromUs"
+                name="howDidYouHearFromUs" />
+            </div>
+            <div class="form-group">
+              <label class="control-label col-form-label">HOW DID YOU HEAR FROM US (optional)</label>
+              <select class="form-control" style="padding: 10px !important; height: 54px" name="discountCode"
+                [(ngModel)]="discountCode" name="discountCode">
+                <option value="Select" selected="true">Select a reason</option>
+                <option value="another">another</option>
+              </select>
+            </div>
+          </div>
+          <div style="padding: 20px">
+            <div class="green_background" style="padding: 20px; border-radius: 10px; margin-bottom: 30px"
+              *ngIf="item === 'rootless'">
+              <p>Total to pay</p>
+              <h2>{{ annually ? "120$" : "30$" }}</h2>
+              <p>
+                You will enjoy a 7 days free trial as a Rootless Me member. If
+                you want to upgrade, you can always do so in your profile
+                settings.
+              </p>
+            </div>
+            <div class="green_background" style="padding: 20px; border-radius: 10px; margin-bottom: 30px"
+              *ngIf="item === 'expert'">
+              <p>Total to pay</p>
+              <h2>$200</h2>
+              <p>billed only after verification</p>
+              <p>
+                A recurring annual charge of $200 will automatically apply as soon as your verification comes through.
+                You may cancel at any time in your settings.
+              </p>
+            </div>
+            <div class="form-group text-center">
+              <div class="col-xs-12 p-b-20">
+                <button type="submit" class="btn yellowBlack-btn padding-20 full-width">
+                  <img src="assets/images/flowerblack.png" style="width: 30px; margin-right: 10px" />
+                  {{item === 'expert' ? 'confirm order' : 'Start your free trial'}}
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="row" [ngClass]="{ 'd-block': item === 'curious' }" style="display: none">
+      <div class="col-12">
+        <form class="form-horizontal m-t-20" (ngSubmit)="onSubmit($event)">
+          <div style="padding: 20px">
+            <div class="form-group">
+              <label class="control-label col-form-label">HOW DID YOU HEAR FROM US (optional)</label>
+              <select class="form-control" style="padding: 10px !important; height: 54px" [(ngModel)]="discountCode"
+                name="discountCode">
+                <option value="Select" selected="true">Select a reason</option>
+                <option value="another">another</option>
+              </select>
+            </div>
+          </div>
+          <div style="padding: 20px">
+            <div class="green_background" style="padding: 20px; border-radius: 10px; margin-bottom: 30px">
+              <p>Total to pay</p>
+              <h2>0,00$</h2>
+              <p class="small">free for your first 7 days</p>
+              <p>
+                You will enjoy a 7 days free trial as a Rootless Me member. If
+                you want to upgrade, you can always do so in your profile
+                settings.
+              </p>
+            </div>
+            <div class="form-group text-center">
+              <div class="col-xs-12 p-b-20">
+                <button class="btn yellowBlack-btn padding-20 full-width" href="/dashboard/dashboard1">
+                  <!-- (click)="nextStep()" (click)="addNewItem(true)" -->
+                  <img src="assets/images/flowerblack.png" style="width: 30px; margin-right: 10px" />
+                  Start your free trial
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-interests class="col-lg-12 col-sm-12" [ngClass]="{ 'd-block': interests }" style="display: none"
+  [userData]="userData"></app-interests>

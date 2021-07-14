@@ -1,0 +1,356 @@
+.events {
+  padding: 0 60px;
+  .beforeyougo h1 {
+    font-family: "Poppins", sans-serif;
+    font-size: 50px;
+    color: black;
+    font-weight: 600;
+  }
+  .beforeyougo {
+    padding: 20px;
+    text-align: center;
+  }
+  .bookedEvents {
+    text-align: center;
+    h1 {
+      font-family: "Poppins", sans-serif;
+      font-size: 50px;
+      color: black;
+      font-weight: 600;
+    }
+  }
+  .margin-b-t {
+    margin: 60px 0;
+  }
+  .white-btn {
+    background: #bba6dd;
+    color: #fff;
+    font-size: 13px;
+    border: none;
+    border-radius: 5px;
+  }
+  .yellow-btn {
+    background-color: #ffdb70;
+    color: #000;
+    font-size: 13px;
+    border: none;
+    margin-right: 10px;
+  }
+  .green-btn {
+    width: 100%;
+    background-color: #6faeac;
+    color: #fff;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 400;
+    text-align: left;
+    border: none;
+  }
+  .purple-btn {
+    width: 100%;
+    background-color: #784ebc;
+    color: #fff;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 400;
+    text-align: left;
+    border: none;
+  }
+  .yellowBlack-btn {
+    background: #ffc20a;
+    color: black;
+    font-weight: 500;
+    border-color: black;
+    width: auto;
+  }
+  .yellow-header {
+    background-color: #feecb7;
+    padding: 10px 0;
+    h4 {
+      color: #dfa803;
+    }
+  }
+  .green-header {
+    background-color: #e0f4f3;
+    padding: 10px 0;
+    h4 {
+      color: #6faeac;
+    }
+  }
+  .purple-header {
+    background-color: #dcd2ed;
+    padding: 10px 0;
+    h4 {
+      color: #784ebc;
+    }
+  }
+  .purple-border {
+    border: 10px solid #784ebc;
+  }
+  .card-body {
+    padding: 10px;
+  }
+  .white-bg {
+    background: #fff;
+    padding: 20px;
+  }
+  .img-title {
+    color: white;
+    margin-top: -66px;
+    margin-left: 10px;
+    font-weight: 500;
+  }
+  .green-tags {
+  }
+  .green-btn-tags {
+    background-color: rgb(194 235 233);
+    color: #000;
+    font-size: 13px;
+    border: none;
+    margin-right: 10px;
+  }
+  .green-bg {
+    border: 1px solid #6faeac;
+    padding: 20px;
+  }
+  .purple-btn-tags {
+    background-color: #bba6dd;
+    color: #000;
+    font-size: 13px;
+    border: none;
+    margin-right: 10px;
+    border-radius: 4px;
+  }
+  .card-hosts {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 18px;
+    color: #111111;
+  }
+  .card-pricing {
+    font-family: Poppins;
+    font-style: normal;
+    font-size: 12px;
+    line-height: 18px;
+    color: #111111;
+  }
+  .eventsDiv {
+    .col-md-5 {
+      padding: 0;
+    }
+    .right-card {
+      margin: auto !important;
+    }
+    .primaryBtn {
+      width: 100%;
+    }
+    .cards {
+      padding: 0;
+      div {
+        margin-top: 0;
+      }
+      .card-body {
+        padding: 0;
+        .card-title {
+          font-family: Poppins;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 30px;
+          text-transform: uppercase;
+          color: #111111;
+        }
+        .card-text {
+          font-family: Poppins;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 24px;
+          color: #111111;
+        }
+        .card-hosts {
+          font-family: Poppins;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 24px;
+          color: #111111;
+        }
+        .card-text-colored {
+          color: #784ebc;
+        }
+        .card-date {
+          font-family: Poppins;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 20px;
+          line-height: 24px;
+          color: #111111;
+        }
+        .badge {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  .mostBookedEvents {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 26px;
+    color: #111111;
+  }
+  .b-yellow {
+    background: #ffc20a;
+  }
+  .col-lg-6 {
+    img {
+      width: 100%;
+    }
+  }
+  .width-40 {
+    width: 60%;
+  }
+  .coursesCard {
+    div {
+      margin-top: 50px;
+    }
+
+    .cards {
+      margin-bottom: 20px;
+      border: 1px solid #784ebc;
+
+      div {
+        margin-top: 0;
+
+        img {
+          height: 100%;
+        }
+      }
+
+      .card-body {
+        .card-title {
+          font-family: Poppins;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 24px;
+          color: #111111;
+        }
+
+        .card-hosts {
+          font-family: Poppins;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 24px;
+          color: #111111;
+        }
+
+        .card-pricing {
+          font-family: Poppins;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 12px;
+          line-height: 18px;
+          color: #111111;
+        }
+
+        .badge {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  .beforeyougo h1 {
+    font-family: "Poppins", sans-serif;
+    font-size: 60px;
+    color: black;
+    font-weight: 600;
+  }
+
+  .beforeyougo {
+    padding: 20px;
+  }
+
+  .inputone {
+    display: inline-block;
+    border: 2px solid black;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    font-size: 20px;
+    margin: 40px auto;
+    width: 80%;
+  }
+
+  .inputtwo {
+    display: inline-block;
+    border: 2px solid black;
+    background: #ffc20a;
+    color: black;
+    padding: 15px 0px;
+    font-weight: bold;
+    font-size: 18px;
+    width: 60%;
+  }
+
+  .blackflower1 {
+    margin-right: 2%;
+  }
+  .card-title {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    text-transform: uppercase;
+    color: #111111;
+  }
+  .card-text {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: #111111;
+  }
+  .col-lg-6.d-flex {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .icon-data-container {
+    background: #784ebc;
+    padding: 30px 20px;
+    margin: 0 0px;
+    .icon-data {
+      display: grid;
+      text-align: center;
+      color: #fff;
+      font-size: 14px;
+      img {
+        margin-left: auto;
+        margin-right: auto;
+        width: 25px;
+        height: 25px;
+      }
+    }
+  }
+  .arrow-up {
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 20px solid #784ebc;
+    margin-left: auto;
+    margin-right: 20px;
+  }
+  .col-md-4.p-r-0.p-l-0 {
+    margin-bottom: -20px;
+  }
+  .badge-check {
+    width: 20px;
+    margin-top: -9px;
+  }
+}

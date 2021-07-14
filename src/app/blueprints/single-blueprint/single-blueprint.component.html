@@ -1,0 +1,234 @@
+<div class="singleBlueprintContainer" *ngIf="blueprint">
+  <div class="row firstContainer">
+    <div class="col-md-5 text-center">
+      <p class="title">
+        WITH THE CEO OF <span class="yellowFont">{{ blueprint.company }}</span>
+      </p>
+      <hr />
+      <img src="{{ blueprint.photo }}" class="img" />
+      <h4 class="yellowFont subtitle">An interview with</h4>
+      <h1 class="name">{{ blueprint.firstName + " " + blueprint.lastName }}</h1>
+      <img src="assets/images/reverse.png" width="50" />
+    </div>
+
+    <div class="col-md-7">
+      <a [routerLink]="['/blueprints']">
+        <p class="goBack">
+          < To blueprints library</p>
+      </a>
+      <p class="title">
+        Explore {{ blueprint.firstName }}’s journey in
+        {{ getIndustryName(blueprint.industryId) }} industry
+      </p>
+      <p class="subtitle">an entire rootless journey with powerful insights</p>
+      <div>
+        <a href="#" class="readMore">read more</a>
+        <!-- <a href="{{ blueprint.pdfFile }}" type="submit"
+          ><img class="button-img" src="assets/images/flower-white.svg" />
+          download
+        </a> -->
+        <a href="{{ pdfUrl }}" class="btn btnDownload" target="_blank"><img class="button-img"
+            src="assets/images/flower-white.svg" />
+          download</a>
+      </div>
+    </div>
+  </div>
+  <div class="sliders profileSlider">
+    <ngb-carousel>
+      <ng-template ngbSlide>
+        <p class="meet text-center">Meet the entrepreneur</p>
+        <div class="row mt-5">
+          <div class="col-md-5 text-center">
+            <img src="{{ blueprint.photo }}" class="img" style="border: 10px solid #6faeac" />
+          </div>
+          <div class="col-md-7">
+            <p class="name">
+              {{ blueprint.firstName }} <br />
+              {{ blueprint.lastName }}
+            </p>
+            <p class="company">{{ blueprint.company }}</p>
+            <p class="location">
+              <i class="fa fa-map-marker-alt"></i> {{ blueprint.location }}
+            </p>
+          </div>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide *ngFor="let description of blueprint.description">
+        <p class="content">
+          {{ description }}
+        </p>
+      </ng-template>
+    </ngb-carousel>
+  </div>
+  <div class="sliders companySlider">
+    <ngb-carousel>
+      <ng-template ngbSlide>
+        <div class="row">
+          <div class="col-md-2 meetCompany">
+            <p>meet the company</p>
+          </div>
+          <div class="col-md-10">
+            <p class="since">{{ blueprint.companyYear }}</p>
+            <p class="name">
+              {{ blueprint.company }}
+            </p>
+            <p class="company">{{ blueprint.industry }}</p>
+            <p class="location">
+              <i class="fa fa-map-marker-alt"></i> {{ blueprint.location }}
+            </p>
+          </div>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide *ngFor="let description of blueprint.companyDescription">
+        <p class="content">
+          {{ description }}
+        </p>
+      </ng-template>
+    </ngb-carousel>
+  </div>
+  <div class="sliders quotesSlider">
+    <ngb-carousel>
+      <ng-template ngbSlide *ngFor="let quote of blueprint.quotes">
+        <p class="content">
+          {{ quote }}
+        </p>
+        <p class="person">
+          - {{ blueprint.firstName + " " + blueprint.lastName }}
+        </p>
+      </ng-template>
+    </ngb-carousel>
+  </div>
+  <div class="stats">
+    <h1 class="m-b-15 text-center">Quick stats about construction industry</h1>
+    <div class="col-md-6 row margin-auto mt-5">
+      <div class="row">
+        <div class="col-lg-4 col-md-4" *ngIf="statKeys.length > 0">
+          <div class="card">
+            <div class="box firstBox">
+              <p>{{ statValues[0] }}</p>
+            </div>
+            <h3 class="img-title">{{ statKeys[0] }}</h3>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4" style="margin-top: 120px" *ngIf="statKeys.length > 1">
+          <div class="card">
+            <div class="box secondBox">
+              <p>{{ statValues[1] }}</p>
+            </div>
+            <h3 class="img-title">{{ statKeys[1] }}</h3>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4" style="margin-top: 240px" *ngIf="statKeys.length > 2">
+          <div class="card">
+            <div class="box thirdBox">
+              <p>{{ statValues[2] }}</p>
+            </div>
+            <h3 class="img-title">{{ statKeys[2] }}</h3>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="width: 100%" *ngIf="statKeys.length > 3">
+        <div class="col-lg-4 col-md-4" style="margin-left: 13%">
+          <div class="card">
+            <div class="box forthBox">
+              <p>{{ statValues[3] }}</p>
+            </div>
+            <h3 class="img-title">{{ statKeys[3] }}</h3>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4" style="margin-top: 120px" *ngIf="statKeys.length > 4">
+          <div class="card">
+            <div class="box fifthBox">
+              <p>{{ statValues[4] }}</p>
+            </div>
+            <h3 class="img-title">{{ statKeys[4] }}</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="video mt-5 mb-5">
+    <div class="col-md-4 margin-auto">
+      <h1 class="m-b-15 text-left">Watch the interview</h1>
+      <video controls muted="" style="width: 70%; margin-left: 30%" src="{{ interviewVideo }}" type="video/mp4">
+        <!-- <source src="{{ interviewVideo }}" type="video/mp4" /> -->
+      </video>
+      <div class="text-center mt-5 mb-5">
+        <img src="assets/images/OR.svg" />
+      </div>
+
+      <h1 class="m-b-15 text-right">Listen TO the PODCAST</h1>
+      <video controls muted="" style="width: 70%" src="{{ interviewPodcast }}" type="video/mp4">
+        <!-- <source src="{{ interviewPodcast }}" type="video/mp4" /> -->
+      </video>
+    </div>
+  </div>
+  <div class="row timelineContainer">
+    <div class="col-md-3">
+      <p>Timeline</p>
+    </div>
+    <div class="col-md-9">
+      <div class="card">
+        <div class="card-body">
+          <ul class="timeline timeline-left">
+            <li class="timeline-item row" *ngFor="let timelineItem of blueprint.timeline">
+              <div class="timeline-year col-md-1">
+                <p>{{ timelineItem.year }}</p>
+              </div>
+              <div class="col-md-1 dot-container">
+                <div class="colored-dot"></div>
+              </div>
+              <div class="timeline-text col-md-6">
+                <p *ngFor="let desc of timelineItem.description">
+                  {{ desc }}
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row interviewContainer">
+    <div class="col-md-8">
+      <span *ngFor="let qa of blueprint.qA">
+        <div class="row">
+          <p class="col-md-1 offset-md-3 question">Q:</p>
+          <p class="col-md-8 question">{{ qa.question }}</p>
+        </div>
+        <div class="row">
+          <p class="col-md-1 offset-md-3 question">A:</p>
+          <p class="col-md-8">
+            {{ qa.answer }}
+          </p>
+        </div>
+      </span>
+    </div>
+    <div class="col-md-4">
+      <p>Interview</p>
+    </div>
+    <div class="col-md-5 text-center">
+      <p class="title">
+        WITH THE CEO OF <span class="yellowFont">{{ blueprint.company }}</span>
+      </p>
+      <hr />
+      <img src="{{ blueprint.photo }}" class="img" />
+      <h4 class="yellowFont subtitle">An interview with</h4>
+      <h1 class="name">{{ blueprint.firstName }} {{ blueprint.lastName }}</h1>
+      <img src="assets/images/reverse.png" width="50" />
+    </div>
+
+    <div class="col-md-7">
+      <p class="title">Read the full story</p>
+      <p class="subtitle">
+        The blueprint document is full of insights and statistics to get you
+        started in the {{ getIndustryName(blueprint.industryId) }} industry
+      </p>
+      <div>
+        <a href="{{ pdfUrl }}" class="btn btnDownload" target="_blank"><img class="button-img"
+            src="assets/images/flowerblack.png" />
+          download</a>
+      </div>
+    </div>
+  </div>
+</div>

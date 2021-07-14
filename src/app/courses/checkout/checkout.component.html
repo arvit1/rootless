@@ -1,0 +1,80 @@
+<div class="container checkout">
+  <div class="row">
+    <div class="col-sm-12 col-lg-6 d-flex">
+      <a [routerLink]="['/courses', courseId]">
+        <p class="goBack">
+          < Back to couse detail page</p>
+      </a>
+      <div>
+        <h1 class="font-55 black-color no-margin">Checkout</h1>
+        <p class="margin-b-t font-25 black-color no-margin">
+          Enrolling to course
+        </p>
+        <div class="col-lg-8 col-xlg-9 col-md-7 no-margin padding-b-t-40 d-block" *ngIf="course && experts">
+          <div class="card">
+            <img class="card-img-top img-responsive" src="{{course.imageUrl}}" />
+            <h3 class="img-title">{{course.title}}</h3>
+            <div class="card-body">
+              <h4 class="card-title m-t-20">
+                A course by
+                <span class="card-text-colored">{{ getExpert(course.expertId).firstName }} {{
+                  getExpert(course.expertId).lastName }}
+                  <img src="assets/images/verified-check-green.svg" class="badge-check-green" /></span>
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6 col-sm-12">
+      <div class="col-sm-12 checkout">
+        <form class="form-horizontal m-t-20" (ngSubmit)="onSubmit($event)" #stripeContainer>
+          <div style="background: #f0f0f0; padding: 20px">
+            <div class="cardContainer" id="example-3">
+              <div class="fieldset">
+                <label for="card-number">Credit Card</label>
+                <div id="card-number" class="field empty"></div>
+                <label for="card-expiry">Expiration</label>
+                <div id="card-expiry" class="field empty"></div>
+                <label for="card-cvc">Security Code</label>
+                <div id="card-cvc" class="field empty"></div>
+              </div>
+            </div>
+          </div>
+          <div style="padding: 20px">
+            <div class="form-group">
+              <label id="inputdiscountcode" class="control-label col-form-label">GIFT OR DISCOUNT CODE
+                (optional)</label>
+              <input type="text" class="form-control" placeholder="" aria-label="discountcode"
+                aria-describedby="basic-addon1" name="discountCode" [(ngModel)]="discountCode" name="discountCode" />
+            </div>
+          </div>
+          <div style="padding: 20px">
+            <div class="form-group text-center">
+              <div class="col-xs-12 p-b-20">
+                <button type="submit" class="btn yellowBlack-btn padding-20 full-width">
+                  <img src="assets/images/flowerblack.png" style="width: 30px; margin-right: 10px" />
+                  Start your free trial
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="m-t-100 m-b-100 padding-60">
+    <h1 class="m-b-15 font-bold">Switch to Rootless me account...</h1>
+    <p class="col-lg-6 col-xlg-6 col-md-5 yellow-color font-40 font-bold">
+      if you want free access to our courses
+    </p>
+    <div class="text-center">
+      <button [routerLink]="['/signup']" class="btn yellowBlack-btn padding-20">
+        <img src="../../../assets/images/flowerblack.png" style="width: 30px; margin-right: 10px" />
+        sign up now
+      </button>
+    </div>
+  </div>
+</div>
